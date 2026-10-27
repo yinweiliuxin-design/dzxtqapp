@@ -248,6 +248,7 @@ dialog.lb button{position:absolute;top:8px;right:8px;min-width:44px;min-height:4
     <p class="lede">调音按选中的目标弦判准，作品可以整包备份和恢复，网络不稳时课程照常打开。本页整理自 GitHub 中现存的源码和交付记录，所有截图都来自同一份代码在本地运行的结果。</p>
     <div class="actions">
       <a class="btn primary" href="#preview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>一键预览</a>
+      <a class="btn" href="https://claude.ai/artifact/9rJcYr7ohYTN1fnpp6sAbT" target="_blank" rel="noopener">手机在线预览</a>
       <a class="btn" href="https://smartvio-studio-mobile.politecalf5.chatgpt.site/" target="_blank" rel="noopener">线上客户端</a>
       <a class="btn" href="https://github.com/yinweiliuxin-design/dzxtqapp" target="_blank" rel="noopener">dzxtqapp 仓库</a>
       <a class="btn" href="https://github.com/yinweiliuxin-design/smartviolin/tree/violinapp/06-App%E8%BD%AF%E4%BB%B6/V29-%E5%8F%AF%E9%9D%A0%E6%80%A7%E7%89%88%E6%9C%AC" target="_blank" rel="noopener">V29 源码出处</a>
@@ -288,7 +289,7 @@ dialog.lb button{position:absolute;top:8px;right:8px;min-width:44px;min-height:4
       <div><dt>本机数据</dt><dd class="mono">web-source/.preview/</dd></div>
       <div><dt>常用参数</dt><dd class="mono">--port · --role user|anonymous · --reset · --no-open</dd></div>
     </dl>
-    <p class="note">只监听本机，手机无法直接打开；手机请用线上客户端。麦克风和摄像头只在 localhost 或 HTTPS 下可用。</p>
+    <p class="note">只监听本机，手机无法直接打开。手机请用<a href="https://claude.ai/artifact/9rJcYr7ohYTN1fnpp6sAbT" target="_blank" rel="noopener">在线预览</a>：客户端与服务端接口都在浏览器里运行，数据只存在该浏览器；麦克风、摄像头、离线模式在在线预览中不可用。</p>
   </div>
   <div class="accept">
     <h3>逐项验收覆盖的功能 <small><span class="mono">node tools/acceptance.cjs</span>，Chromium 手机视口，生成的 440 Hz 麦克风信号与虚拟摄像头</small></h3>

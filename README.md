@@ -4,6 +4,22 @@
 
 打开 [`index.html`](index.html) 查看 App 页面：首次引导与全部功能页截图、V29 改进项状态、功能一览、代码结构和 V12–V29 版本记录。
 
+## 手机在线预览
+
+<https://claude.ai/artifact/9rJcYr7ohYTN1fnpp6sAbT>（claude.ai 私有链接，手机浏览器或 Claude App 可直接打开；分享给他人需在页面的“分享”菜单中授权）
+
+V29 客户端和**原样的服务端接口代码**都在浏览器里运行：数据库用纯 JavaScript 版 SQLite（sql.js 的 asm.js 构建，见 `tools/online-preview/vendor/`），媒体存在 IndexedDB，App 发出的 `/api/` 请求在本页内处理，不会发到任何服务器。所有数据只保存在当前浏览器。
+
+- 可用：曲库、练习示范、伴奏、学习路径与动作跟练、课程云进度、音色与预设云备份、MIDI、节拍器、调音参考音、社区发帖 / 短视频 / 点赞评论、后台审核（页面左下“在线预览”→“打开后台”）、导出记录与作品包（保存前会请你确认；.mid 等格式会打包成 .zip）
+- 不可用：麦克风和摄像头（调音器检测、跟奏、录音录像）、离线模式、蓝牙 MIDI。这些请用下面的一键预览
+
+重新构建与验证：
+
+```sh
+node tools/online-preview/build.cjs     # 输出到 build/online-preview（index.html 可放到任何 HTTPS 静态主机）
+node tools/online-preview/verify.cjs    # 无后端服务器、严格 CSP、禁用麦克风摄像头下的 21 项检查（需 Playwright）
+```
+
 ## 一键预览
 
 在电脑上启动完整的 App：客户端、服务端接口、本地数据库和后台管理端一起运行，浏览器自动打开。
@@ -50,6 +66,7 @@ node tools/acceptance.cjs
 | `docs/V29-交付说明.txt` | V29 原交付说明（R01–R14 状态、验证范围） |
 | `start-preview.mjs`、`一键预览.cmd`、`一键预览.command` | 一键预览启动器 |
 | `tools/acceptance.cjs`、`docs/一键预览验收结果.json` | 功能验收脚本及最近一次结果 |
+| `tools/online-preview/` | 手机在线预览的构建、浏览器端后端（`runtime.js`）、验证脚本与 sql.js 依赖 |
 
 ## 手动运行
 

@@ -1,0 +1,48 @@
+<style>
+#svp-chip{position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 86px);z-index:60;display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:6px 12px;border-radius:999px;border:1px solid var(--line-strong,#cfc9ba);background:var(--paper,#fffefa);color:var(--ink,#282b27);font:600 12px/1.2 inherit;box-shadow:0 6px 18px rgba(40,40,30,.12);cursor:pointer}
+#svp-chip i{width:8px;height:8px;border-radius:50%;background:var(--accent,#bb422d)}
+@media (min-width:1024px){#svp-chip{bottom:calc(env(safe-area-inset-bottom,0px) + 20px);left:auto;right:20px}}
+#svp-sheet{max-width:min(460px,92vw);border:0;border-radius:20px;padding:22px 22px 18px;background:var(--paper,#fffefa);color:var(--ink,#282b27)}
+#svp-sheet::backdrop{background:rgba(20,22,20,.45)}
+#svp-sheet h2{margin:0 0 6px;font-size:19px}
+#svp-sheet p,#svp-sheet li{font-size:13px;line-height:1.7;color:var(--muted,#656a60)}
+#svp-sheet ul{margin:8px 0 12px;padding-left:18px}
+#svp-sheet strong{color:var(--ink,#282b27)}
+#svp-sheet .svp-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+#svp-sheet .svp-row a,#svp-sheet .svp-row button{min-height:40px;padding:8px 14px;border-radius:12px;border:1px solid var(--line-strong,#cfc9ba);background:var(--paper,#fffefa);color:var(--ink,#282b27);font:600 13px inherit;text-decoration:none;display:inline-flex;align-items:center;cursor:pointer}
+#svp-sheet .svp-row .svp-primary{background:var(--accent,#bb422d);border-color:var(--accent,#bb422d);color:#fff}
+#svp-sheet select{min-height:40px;border-radius:12px;padding:6px 10px;font:inherit}
+#svp-sheet .svp-confirm{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--accent-soft,#fbece3)}
+#svp-sheet .svp-confirm.on{display:block}
+</style>
+<button type="button" id="svp-chip" aria-haspopup="dialog"><i aria-hidden="true"></i>在线预览</button>
+<dialog id="svp-sheet" aria-labelledby="svp-title">
+  <h2 id="svp-title">Silvio V29 在线预览</h2>
+  <p>客户端和服务端接口都在这个浏览器里运行。练习、作品、社区投稿和后台记录<strong>只保存在当前浏览器</strong>，其他人看不到，也不会上传。</p>
+  <ul>
+    <li>可用：曲库、练习示范、伴奏、学习路径与动作跟练、音色与 MIDI、节拍器、社区发帖与短视频、点赞评论、后台审核、导出（经确认后保存）。</li>
+    <li>不可用：<strong>麦克风和摄像头</strong>（调音器检测、跟奏、录音录像）、离线模式、蓝牙 MIDI。这些请在电脑上用仓库里的“一键预览”。</li>
+  </ul>
+  <label for="svp-role" style="font-size:13px">预览身份</label>
+  <select id="svp-role"><option value="admin">管理员 preview-owner</option><option value="user">普通账号 preview-user</option><option value="anonymous">未登录访客</option></select>
+  <div class="svp-row">
+    <a href="admin.html" class="svp-primary">打开后台</a>
+    <button type="button" id="svp-reset">清空预览数据</button>
+    <button type="button" id="svp-close">关闭</button>
+  </div>
+  <div class="svp-confirm" id="svp-confirm"><p style="margin:0 0 8px">将删除这个预览里的社区投稿、视频和后台记录（App 里的练习与作品请在“我的设置”中单独清除）。</p><div class="svp-row" style="margin-top:0"><button type="button" class="svp-primary" id="svp-reset-yes">确认清空</button><button type="button" id="svp-reset-no">取消</button></div></div>
+</dialog>
+<script>
+(function(){
+  var chip=document.getElementById('svp-chip'),sheet=document.getElementById('svp-sheet'),role=document.getElementById('svp-role'),confirmBox=document.getElementById('svp-confirm');
+  if(!chip||!sheet||!window.SVPreview)return;
+  role.value=window.SVPreview.role;
+  chip.addEventListener('click',function(){confirmBox.classList.remove('on');sheet.showModal();});
+  document.getElementById('svp-close').addEventListener('click',function(){sheet.close();});
+  sheet.addEventListener('click',function(e){if(e.target===sheet)sheet.close();});
+  role.addEventListener('change',function(){window.SVPreview.setRole(role.value);});
+  document.getElementById('svp-reset').addEventListener('click',function(){confirmBox.classList.add('on');});
+  document.getElementById('svp-reset-no').addEventListener('click',function(){confirmBox.classList.remove('on');});
+  document.getElementById('svp-reset-yes').addEventListener('click',function(){window.SVPreview.reset();});
+})();
+</script>
