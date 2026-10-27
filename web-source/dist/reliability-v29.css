@@ -1,0 +1,47 @@
+.v29-tuner { min-width:0; }
+.v29-tuner .page-heading h1 { font-size:clamp(27px,4vw,38px); margin:0 0 12px; }
+.v29-tuner-grid { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(280px,1fr); gap:22px; align-items:start; }
+.v29-tuner-main { text-align:center; }
+.v29-strings { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; border:0; padding:0; margin:0 0 24px; }
+.v29-strings legend { text-align:left; margin-bottom:12px; font-size:13px; color:var(--muted); }
+.v29-strings .string-button { width:100%; min-width:0; min-height:72px; margin:0; padding:12px 6px; border:1px solid var(--line); border-radius:14px; background:var(--paper); color:var(--ink); }
+.v29-strings .string-button strong { display:block; font-family:Georgia,serif; font-size:25px; font-weight:500; }
+.v29-strings .string-button small { display:block; font-size:11px; white-space:nowrap; margin-top:4px; }
+.v29-strings .string-button.active { background:var(--am-solid); color:white; border-color:var(--am-solid); }
+.v29-target { display:grid; justify-items:center; gap:8px; }
+.v29-target>span { color:var(--muted); font-size:12px; }
+.v29-target>strong { font-family:Georgia,serif; font-size:70px; line-height:1.1; font-weight:500; }
+.v29-target>small { color:var(--muted); font-size:13px; }
+.v29-tuner .tuner-scale { display:flex; justify-content:space-between; height:60px; padding:18px 0; margin-top:14px; border-top:1px solid var(--line); color:var(--muted); font-size:11px; }
+.v29-tuner .tuner-needle { position:absolute; top:7px; height:32px; width:3px; border-radius:3px; background:var(--am-action); transition:left .1s linear; }
+.v29-cents { font-size:23px; font-weight:600; }
+.v29-tuner-main[data-tuner-state=in-tune] .v29-cents,.v29-tuner-main[data-tuner-state=in-tune] .tuner-feedback { color:var(--green); }
+.v29-tuner .tuner-feedback { min-height:48px; font-size:15px; line-height:1.6; margin:15px 0 4px; }
+.v29-input { display:flex; align-items:center; gap:16px; text-align:left; font-size:12px; margin:18px 0; color:var(--muted); white-space:nowrap; }
+.v29-input meter { flex:1; width:0; min-width:0; height:15px; }
+.v29-tuner-actions,.v29-backup-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:15px; }
+.v29-tuner-actions>.button,.v29-backup-actions>.button { flex:1 1 150px; min-height:48px; white-space:normal; line-height:1.5; }
+.v29-tuner-settings,.v29-tuner-guide { margin-bottom:16px; }
+.v29-tuner summary { cursor:pointer; font-size:15px; font-weight:600; line-height:1.6; }
+.v29-tuner details[open]>summary { margin-bottom:18px; }
+.v29-tuner-settings label { display:block; margin:18px 0; font-size:13px; }
+.v29-tuner-settings input { max-width:100%; }
+.v29-tuner-settings input[type=number] { margin:8px 4px; width:100px; }
+.v29-tuner-settings input[type=range] { display:block; width:100%; margin-top:9px; }
+.v29-tuner-guide ol { padding-inline-start:21px; margin:0; }
+.v29-tuner-guide li { line-height:1.8; margin:10px 0; font-size:13px; }
+.v29-tuner #tuner-input-settings { overflow-wrap:anywhere; font-size:11px; }
+.v29-backup { margin:22px 0; }
+.v29-backup h3 { margin:0 0 12px; }
+.v29-backup p { line-height:1.8; }
+.v29-restore-preview dl { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:24px 0; }
+.v29-restore-preview dt { color:var(--muted); }
+.v29-restore-preview dd { margin:0; text-align:right; }
+#main .sl-cloud-progress { margin:18px 0; padding:18px; border:1px solid var(--line); border-radius:16px; background:var(--paper); }
+#main .sl-cloud-progress summary { cursor:pointer; font-weight:600; line-height:1.6; }
+#main .sl-cloud-progress p { margin:12px 0; font-size:13px; line-height:1.8; }
+#main .sl-cloud-actions { display:flex; flex-wrap:wrap; gap:9px; }
+#main .sl-cloud-actions button { flex:1 1 150px; min-height:48px; white-space:normal; }
+@media(max-width:900px){.v29-tuner-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:440px){.v29-strings{gap:7px}.v29-strings .string-button small{font-size:10px}.v29-tuner-actions>.button,.v29-backup-actions>.button{flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){.v29-tuner .tuner-needle{transition:none}}

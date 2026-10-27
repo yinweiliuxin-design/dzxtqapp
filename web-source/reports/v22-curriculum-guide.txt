@@ -1,0 +1,49 @@
+SmartVio V22 分级学习路径
+日期：2026-10-23
+
+交付范围
+8 个阶段，四语引导（中文、英语、日语、德语），22 项精选官方或作者本人来源。
+阶段依次为：舒适持琴、空弦长音、第一把位手指、换弦、原创短句、选修揉弦、换把与连奏参考、进阶音乐表达。
+前 6 个阶段连接原有 settle/open-strings/first-fingers/crossing/dawn-melody/vibrato 课时。
+后 2 个阶段为官方参考研习与用户自评，不提供未实现的高把位、双音或跳弓动画。
+
+使用方式
+进入学习路径后选择一个阶段。每阶段用三个简单步骤组织：先看清楚、慢慢跟练、回听与自评。
+零基础、初级、中级、进阶均可直接浏览，不锁级，不要求登录。
+动作示范与跟练进入原有课时，保持原有五步课程、播放控制、可选麦克风反馈。
+点击示范只导航，不自动播放声音，不主动申请相机或麦克风。
+原有六步按钮教学入口继续保留，由宿主应用处理 learn 导航。
+来源链接仅在用户点击时打开原作者网页。没有自动嵌入、第三方缩略图、抓取视频或后台媒体下载。
+外部资料主要为英文，含日文来源；未承诺原视频有四语字幕或所有地区可播放。
+
+进度
+仅使用 localStorage 键 smartvio-curriculum-progress-v1，与原课时进度分开。
+保存用户所选筛选级别、阶段内步骤、自评确认与手动练过标记。观看外链不会自动标为看完。
+练过需要用户明确勾选练习/回顾，再按记录按钮；该状态不代表考试成绩或技术认证。
+损坏的旧进度不会被静默覆盖。存储失败时提示临时状态，可导出 JSON。
+明确清除只删除本模块键；不清除旧课程、录音、社区或其他数据。
+
+集成 API
+脚本顺序：curriculum-data.js，然后 curriculum.js。样式 curriculum.css 与全局音乐视觉主题兼容。
+window.SVCurriculum.create({environment, notify, onNavigateLesson, onNavigateFeature})
+- render(): 返回 <div id="curriculum-host"></div>
+- mount(element,{lang}): 绑定事件并渲染，lang 可为 zh/en/ja/de。
+- unmount(): 移除事件，不操作任何音频或相机。
+- select(stageId): 打开一个存在的阶段并返回是否成功。
+- state(): 返回状态与进度的独立副本。
+- clear(): 显式清除当前模块本机进度，返回 {committed,storageState}。
+- export({download:false}): 直接返回导出 JSON；默认尝试下载 Silvio-learning-path-progress.json。
+onNavigateLesson(id) 接收现有六个课时 ID；宿主应刷新发布目录并处理撤回后的不可用状态。
+onNavigateFeature(route) 接收 learn/studio/tuner/metronome；learn 应显示保留的原有按钮教学。
+回调返回 Promise 被支持；拒绝会给出可用性提示，不让未处理异常泄漏。
+
+内容与许可
+本轮成果为基于官方公开来源的原创课程编排，不是已经训练/微调的 AI 模型。
+没有引入第三方视频、教师肖像、谱面、逐字讲稿或教学库。没有取得视频商用转载或训练许可。
+官方课程来源不代表作者为本应用背书。Violin Lounge 等来源有个人非商业使用限制，应用仅提供链接。
+Trinity 的旧版技术示范明确标为历史示范，不能等同现行考纲。
+App 自定义级别不等同 ABRSM、Trinity 等机构的考级认证。
+
+验证
+tests/curriculum.test.mjs 覆盖：四语与来源完整性、访客无权限副作用、筛选和焦点、现有课时导航、自评标记、离线本机进度、损坏保留、存储失败、清除确认、导出异常、外链安全、回调拒绝以及进阶能力边界。
+自动化行为测试不等于真人教师复核或手机/iPad 真机验收。

@@ -1,0 +1,57 @@
+V21 同步陪练课程后台与客户端 API 说明
+日期：2026-10-22
+
+实施范围
+1. 客户端无需登录可读取已发布课程；草稿与账号进度不公开。
+2. 后台沿用 Sites 可信身份与 ADMIN_USER_IDS 白名单，访客不能打开后台或调用管理 API。
+3. 后台新增“课程与内容”：四语言标题/说明编辑、五步骤文字与逐音标注编辑、授权素材登记、标注预览、草稿保存、发布、撤回和历史恢复。
+4. 新课草稿不显示在客户端。已有课保存草稿时保持原发布内容，发布成功后一次替换完整 manifest。
+5. 内置课程被撤回后，数据库 tombstone 覆盖内置数据；不会因存在内置模板重新出现在在线列表。
+6. 首次修改内置课程时保存初始版本快照，发布版本号递增；恢复历史版本会形成新的发布版本，保留旧快照。
+7. 管理员发布确认不等于教师认证。原创示意课 reviewStatus=draft，后续教师复核需记录真实依据。
+
+接口
+GET /api/lessons
+返回 {ok:true,lessons:[完整发布manifest]}，允许访客；无发布内容时空数组，不强制回退到内置数据。
+GET /api/lessons/:id/manifest
+返回 {ok:true,manifest}；草稿/撤回/不存在返回404。
+GET /api/admin/lessons
+仅管理员，返回草稿、当前发布版本、发布历史和限制。
+POST /api/admin/lessons/action
+{action:'save'|'publish'|'withdraw'|'rollback',id,version,manifest?,revision?,confirmed?}
+version 为后台记录的 CAS 版本。publish/rollback 需要 confirmed:true。
+GET /api/me/lesson-progress
+仅已登录用户，返回该用户的云进度。
+PUT /api/me/lesson-progress
+{id,version,position,step,completed}，首次version=0；访客不调用也可保留浏览器本地进度。
+写入需同源 Origin，JSON，已启用身份；X-Account-Id 如提供需匹配当前身份。
+
+manifest 约束
+id: 2–64位小写字母/数字/连字符，首字母为字母。
+title/summary: zh,en,ja,de 四语对象，标题每语120字符，说明每语1200字符。
+level: beginner/intermediate/optional；duration:0.25–3600秒；bpm:20–240。
+steps: 固定顺序 see,slow,loop,solo,review；每步四语 title/text。
+events: 每课1–512个非重叠单音事件；id,start,end,midi,string,finger,bow,vibrato。
+弦 G/D/A/E，指号0–4，弓向down/up，midi55–96；空弦需匹配该弦音高。
+rights: original/authorized/public-domain，并提供登记说明。
+media: animation，或video及同站 /assets/lessons/*.mp4|webm 路径、严格递增time/scoreTime锚点。
+视频素材需已随当前版本部署，不能用此表单复制或上传第三方视频。未提供视频不会伪装成真人课程。
+发布历史接口最多返回2000条；数据库保留完整历史。
+
+数据库
+新增且仅追加 drizzle/0005_lesson_studio.sql；保留0000–0004迁移原文。
+lesson_records：草稿、发布内容、记录版本、发布版本、状态与变更令牌。
+lesson_revisions：不可覆写的发布快照，(lesson_id,revision)联合主键。
+lesson_progress：账号隔离的云进度，(user_id,lesson_id)联合主键。
+更新与审计使用同一D1批事务；CAS失败触发既有审计CHECK约束回滚全部变更。
+
+验证
+tests/lessons-api.test.mjs：14项通过，包括访客读/管理员限制、同源、草稿隔离、撤回覆盖、版本冲突、原子回滚、历史恢复、视频路径及时间锚点、私有云进度。
+与现有社区API/视频/界面/管理员权限回归合计77项测试通过，其中既有社区API脚本内部还报告221个断言。
+本地真实Chrome鼠标点击联调15项通过：320/390/768/1024/1440布局，四语，创建/编辑/发布/撤回/历史恢复，客户端API读回与零页面异常。
+浏览器测试仅使用本地 preview-owner 与隔离测试数据库；不等同生产账号、实际iPhone/iPad或实琴验收。
+
+保留与边界
+旧社区、录像、管理员访问保护及基本访客功能保留。
+撤回能阻止新的在线读取，已经保存到用户设备的离线副本需联网刷新，不能承诺远程擦除。
+音频/摄像头推断能力与课程CMS属于不同模块；此后台不会声称完成教师认证或硬件验收。

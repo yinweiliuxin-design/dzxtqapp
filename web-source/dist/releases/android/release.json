@@ -1,0 +1,18 @@
+{
+  "releaseDate": "2026-10-25",
+  "packageName": "com.smartvio.studio.test",
+  "appName": "Silvio 测试版",
+  "versionName": "0.27.1",
+  "versionCode": 2701,
+  "minSdk": 26,
+  "targetSdk": 35,
+  "intendedDevice": "iQOO 11 / V2243A",
+  "apkBytes": 37481,
+  "apkSha256": "5f864c788a188aec85730b96f76086a73951e7a2578111fa90a6896656472e9c",
+  "certificateSha256": "8e8353e4f0cbf84207d1e10967ce320a9d909229b824869a9cdd3f78a58f58a2",
+  "url": "/releases/android/Silvio-V27-iQOO11-test.apk",
+  "architecture": "Java/DEX; no ABI-specific native libraries",
+  "physicalDeviceTested": false,
+  "guestMode": true,
+  "firstLaunchRequiresNetwork": true
+}

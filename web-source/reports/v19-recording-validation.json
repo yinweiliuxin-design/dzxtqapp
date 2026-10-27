@@ -1,0 +1,614 @@
+{
+  "release": "V19",
+  "assetVersion": "20261016-v19-1",
+  "generatedAt": "2026-10-16T02:27:09.840Z",
+  "sourceBaseline": "75c8b2670f2be9566d4f4c64afc711ba83e10b99",
+  "scope": [
+    "Record your performance panel moved before original recording creation center",
+    "Audio and video capture with microphone default independent from loop source",
+    "Real audio level, elapsed time, camera preview, stop/save and latest-take review",
+    "Rename, named original-format download and refresh persistence",
+    "Original four-track project workflow retained"
+  ],
+  "references": [
+    {
+      "product": "GarageBand",
+      "source": "https://support.apple.com/en-gb/guide/garageband-iphone/chs39283a21/ios",
+      "applied": "Clear recording input and actual input-level presentation"
+    },
+    {
+      "product": "Dolby On",
+      "source": "https://www.dolby.com/en-gb/apps/dolby-on/",
+      "applied": "Separate audio/video mode, simple record action and review/export flow"
+    }
+  ],
+  "automatedTests": {
+    "passed": 441,
+    "failed": 0,
+    "skipped": 0,
+    "logSha256": "6f51ebf956c9e2e0f51d28b1c907c8eaac0a5943883ebe70ae1d94c62d03f930"
+  },
+  "browser": {
+    "product": "Windows Chromium 155",
+    "generatedCameraAndMicrophone": true,
+    "physicalDevice": false,
+    "records": [
+      {
+        "pass": true,
+        "lang": "en",
+        "width": 375,
+        "scrollWidth": 375,
+        "recordingBeforeFourTracks": true,
+        "id": "v19-recording-load",
+        "at": "2026-10-16T02:25:45.720Z",
+        "physicalDevice": false
+      },
+      {
+        "pass": true,
+        "kind": "recording",
+        "source": "microphone",
+        "requestedFacing": null,
+        "bytes": 18011,
+        "mime": "audio/webm;codecs=opus",
+        "duration": 1.6728000000715255,
+        "persisted": true,
+        "pcm": {
+          "duration": 1.62,
+          "peak": 1.0292083024978638,
+          "rms": 0.09263208008346667,
+          "channels": 2,
+          "sampleRate": 44100
+        },
+        "preview": null,
+        "meter": {
+          "style": "width: 2%;",
+          "value": "2"
+        },
+        "lockedControls": 3,
+        "lang": "en",
+        "width": 375,
+        "scrollWidth": 375,
+        "recordingBeforeFourTracks": true,
+        "recordingId": "467cfc7d-9e18-4bf5-b38e-3a56c536ef5c",
+        "id": "v19-recording-microphone",
+        "at": "2026-10-16T02:25:48.141Z",
+        "physicalDevice": false
+      },
+      {
+        "pass": true,
+        "native": {
+          "tag": "AUDIO",
+          "controls": true,
+          "currentTime": 0.674417,
+          "muted": false,
+          "volume": 1
+        },
+        "pcm": {
+          "duration": 1.62,
+          "peak": 1.0292083024978638,
+          "rms": 0.09263208008346667,
+          "channels": 2,
+          "sampleRate": 44100
+        },
+        "lang": "en",
+        "width": 375,
+        "scrollWidth": 375,
+        "recordingBeforeFourTracks": true,
+        "recordingId": "467cfc7d-9e18-4bf5-b38e-3a56c536ef5c",
+        "id": "v19-recording-native-playback-microphone",
+        "at": "2026-10-16T02:25:48.883Z",
+        "physicalDevice": false
+      },
+      {
+        "pass": true,
+        "kind": "recording",
+        "source": "synth",
+        "requestedFacing": null,
+        "bytes": 26593,
+        "mime": "audio/webm;codecs=opus",
+        "duration": 1.7201999999284745,
+        "persisted": true,
+        "pcm": {
+          "duration": 1.68,
+          "peak": 0.04826158657670021,
+          "rms": 0.02666103597931669,
+          "channels": 2,
+          "sampleRate": 44100
+        },
+        "preview": null,
+        "meter": {
+          "style": "width: 3%;",
+          "value": "3"
+        },
+        "lockedControls": 3,
+        "lang": "en",
+        "width": 375,
+        "scrollWidth": 375,
+        "recordingBeforeFourTracks": true,
+        "recordingId": "b4456462-3327-4424-a61d-5f8791f851fe",
+        "id": "v19-recording-synth",
+        "at": "2026-10-16T02:25:50.908Z",
+        "physicalDevice": false
+      },
+      {
+        "pass": true,
+        "native": {
+          "tag": "AUDIO",
+          "controls": true,
+          "currentTime": 0.667554,
+          "muted": false,
+          "volume": 1
+        },
+        "pcm": {
+          "duration": 1.68,
+          "peak": 0.04826158657670021,
+          "rms": 0.02666103597931669,
+          "channels": 2,
+          "sampleRate": 44100
+        },
+        "lang": "en",
+        "width": 375,
+        "scrollWidth": 375,
+        "recordingBeforeFourTracks": true,
+        "recordingId": "b4456462-3327-4424-a61d-5f8791f851fe",
+        "id": "v19-recording-native-playback-synth",
+        "at": "2026-10-16T02:25:52.156Z",
+        "physicalDevice": false
+      },
+      {
+        "pass": true,
+        "kind": "video",
+        "source": "microphone",
+        "requestedFacing": "user",
+        "bytes": 120546,
+        "mime": "video/webm;codecs=vp8,opus",
+        "duration": 1.7702000000476836,
+        "persisted": true,
+        "pcm": {
+          "duration": 1.74,
+          "peak": 1.0125211477279663,
+          "rms": 0.12541245099934145,
+          "channels": 2,
+          "sampleRate": 44100
+        },
+        "preview": {
+          "width": 1280,
+          "height": 720,
+          "currentTime": 0.044998,
+          "requestedFacing": "user",
+          "actualSettings": {
+            "aspectRatio": 1.7777777777777777,
+            "exposureMode": "manual",
+            "exposureTime": 50,
+            "focusDistance": 50,
+            "focusMode": "manual",
+            "frameRate": 20,
+            "height": 720,
+            "resizeMode": "none",
+            "width": 1280
+          }
+        },
+        "meter": {
+          "style": "width:0%",
+          "value": "0"
+        },
+        "lockedControls": 3,
+        "lang": "en",
+        "width": 375,
+        "scrollWidth": 375,
+        "recordingBeforeFourTracks": true,
+        "recordingId": "29680ed3-fd59-473e-a47b-be818334ff78",
+        "id": "v19-recording-video-user",
+        "at": "2026-10-16T02:25:54.287Z",
+        "physicalDevice": false
+      },
+      {
+        "pass": true,
+        "native": {
+          "tag": "VIDEO",
+          "controls": true,
+          "currentTime": 0.645711,
+          "muted": false,
+          "volume": 1
+        },
+        "pcm": {
+          "duration": 1.74,
+          "peak": 1.0125211477279663,
+          "rms": 0.12541245099934145,
+          "channels": 2,
+          "sampleRate": 44100
+        },
+        "lang": "en",
+        "width": 375,
+        "scrollWidth": 375,
+        "recordingBeforeFourTracks": true,
+        "recordingId": "29680ed3-fd59-473e-a47b-be818334ff78",
+        "id": "v19-recording-native-playback-video-user",
+        "at": "2026-10-16T02:25:55.385Z",
+        "physicalDevice": false
+      },
+      {
+        "pass": true,
+        "kind": "video",
+        "source": "microphone",
+        "requestedFacing": "environment",
+        "bytes": 120546,
+        "mime": "video/webm;codecs=vp8,opus",
+        "duration": 1.7686999999284745,
+        "persisted": true,
+        "pcm": {
+          "duration": 1.74,
+          "peak": 1.0125211477279663,
+          "rms": 0.12541245099934145,
+          "channels": 2,
+          "sampleRate": 44100
+        },
+        "preview": {
+          "width": 1280,
+          "height": 720,
+          "currentTime": 0.034607,
+          "requestedFacing": "environment",
+          "actualSettings": {
+            "aspectRatio": 1.7777777777777777,
+            "exposureMode": "manual",
+            "exposureTime": 50,
+            "focusDistance": 50,
+            "focusMode": "manual",
+            "frameRate": 20,
+            "height": 720,
+            "resizeMode": "none",
+            "width": 1280
+          }
+        },
+        "meter": {
+          "style": "width:0%",
+          "value": "0"
+        },
+        "lockedControls": 3,
+        "lang": "en",
+        "width": 375,
+        "scrollWidth": 375,
+        "recordingBeforeFourTracks": true,
+        "recordingId": "f25be88e-c81d-4c7e-ae65-b5eaee712fde",
+        "id": "v19-recording-video-environment",
+        "at": "2026-10-16T02:25:57.509Z",
+        "physicalDevice": false
+      },
+      {
+        "pass": true,
+        "native": {
+          "tag": "VIDEO",
+          "controls": true,
+          "currentTime": 0.631424,
+          "muted": false,
+          "volume": 1
+        },
+        "pcm": {
+          "duration": 1.74,
+          "peak": 1.0125211477279663,
+          "rms": 0.12541245099934145,
+          "channels": 2,
+          "sampleRate": 44100
+        },
+        "lang": "en",
+        "width": 375,
+        "scrollWidth": 375,
+        "recordingBeforeFourTracks": true,
+        "recordingId": "f25be88e-c81d-4c7e-ae65-b5eaee712fde",
+        "id": "v19-recording-native-playback-video-environment",
+        "at": "2026-10-16T02:25:58.660Z",
+        "physicalDevice": false
+      },
+      {
+        "pass": true,
+        "renamed": "V19 <img src=x onerror=\"window.__qaNameExecuted=true\">",
+        "escaped": true,
+        "download": {
+          "name": "V19  img src=x onerror= window.__qaNameExecuted=true.webm",
+          "bytes": 120546,
+          "mime": "video/webm;codecs=vp8,opus"
+        },
+        "lang": "en",
+        "width": 375,
+        "scrollWidth": 375,
+        "recordingBeforeFourTracks": true,
+        "recordingId": "f25be88e-c81d-4c7e-ae65-b5eaee712fde",
+        "id": "v19-recording-rename-download",
+        "at": "2026-10-16T02:25:58.934Z",
+        "physicalDevice": false
+      },
+      {
+        "pass": true,
+        "restored": [
+          {
+            "id": "467cfc7d-9e18-4bf5-b38e-3a56c536ef5c",
+            "kind": "recording",
+            "bytes": 18011
+          },
+          {
+            "id": "b4456462-3327-4424-a61d-5f8791f851fe",
+            "kind": "recording",
+            "bytes": 26593
+          },
+          {
+            "id": "29680ed3-fd59-473e-a47b-be818334ff78",
+            "kind": "video",
+            "bytes": 120546
+          },
+          {
+            "id": "f25be88e-c81d-4c7e-ae65-b5eaee712fde",
+            "kind": "video",
+            "bytes": 120546
+          }
+        ],
+        "lang": "en",
+        "width": 375,
+        "scrollWidth": 375,
+        "recordingBeforeFourTracks": true,
+        "id": "v19-recording-refresh-recovery",
+        "at": "2026-10-16T02:25:59.339Z",
+        "physicalDevice": false
+      },
+      {
+        "pass": true,
+        "cases": [
+          {
+            "lang": "zh",
+            "width": 320,
+            "label": "开始录音",
+            "audio": {
+              "lang": "zh",
+              "width": 305,
+              "scrollWidth": 305,
+              "recordingBeforeFourTracks": true
+            },
+            "video": {
+              "lang": "zh",
+              "width": 305,
+              "scrollWidth": 305,
+              "recordingBeforeFourTracks": true
+            }
+          },
+          {
+            "lang": "zh",
+            "width": 390,
+            "label": "开始录音",
+            "audio": {
+              "lang": "zh",
+              "width": 375,
+              "scrollWidth": 375,
+              "recordingBeforeFourTracks": true
+            },
+            "video": {
+              "lang": "zh",
+              "width": 375,
+              "scrollWidth": 375,
+              "recordingBeforeFourTracks": true
+            }
+          },
+          {
+            "lang": "zh",
+            "width": 768,
+            "label": "开始录音",
+            "audio": {
+              "lang": "zh",
+              "width": 753,
+              "scrollWidth": 753,
+              "recordingBeforeFourTracks": true
+            },
+            "video": {
+              "lang": "zh",
+              "width": 753,
+              "scrollWidth": 753,
+              "recordingBeforeFourTracks": true
+            }
+          },
+          {
+            "lang": "en",
+            "width": 320,
+            "label": "Start audio recording",
+            "audio": {
+              "lang": "en",
+              "width": 305,
+              "scrollWidth": 305,
+              "recordingBeforeFourTracks": true
+            },
+            "video": {
+              "lang": "en",
+              "width": 305,
+              "scrollWidth": 305,
+              "recordingBeforeFourTracks": true
+            }
+          },
+          {
+            "lang": "en",
+            "width": 390,
+            "label": "Start audio recording",
+            "audio": {
+              "lang": "en",
+              "width": 375,
+              "scrollWidth": 375,
+              "recordingBeforeFourTracks": true
+            },
+            "video": {
+              "lang": "en",
+              "width": 375,
+              "scrollWidth": 375,
+              "recordingBeforeFourTracks": true
+            }
+          },
+          {
+            "lang": "en",
+            "width": 768,
+            "label": "Start audio recording",
+            "audio": {
+              "lang": "en",
+              "width": 753,
+              "scrollWidth": 753,
+              "recordingBeforeFourTracks": true
+            },
+            "video": {
+              "lang": "en",
+              "width": 753,
+              "scrollWidth": 753,
+              "recordingBeforeFourTracks": true
+            }
+          },
+          {
+            "lang": "ja",
+            "width": 320,
+            "label": "録音を始める",
+            "audio": {
+              "lang": "ja",
+              "width": 305,
+              "scrollWidth": 305,
+              "recordingBeforeFourTracks": true
+            },
+            "video": {
+              "lang": "ja",
+              "width": 305,
+              "scrollWidth": 305,
+              "recordingBeforeFourTracks": true
+            }
+          },
+          {
+            "lang": "ja",
+            "width": 390,
+            "label": "録音を始める",
+            "audio": {
+              "lang": "ja",
+              "width": 375,
+              "scrollWidth": 375,
+              "recordingBeforeFourTracks": true
+            },
+            "video": {
+              "lang": "ja",
+              "width": 375,
+              "scrollWidth": 375,
+              "recordingBeforeFourTracks": true
+            }
+          },
+          {
+            "lang": "ja",
+            "width": 768,
+            "label": "録音を始める",
+            "audio": {
+              "lang": "ja",
+              "width": 753,
+              "scrollWidth": 753,
+              "recordingBeforeFourTracks": true
+            },
+            "video": {
+              "lang": "ja",
+              "width": 753,
+              "scrollWidth": 753,
+              "recordingBeforeFourTracks": true
+            }
+          },
+          {
+            "lang": "de",
+            "width": 320,
+            "label": "Audioaufnahme starten",
+            "audio": {
+              "lang": "de",
+              "width": 305,
+              "scrollWidth": 305,
+              "recordingBeforeFourTracks": true
+            },
+            "video": {
+              "lang": "de",
+              "width": 305,
+              "scrollWidth": 305,
+              "recordingBeforeFourTracks": true
+            }
+          },
+          {
+            "lang": "de",
+            "width": 390,
+            "label": "Audioaufnahme starten",
+            "audio": {
+              "lang": "de",
+              "width": 375,
+              "scrollWidth": 375,
+              "recordingBeforeFourTracks": true
+            },
+            "video": {
+              "lang": "de",
+              "width": 375,
+              "scrollWidth": 375,
+              "recordingBeforeFourTracks": true
+            }
+          },
+          {
+            "lang": "de",
+            "width": 768,
+            "label": "Audioaufnahme starten",
+            "audio": {
+              "lang": "de",
+              "width": 753,
+              "scrollWidth": 753,
+              "recordingBeforeFourTracks": true
+            },
+            "video": {
+              "lang": "de",
+              "width": 753,
+              "scrollWidth": 753,
+              "recordingBeforeFourTracks": true
+            }
+          }
+        ],
+        "count": 12,
+        "missingRecordingPreferenceDefaultsToMicrophone": true,
+        "loopSourceUnchanged": true,
+        "id": "v19-recording-layout-matrix",
+        "at": "2026-10-16T02:26:04.187Z",
+        "physicalDevice": false
+      },
+      {
+        "pass": true,
+        "lang": "zh",
+        "width": 375,
+        "scrollWidth": 375,
+        "recordingBeforeFourTracks": true,
+        "id": "v19-recording-display",
+        "at": "2026-10-16T02:26:04.590Z",
+        "physicalDevice": false
+      }
+    ],
+    "languages": [
+      "zh",
+      "en",
+      "ja",
+      "de"
+    ],
+    "widths": [
+      320,
+      390,
+      768
+    ]
+  },
+  "fixed": [
+    "One-shot capture no longer silently inherits synthesized loop source",
+    "Late permission resolution/rejection cannot affect a newer recording",
+    "Automatic video ending now resolves finished and triggers saving once",
+    "Native inactive-before-final-data race waits for actual data",
+    "Failed synth playback startup cannot auto-save an unsuccessful take",
+    "Recorder stop failure still clears timers and audio output",
+    "Audio MP4 files retain original bytes and use .m4a filename extension"
+  ],
+  "limits": [
+    "No real iPhone/iPad/HarmonyOS or real instrument hardware verification",
+    "Camera front/rear setting is a preference; actual device must support it",
+    "Downloads preserve native browser format, no transcoding or Dolby processing",
+    "Media stays on this device and requires the user to download important takes"
+  ],
+  "hosting": "Preserve existing owner-private audience; no public sharing change",
+  "privacySanitization": {
+    "date": "2026-10-24",
+    "removedFields": [
+      "deviceId",
+      "groupId"
+    ],
+    "reason": "Omit origin-specific capture-device identifiers from archived test evidence; preserve capability and behavioral results."
+  }
+}
