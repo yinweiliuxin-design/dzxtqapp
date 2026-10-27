@@ -1,0 +1,183 @@
+{
+  "release": "V18",
+  "assetVersion": "20261016-v18-1",
+  "generatedAt": "2026-10-16T01:49:38.693Z",
+  "sourceBaseline": "8491158a6b04aa595fdceaab0a54b4e4d21f587c",
+  "automatedTests": {
+    "passed": 388,
+    "failed": 0,
+    "skipped": 0,
+    "logSha256": "5a23996efac84958d976ab81a19961446cd7b5aebd05277226611cbb77e5ce2c"
+  },
+  "browser": {
+    "product": "Windows Chromium 155",
+    "cases": [
+      {
+        "id": "v18-first-guest",
+        "at": "2026-10-16T01:42:28.984Z",
+        "pass": true,
+        "skip": {
+          "width": 109.65625,
+          "height": 30
+        },
+        "guestChoice": "guest",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      {
+        "id": "v18-localization-layout",
+        "at": "2026-10-16T01:42:58.372Z",
+        "pass": true,
+        "cases": [
+          {
+            "lang": "zh",
+            "width": 305,
+            "scrollWidth": 305
+          },
+          {
+            "lang": "zh",
+            "width": 375,
+            "scrollWidth": 375
+          },
+          {
+            "lang": "zh",
+            "width": 753,
+            "scrollWidth": 753
+          },
+          {
+            "lang": "en",
+            "width": 305,
+            "scrollWidth": 305
+          },
+          {
+            "lang": "en",
+            "width": 375,
+            "scrollWidth": 375
+          },
+          {
+            "lang": "en",
+            "width": 753,
+            "scrollWidth": 753
+          },
+          {
+            "lang": "ja",
+            "width": 305,
+            "scrollWidth": 305
+          },
+          {
+            "lang": "ja",
+            "width": 375,
+            "scrollWidth": 375
+          },
+          {
+            "lang": "ja",
+            "width": 753,
+            "scrollWidth": 753
+          },
+          {
+            "lang": "de",
+            "width": 305,
+            "scrollWidth": 305
+          },
+          {
+            "lang": "de",
+            "width": 375,
+            "scrollWidth": 375
+          },
+          {
+            "lang": "de",
+            "width": 753,
+            "scrollWidth": 753
+          }
+        ]
+      },
+      {
+        "id": "v18-account-community",
+        "at": "2026-10-16T01:43:00.012Z",
+        "pass": true,
+        "width": 375,
+        "scrollWidth": 375,
+        "publicPosts": 0,
+        "identityChecked": true
+      },
+      {
+        "id": "v18-audio-smoke",
+        "at": "2026-10-16T01:43:02.128Z",
+        "pass": true,
+        "toneRmsPeak": 0.037311879329513895,
+        "referenceRmsPeak": 0.0377573961410458,
+        "width": 375,
+        "scrollWidth": 375
+      },
+      {
+        "id": "v18-account-display",
+        "at": "2026-10-16T01:48:44.734Z",
+        "pass": true,
+        "dialogLanguage": "en",
+        "width": 375,
+        "scrollWidth": 375
+      }
+    ],
+    "viewports": [
+      320,
+      390,
+      768
+    ],
+    "languages": [
+      "zh",
+      "en",
+      "ja",
+      "de"
+    ],
+    "audioEvidence": "Nonzero actual Web Audio RMS for test tone and tuning reference; controlled Chrome autoplay policy; not iOS device verification."
+  },
+  "artwork": {
+    "kind": "Original inline SVG and CSS",
+    "reference": "Owner-supplied photographs IMG_0265.JPG.jpg and IMG_0266.JPG",
+    "sharedUses": [
+      "startup",
+      "learning-path",
+      "intro tutorial",
+      "coach cards"
+    ],
+    "features": [
+      "white open frame",
+      "black fingerboard and chinrest",
+      "four strings and pegs",
+      "bow animation",
+      "reduce motion"
+    ]
+  },
+  "identity": {
+    "optional": true,
+    "default": "guest",
+    "implemented": [
+      "Sites verified account",
+      "public community read",
+      "protected account community writes",
+      "local draft retention"
+    ],
+    "reserved": [
+      "Google",
+      "Apple",
+      "Microsoft",
+      "email"
+    ],
+    "hostingAudience": "Existing owner-private audience preserved; app guest mode is separate from hosting access."
+  },
+  "repairedIssues": [
+    "Guest transition during pending community mutation now fetches public feed immediately. Late replies cannot restore private drafts.",
+    "Account loading/status changes do not re-render and interrupt active recording or playback.",
+    "Explicit dialog language and focus handoff after optional onboarding."
+  ],
+  "limits": [
+    "No real Google/Apple/Microsoft/email authentication: provider apps and supported hosting identity integration are not configured.",
+    "No new physical iPhone/iPad/HarmonyOS hardware verification.",
+    "No production account/recording/database copied into source backup."
+  ],
+  "officialProviderReferences": [
+    "https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid",
+    "https://developer.apple.com/help/account/capabilities/configure-sign-in-with-apple-for-the-web",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-redirect-uri"
+  ]
+}

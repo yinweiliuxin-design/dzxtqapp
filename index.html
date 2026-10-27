@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Silvio V29 App</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Silvio 电子小提琴 App 当前代码版本 V29：页面截图、功能、代码结构与版本记录。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Noto+Serif+SC:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an instrument maker's spec sheet. Left-aligned editorial header with a violin "label" of version facts,
+   then real screens from the running code, then the code itself. Palette is the app's own V27+ tokens. */
+:root{
+  --bg:#faf8f2; --paper:#fffefa; --ink:#282b27; --muted:#656a60; --line:#e7e3d8; --line-strong:#cfc9ba;
+  --accent:#bb422d; --accent-hover:#a13625; --accent-soft:#fbece3; --on-accent:#fffefa;
+  --maple:#edddbd; --maple-soft:#f6ecda; --maple-ink:#76552e;
+  --ok:#486844; --ok-soft:#eef2e8; --part:#8a5a12; --part-soft:#f8ecd2; --todo:#656a60; --todo-soft:#efede6;
+  --phone-edge:#1f221f; --shadow:0 18px 40px rgba(81,69,44,.10);
+  --f-display:'Bodoni Moda','Noto Serif SC','Songti SC','STSong',Georgia,serif;
+  --f-head:'Noto Serif SC','Songti SC','STSong','Bodoni Moda',Georgia,serif;
+  --f-body:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --step--1:.8125rem; --step-0:1rem; --step-1:1.1875rem; --step-2:1.5rem; --step-3:2.125rem; --step-4:clamp(2.5rem,7vw,4.25rem);
+  --radius:18px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#181b18; --paper:#222620; --ink:#f4f2e9; --muted:#b9beb1; --line:#3c4037; --line-strong:#656a5e;
+  --accent:#ffad94; --accent-hover:#ffc2ad; --accent-soft:#422a24; --on-accent:#2a1712;
+  --maple:#4a3d27; --maple-soft:#2c2820; --maple-ink:#e8c993;
+  --ok:#a9c9a2; --ok-soft:#24301f; --part:#efc27a; --part-soft:#3a2f1c; --todo:#b9beb1; --todo-soft:#2c302a;
+  --phone-edge:#050605; --shadow:0 18px 40px rgba(0,0,0,.35); color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#181b18; --paper:#222620; --ink:#f4f2e9; --muted:#b9beb1; --line:#3c4037; --line-strong:#656a5e;
+  --accent:#ffad94; --accent-hover:#ffc2ad; --accent-soft:#422a24; --on-accent:#2a1712;
+  --maple:#4a3d27; --maple-soft:#2c2820; --maple-ink:#e8c993;
+  --ok:#a9c9a2; --ok-soft:#24301f; --part:#efc27a; --part-soft:#3a2f1c; --todo:#b9beb1; --todo-soft:#2c302a;
+  --phone-edge:#050605; --shadow:0 18px 40px rgba(0,0,0,.35); color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:var(--step-0);line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+.mono{font-family:var(--f-mono);font-size:.92em;overflow-wrap:anywhere}
+.eyebrow{font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;color:var(--maple-ink);font-weight:600}
+
+/* top bar */
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px;flex-wrap:wrap}
+.mark{display:flex;align-items:baseline;gap:12px;min-width:0}
+.mark b{font-family:'Bodoni Moda',Georgia,serif;font-size:1.9rem;font-weight:700;letter-spacing:-.02em;line-height:1}
+.mark span{color:var(--muted);font-size:var(--step--1);border-left:1px solid var(--line-strong);padding-left:12px}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 11px;font-size:var(--step--1);font-weight:600;white-space:nowrap}
+.chip.cur{background:var(--accent-soft);color:var(--accent)}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,5vw,64px);padding-block:clamp(32px,6vw,72px) 40px;align-items:center}
+.hero h1{font-family:var(--f-display);font-size:var(--step-4);line-height:1.05;letter-spacing:-.02em;font-weight:700;margin-top:10px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lede{margin-top:18px;font-size:var(--step-1);color:var(--muted);max-width:34em;line-height:1.75}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:12px;font-weight:600;text-decoration:none;border:1px solid var(--line-strong);color:var(--ink);background:var(--paper)}
+.btn:hover{border-color:var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+.btn svg{width:16px;height:16px;flex:0 0 16px}
+
+/* the violin maker's label */
+.label{margin-top:30px;background:var(--maple-soft);border:1px solid var(--maple);border-radius:6px;padding:16px 18px 14px;max-width:560px;position:relative}
+.label::before{content:"";position:absolute;inset:5px;border:1px solid var(--maple);border-radius:3px;pointer-events:none}
+.label .fecit{font-family:var(--f-display);font-style:italic;color:var(--maple-ink);font-size:var(--step--1);letter-spacing:.04em}
+.label dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 18px;margin:10px 0 0}
+.label dt{font-size:.75rem;color:var(--maple-ink);letter-spacing:.06em}
+.label dd{margin:0;font-family:var(--f-mono);font-size:.95rem;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+
+/* phones */
+.phone{border-radius:34px;padding:9px;background:var(--phone-edge);box-shadow:var(--shadow);max-width:100%}
+.phone img{display:block;width:100%;height:auto;border-radius:26px;aspect-ratio:585/1266;background:var(--paper)}
+.hero-phones{position:relative;display:flex;justify-content:center}
+.hero-phones .phone{width:min(300px,78%)}
+.hero-phones .phone.back{position:absolute;width:min(230px,58%);right:0;top:14%;transform:rotate(4deg);opacity:.96}
+.hero-phones .phone.front{position:relative;margin-right:22%;z-index:1}
+
+/* sections */
+section{padding-block:clamp(36px,6vw,64px);border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px;align-items:end;margin-bottom:26px}
+.sec-head h2{font-family:var(--f-head);font-size:var(--step-3);line-height:1.25;font-weight:700;letter-spacing:-.01em}
+.sec-head p{grid-column:1/-1;color:var(--muted);max-width:44em}
+
+/* gallery */
+.group{margin-top:26px}
+.group:first-of-type{margin-top:0}
+.group h3{font-size:var(--step-1);font-weight:650;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.group h3 small{font-size:var(--step--1);color:var(--muted);font-weight:400}
+.strip{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x proximity;padding:14px 2px 18px;-webkit-overflow-scrolling:touch}
+.shot{flex:0 0 200px;scroll-snap-align:start;display:flex;flex-direction:column;gap:10px;background:none;border:0;padding:0;text-align:left;color:inherit;font:inherit;cursor:zoom-in}
+.shot .phone{padding:6px;border-radius:26px}
+.shot .phone img{border-radius:20px}
+.shot.wide{flex-basis:min(520px,82vw)}
+.shot.wide .phone{border-radius:14px;padding:6px}
+.shot.wide .phone img{aspect-ratio:1600/1000;border-radius:9px}
+.cap{display:flex;flex-direction:column;gap:2px;min-width:0}
+.cap strong{font-size:.95rem}
+.cap .route{font-family:var(--f-mono);font-size:.78rem;color:var(--accent)}
+.cap span:last-child{font-size:var(--step--1);color:var(--muted);line-height:1.55}
+.shot:hover .phone{transform:translateY(-2px)}
+.shot .phone{transition:transform .2s}
+
+/* roadmap */
+.tally{display:flex;gap:8px;flex-wrap:wrap}
+.st{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:2px 10px;font-size:.78rem;font-weight:650;white-space:nowrap}
+.st::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.st.ok{background:var(--ok-soft);color:var(--ok)}
+.st.part{background:var(--part-soft);color:var(--part)}
+.st.todo{background:var(--todo-soft);color:var(--todo)}
+.road{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}
+.road li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:4px 12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.road .id{font-family:var(--f-mono);color:var(--muted);font-size:.85rem;padding-top:2px}
+.road .t{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-weight:600}
+.road .d{grid-column:2;color:var(--muted);font-size:var(--step--1);line-height:1.6}
+
+/* features */
+.feats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--line-strong)}
+.feat{padding:18px 18px 20px 0;border-bottom:1px solid var(--line);min-width:0}
+.feat:not(:nth-child(4n+1)){padding-left:18px;border-left:1px solid var(--line)}
+.feat .num{font-family:var(--f-display);font-size:var(--step-3);line-height:1;font-weight:700;font-variant-numeric:lining-nums}
+.feat .num small{font-family:var(--f-body);font-size:var(--step--1);font-weight:500;color:var(--muted);margin-left:4px}
+.feat h3{font-size:var(--step-0);font-weight:650;margin-top:10px}
+.feat p{color:var(--muted);font-size:var(--step--1);margin-top:6px;line-height:1.65}
+.strings{display:flex;gap:6px;margin-top:2px}
+.strings span{font-family:var(--f-mono);font-size:.72rem;border:1px solid var(--line-strong);border-radius:6px;padding:1px 6px;white-space:nowrap}
+
+/* code */
+.code-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:start}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:var(--step--1)}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-weight:600;color:var(--muted);font-size:.75rem;letter-spacing:.06em;background:var(--bg)}
+td .mono{font-size:.8rem}
+.kb{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--muted);text-align:right}
+pre{margin:0;overflow-x:auto;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;font-family:var(--f-mono);font-size:.82rem;line-height:1.75}
+pre .c{color:var(--muted)}
+.side{display:flex;flex-direction:column;gap:18px;min-width:0}
+.side h3{font-size:var(--step-0);font-weight:650;margin-bottom:8px}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:4.2em 6.6em minmax(0,1fr) 9em;gap:4px 16px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}
+.tl .v{font-family:var(--f-display);font-weight:700;font-size:1.15rem}
+.tl .date{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.tl .what{font-size:var(--step--1);min-width:0}
+.tl .bar{display:grid;grid-template-columns:minmax(0,1fr) 3.4em;gap:8px;align-items:center}
+.tl .bar i{display:block;height:6px;border-radius:3px;background:var(--maple)}
+.tl .bar b{font-family:var(--f-mono);font-size:.78rem;font-weight:500;text-align:right;font-variant-numeric:tabular-nums}
+.tl .bar.na i{background:none}
+.tl .bar.na b{color:var(--muted)}
+.tl li.now .v{color:var(--accent)}
+.tl li.now .bar i{background:var(--accent)}
+.tl-head{display:grid;grid-template-columns:4.2em 6.6em minmax(0,1fr) 9em;gap:16px;font-size:.75rem;letter-spacing:.06em;color:var(--muted);padding-bottom:6px;border-bottom:1px solid var(--line-strong)}
+.tl-head span:last-child{text-align:right}
+
+/* limits + sources */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px}
+.limits{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.limits li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;font-size:var(--step--1);line-height:1.65}
+.limits li::before{content:"";width:10px;height:10px;margin-top:6px;border:2px solid var(--part);border-radius:50%}
+.src{display:flex;flex-direction:column;gap:0}
+.src div{padding:12px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;align-items:baseline}
+.src strong{font-size:var(--step--1)}
+.src .mono{font-size:.75rem;color:var(--muted)}
+.src p{grid-column:1/-1;font-size:var(--step--1);color:var(--muted)}
+.checks{margin-top:18px;background:var(--ok-soft);border-radius:var(--radius);padding:14px 16px;font-size:var(--step--1);line-height:1.7}
+.checks b{color:var(--ok)}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:var(--step--1)}
+footer .wrap{padding-block:22px 34px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(94vw,1200px);max-height:92vh;margin:auto}
+dialog.lb::backdrop{background:rgba(20,22,20,.78)}
+dialog.lb img{display:block;max-width:100%;max-height:84vh;width:auto;height:auto;border-radius:14px;margin:0 auto}
+dialog.lb p{color:#f4f2e9;text-align:center;margin-top:10px;font-size:var(--step--1)}
+dialog.lb button{position:absolute;top:8px;right:8px;min-width:44px;min-height:44px;border-radius:22px;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:1.3rem;cursor:pointer}
+
+@media (max-width:900px){
+  .feats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .feat:not(:nth-child(4n+1)){padding-left:0;border-left:0}
+  .feat:nth-child(2n){padding-left:18px;border-left:1px solid var(--line)}
+  .code-grid,.two{grid-template-columns:minmax(0,1fr)}
+  .road{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:720px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr)}
+  .sec-head{grid-template-columns:minmax(0,1fr)}
+  .hero-phones{order:-1;max-width:360px;width:100%;margin:0 auto}
+  .label dl{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tl li,.tl-head{grid-template-columns:3.6em minmax(0,1fr) 7.5em}
+  .tl .date{grid-column:2;grid-row:1}
+  .tl .what{grid-column:1/-1;grid-row:2}
+  .tl .bar{grid-column:3;grid-row:1}
+  .tl-head span:nth-child(3){display:none}
+}
+@media (max-width:460px){
+  .feats{grid-template-columns:minmax(0,1fr)}
+  .feat:nth-child(2n){padding-left:0;border-left:0}
+  .shot{flex-basis:168px}
+}
+@media (prefers-reduced-motion:reduce){.shot .phone{transition:none}.shot:hover .phone{transform:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="mark"><b>Silvio</b><span>电子小提琴 App · 当前代码版本</span></div>
+  <span class="chip cur">V29 · 0.29.0</span>
+</div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+  <div>
+    <p class="eyebrow">SmartVio / Silvio / VELLEN · 网页 App + Android 壳</p>
+    <h1>V29 <em>可靠性</em>版本</h1>
+    <p class="lede">调音按选中的目标弦判准，作品可以整包备份和恢复，网络不稳时课程照常打开。本页整理自 GitHub 中现存的源码和交付记录，所有截图都来自同一份代码在本地运行的结果。</p>
+    <div class="actions">
+      <a class="btn primary" href="https://smartvio-studio-mobile.politecalf5.chatgpt.site/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>打开线上客户端</a>
+      <a class="btn" href="https://github.com/yinweiliuxin-design/dzxtqapp" target="_blank" rel="noopener">dzxtqapp 仓库</a>
+      <a class="btn" href="https://github.com/yinweiliuxin-design/smartviolin/tree/violinapp/06-App%E8%BD%AF%E4%BB%B6/V29-%E5%8F%AF%E9%9D%A0%E6%80%A7%E7%89%88%E6%9C%AC" target="_blank" rel="noopener">V29 源码出处</a>
+    </div>
+    <div class="label" aria-label="版本信息">
+      <p class="fecit">Silvio Studio · fecit anno 2026</p>
+      <dl>
+        <div><dt>版本</dt><dd>0.29.0</dd></div>
+        <div><dt>发布日期</dt><dd>2026-10-26</dd></div>
+        <div><dt>源码提交</dt><dd>8168d02</dd></div>
+        <div><dt>网页源码</dt><dd>266 个文件</dd></div>
+        <div><dt>Android 壳</dt><dd>13 个文件</dd></div>
+        <div><dt>自动化测试</dt><dd>709 / 709</dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="hero-phones" aria-hidden="true">
+    <div class="phone back"><img src="page/screens/tuner.webp" alt="" width="585" height="1266"></div>
+    <div class="phone front"><img src="page/screens/home.webp" alt="" width="585" height="1266"></div>
+  </div>
+</div></div>
+
+<section id="screens"><div class="wrap">
+  <div class="sec-head">
+    <h2>App 页面</h2>
+    <p>在 390×844 手机视口下运行 V29 源码截取。首次打开依次经过开机动画、国家语言、乐器、账号四步；之后底部导航为首页、练习中心、学习、创作、社区，其余工具从菜单进入。点任一截图可放大。</p>
+  </div>
+
+  <div class="group">
+    <h3>首次打开 <small>4 步，均可跳过或返回修改</small></h3>
+    <div class="strip">
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/startup.webp" alt="开机动画" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>开机动画</strong><span class="route">startup</span><span>原创白色镂空电小提琴 SVG 动画，右上角可跳过。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/country.webp" alt="选择国家与界面语言" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>国家与语言</strong><span class="route">country</span><span>6 个国家、4 种界面语言；英国、德国显示 VELLEN 商标。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/instrument.webp" alt="选择电子小提琴或原声小提琴" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>选择乐器</strong><span class="route">instrument</span><span>电子小提琴偏设备与音色，原声小提琴偏调音与麦克风跟练。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/account.webp" alt="可选账号，访客继续" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>账号可选</strong><span class="route">account</span><span>默认访客；Google、Apple、Microsoft、邮箱登录尚未开通。</span></span></button>
+    </div>
+  </div>
+
+  <div class="group">
+    <h3>底部导航 <small>首页 · 练习中心 · 学习 · 创作 · 社区</small></h3>
+    <div class="strip">
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/home.webp" alt="首页" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>首页</strong><span class="route">#home</span><span>调音器入口、当前曲目封面与今日练习统计。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/practice.webp" alt="练习中心：曲库练习" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>练习中心 · 曲库练习</strong><span class="route">#practice</span><span>选曲、看谱、示范音色，按曲目记住续播位置。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/lessons.webp" alt="练习中心：动作跟练" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>练习中心 · 动作跟练</strong><span class="route">#lessons</span><span>同步陪练六课：先看、放慢、重复难点、自己拉、回听。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/learn.webp" alt="学习：六步主线" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>学习</strong><span class="route">#learn</span><span>六步主线，每步看示范、试一试、回听；可减少动态。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/studio.webp" alt="创作：录音创作中心" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>创作</strong><span class="route">#studio</span><span>录音与视频，大计时器；录音保存在本机。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/community.webp" alt="社区" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>社区</strong><span class="route">#community</span><span>访客可浏览公开内容；发帖需要已验证账号。</span></span></button>
+    </div>
+  </div>
+
+  <div class="group">
+    <h3>工具与设置 <small>从菜单进入</small></h3>
+    <div class="strip">
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/tuner.webp" alt="调音器" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>调音器</strong><span class="route">#tuner</span><span>先选 G、D、A、E 目标弦，按音分判准；参考音播放时暂停判断。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/metronome.webp" alt="节拍器" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>节拍器</strong><span class="route">#metronome</span><span>速度与拍号独立设置，默认 80 BPM、4/4。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/tones.webp" alt="声音工作台" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>声音工作台</strong><span class="route">#tones</span><span>音色与 MIDI 两个标签：预设、编辑、导入、导出。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/library.webp" alt="曲库" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>曲库</strong><span class="route">#library</span><span>68 首，可搜索、分类、收藏，标注曲目来源核验状态。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/device.webp" alt="我的设备" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>我的设备</strong><span class="route">#device</span><span>BLE-MIDI、琴端适配与输入路由；尚未接入真实琴。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/shop.webp" alt="产品探索" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>产品探索</strong><span class="route">#shop</span><span>Air 整琴、Pro 旗舰、SV-210 加装模块等概念产品，价格待定。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/profile.webp" alt="我的设置" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>我的设置</strong><span class="route">#profile</span><span>访客 / 离线模式、作品包导出与恢复、导出练习记录。</span></span></button>
+    </div>
+  </div>
+
+  <div class="group">
+    <h3>同一页面的不同状态 <small>乐器、主题、地区、屏幕宽度</small></h3>
+    <div class="strip">
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/acoustic-home.webp" alt="原声小提琴模式首页" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>原声小提琴</strong><span class="route">#home</span><span>页头换成麦克风入口，插图换成原声琴。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/dark-home.webp" alt="深色主题首页" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>深色主题</strong><span class="route">#home</span><span>跟随系统或在页头手动切换。</span></span></button>
+      <button class="shot" type="button"><div class="phone"><img src="page/screens/vellen-home.webp" alt="英国地区 VELLEN 英文首页" loading="lazy" width="585" height="1266"></div><span class="cap"><strong>英国 · VELLEN</strong><span class="route">#home</span><span>英国地区固定 VELLEN 商标，默认英文。</span></span></button>
+      <button class="shot wide" type="button"><div class="phone"><img src="page/screens/desktop-home.webp" alt="电脑宽屏首页" loading="lazy" width="1600" height="1000"></div><span class="cap"><strong>电脑宽屏</strong><span class="route">#home · 1280×800</span><span>1024px 以上改为左侧栏导航。</span></span></button>
+    </div>
+  </div>
+</div></section>
+
+<section id="v29"><div class="wrap">
+  <div class="sec-head">
+    <h2>V29 这一轮做了什么</h2>
+    <div class="tally"><span class="st ok">已实现 4</span><span class="st part">部分完成 3</span><span class="st todo">待后续 7</span></div>
+    <p>交付说明把改进路线分为 14 项（R01–R14），V29 交付第一阶段。下表状态按 <span class="mono">delivery/V29-交付说明.txt</span> 原文归类。</p>
+  </div>
+  <ol class="road">
+    <li><span class="id">R01</span><span class="t">修正调音目标与不确定读数<span class="st ok">已实现</span></span><span class="d">目标弦锁定、相对目标音分、输入质量、稳定判准、参考音隔离。实琴准确度未验收。</span></li>
+    <li><span class="id">R02</span><span class="t">作品完整备份与恢复<span class="st ok">已实现</span></span><span class="d">含实际媒体的 ZIP、逐文件哈希、预检、崩溃回滚。包上限 80 MiB，单个媒体 64 MiB，只能恢复到空作品库。</span></li>
+    <li><span class="id">R03</span><span class="t">弱网与离线课程容错<span class="st ok">已实现</span></span><span class="d">网络失败、超时时改用已验证的课程副本；服务器明确撤回的课程不会复活。</span></li>
+    <li><span class="id">R04</span><span class="t">统一版本与能力说明<span class="st ok">已实现</span></span><span class="d">由发布清单 <span class="mono">release.json</span> 驱动版本号、日期、离线资源版本和说明入口。</span></li>
+    <li><span class="id">R05</span><span class="t">可学完的基础课程<span class="st todo">待后续</span></span><span class="d">教师审校实录课程与新手观察测试尚未进行，当前示意课程保留。</span></li>
+    <li><span class="id">R06</span><span class="t">可选账号与课程跨端进度<span class="st part">部分完成</span></span><span class="d">已验证账号可手动读取、采用或合并云进度；Google、Apple、邮箱正式认证未接入。</span></li>
+    <li><span class="id">R07</span><span class="t">区分调音参考、教学直音和演奏示范<span class="st part">部分完成</span></span><span class="d">本轮只隔离了调音参考音；三类正式声音素材待后续。</span></li>
+    <li><span class="id">R08</span><span class="t">录制到可分享成片<span class="st todo">待后续</span></span><span class="d">成片混音、导出伴奏与音画补偿。</span></li>
+    <li><span class="id">R09</span><span class="t">MIDI 无损保存演奏表情<span class="st todo">待后续</span></span><span class="d">表情事件往返与高级编辑。</span></li>
+    <li><span class="id">R10</span><span class="t">真实琴型号与平台能力矩阵<span class="st todo">待后续</span></span><span class="d">需要实体琴和各系统设备到位后实施。</span></li>
+    <li><span class="id">R11</span><span class="t">运营和教师独立维护曲库课程<span class="st todo">待后续</span></span><span class="d">原管理端保留，内容生产与审核流程待完善。</span></li>
+    <li><span class="id">R12</span><span class="t">社区方案 B 与真实内容<span class="st todo">待后续</span></span><span class="d">分页搜索、关注收藏、视频局部刷新；不制造虚假帖子。</span></li>
+    <li><span class="id">R13</span><span class="t">生产数据恢复与运行监测<span class="st part">部分完成</span></span><span class="d">已有源码与本机作品恢复证据、D1/R2 恢复方案；未做生产灾难恢复演练。</span></li>
+    <li><span class="id">R14</span><span class="t">姿态 AI 专项实验<span class="st todo">待后续</span></span><span class="d">需要授权训练数据和教师标注；当前动作图示不是经过验证的姿态评测。</span></li>
+  </ol>
+</div></section>
+
+<section id="features"><div class="wrap">
+  <div class="sec-head">
+    <h2>功能一览</h2>
+    <p>数字取自 V29 源码本身（<span class="mono">seed.js</span>、<span class="mono">common.js</span>、<span class="mono">db/schema.ts</span> 等），不是宣传口径。</p>
+  </div>
+  <div class="feats">
+    <div class="feat"><div class="num">68<small>首</small></div><h3>曲库与练习</h3><p>入门 10、经典 17、民谣 41；其中 33 首来源已核验，35 首待核验。练习中心合并曲库练习与动作跟练。</p></div>
+    <div class="feat"><div class="num">6 + 8<small>步 / 阶段</small></div><h3>学习路径</h3><p>六步主线：选琴准备、持琴持弓、认弦调音、空弦节奏、左手指法、第一首曲。另有八阶段分级学习和 6 节同步陪练，0.5–1.25 倍速与 A–B 循环。</p></div>
+    <div class="feat"><div class="num">4<small>根弦</small></div><h3>调音器与节拍器</h3><div class="strings"><span>G 196.0</span><span>D 293.7</span><span>A 440.0</span><span>E 659.3</span></div><p>Hz。先选目标弦再检测，不确定、过载或双音时提示检查输入；节拍器独立页面。</p></div>
+    <div class="feat"><div class="num">9<small>种音色</small></div><h3>录音创作</h3><p>Acoustic、Warm、Bright、Electric、Bass、Piano、Organ、Strings、Pad。录音与视频、伴奏导入、MIDI 导入编辑导出。</p></div>
+    <div class="feat"><div class="num">60<small>秒短视频</small></div><h3>社区</h3><p>MP4 / WebM，上限 20,000,000 字节，服务端校验容器并支持后台审核。访客只读，发帖需要已验证账号。</p></div>
+    <div class="feat"><div class="num">2<small>种乐器</small></div><h3>设备</h3><p>电子小提琴：BLE-MIDI、琴端适配与预设写入（只传音符，不传音频）。原声小提琴：麦克风输入，隐藏写琴操作。</p></div>
+    <div class="feat"><div class="num">80<small>MiB 作品包</small></div><h3>本机数据与离线</h3><p>练习、录音和工程默认留在本机。离线资源由 Service Worker 缓存，作品可整包导出、预检后恢复。</p></div>
+    <div class="feat"><div class="num">4<small>种语言</small></div><h3>语言与商标</h3><p>中文、English、日本語、Deutsch，覆盖 6 个国家；英国和德国用 VELLEN，其余地区用 Silvio。</p></div>
+  </div>
+</div></section>
+
+<section id="code"><div class="wrap">
+  <div class="sec-head">
+    <h2>代码结构</h2>
+    <p>前端是不依赖框架的原生 JavaScript PWA，<span class="mono">dist/</span> 即可编辑的源码；服务端为 Worker 脚本，数据存 D1（SQLite），媒体存 R2；Android 版是复用网页的 WebView 壳。</p>
+  </div>
+  <div class="code-grid">
+    <div class="tbl"><table>
+      <thead><tr><th>模块</th><th>主要文件</th><th class="kb">最大文件</th></tr></thead>
+      <tbody>
+        <tr><td>界面核心</td><td><span class="mono">client.js · common.js · i18n.js · seed.js</span></td><td class="kb">171 KB</td></tr>
+        <tr><td>声音</td><td><span class="mono">audio-engine.js · pitch.js · violin-tuner.js · performance.js · midi.js</span></td><td class="kb">46 KB</td></tr>
+        <tr><td>学习</td><td><span class="mono">lesson-client.js · lesson-engine.js · curriculum.js · learning-journey.js · tutorial.js · lesson-camera.js</span></td><td class="kb">66 KB</td></tr>
+        <tr><td>创作与本机数据</td><td><span class="mono">recording-center.js · video-capture.js · media-store.js · workspace-backup.js · preset-cloud.js</span></td><td class="kb">31 KB</td></tr>
+        <tr><td>社区与账号</td><td><span class="mono">community.js · account.js · identity.js · lesson-progress-cloud.js</span></td><td class="kb">79 KB</td></tr>
+        <tr><td>设备</td><td><span class="mono">device-bridge.js · instrument-profile.js</span></td><td class="kb">29 KB</td></tr>
+        <tr><td>离线与发布</td><td><span class="mono">sw.js · offline.js · release.js · reliability-ui.js · viewport.js</span></td><td class="kb">18 KB</td></tr>
+        <tr><td>后台管理</td><td><span class="mono">admin.html · admin.js</span>，路径 <span class="mono">/admin</span>，管理员白名单</td><td class="kb">82 KB</td></tr>
+        <tr><td>服务端</td><td><span class="mono">worker/community.mjs · lessons.mjs · video-inspection.mjs</span></td><td class="kb">—</td></tr>
+        <tr><td>数据库</td><td><span class="mono">db/schema.ts</span> 13 张表，<span class="mono">drizzle/</span> 迁移 0000–0005</td><td class="kb">—</td></tr>
+        <tr><td>测试</td><td><span class="mono">tests/</span> 42 个测试文件，共 709 项</td><td class="kb">—</td></tr>
+        <tr><td>Android 壳</td><td><span class="mono">android-source/</span> Java WebView，包名 <span class="mono">com.smartvio.studio.test</span> 0.27.1，minSdk 26 / target 35</td><td class="kb">—</td></tr>
+      </tbody>
+    </table></div>
+    <div class="side">
+      <div><h3>本地运行</h3>
+<pre><span class="c"># 在 web-source/ 目录，建议 Node.js 24</span>
+node scripts/build-worker.cjs   <span class="c"># 打包 149 个资源</span>
+node --test tests/*.test.mjs    <span class="c"># 709 项</span>
+node scripts/preview.mjs        <span class="c"># 127.0.0.1:18912</span></pre></div>
+      <div><h3>服务端接口</h3>
+<pre>/api/auth/config · /api/auth/session
+/api/community/public · state · action
+/api/community/videos · media
+/api/lessons · /api/lessons/{id}/manifest
+/api/me/lesson-progress
+/api/presets
+/api/admin/state · action · lessons</pre></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="history"><div class="wrap">
+  <div class="sec-head">
+    <h2>版本记录</h2>
+    <p>右侧条形为该版本完整源码的文件数（按 266 等比例绘制），取自各版本的源码清单；V12 未单独备份。</p>
+  </div>
+  <div class="tl-head" aria-hidden="true"><span>版本</span><span>日期</span><span>主要变化</span><span>源码文件</span></div>
+  <ol class="tl">
+    <li class="now"><span class="v">V29</span><span class="date">2026-10-26</span><span class="what">可靠性：调音判准、作品包备份恢复、弱网课程、可选云进度；709 项测试</span><span class="bar"><i style="width:100%"></i><b>266</b></span></li>
+    <li><span class="v">V28.1</span><span class="date">2026-10-25</span><span class="what">手机商标、同步陪练控件、曲目封面入口与缓存版本热修</span><span class="bar"><i style="width:95.5%"></i><b>254</b></span></li>
+    <li><span class="v">V28</span><span class="date">2026-10-25</span><span class="what">原声 / 电子示范一致、教学音画同步、录制画幅修复</span><span class="bar"><i style="width:94.4%"></i><b>251</b></span></li>
+    <li><span class="v">V27</span><span class="date">2026-10-25</span><span class="what">明亮小提琴设计，主导航改为五项；Android 测试壳</span><span class="bar"><i style="width:89.8%"></i><b>239</b></span></li>
+    <li><span class="v">V26</span><span class="date">2026-10-24</span><span class="what">设计扩展到全部 15 个功能页；WebKit / Chrome 适配，录音中断修复</span><span class="bar"><i style="width:86.5%"></i><b>230</b></span></li>
+    <li><span class="v">V25</span><span class="date">2026-10-24</span><span class="what">Safari 视窗与安全区布局，真实比例的两种小提琴插图</span><span class="bar"><i style="width:85.7%"></i><b>228</b></span></li>
+    <li><span class="v">V24</span><span class="date">2026-10-23</span><span class="what">电子 / 原声小提琴双入口</span><span class="bar"><i style="width:83.5%"></i><b>222</b></span></li>
+    <li><span class="v">V23</span><span class="date">2026-10-23</span><span class="what">Canva 六页视觉落地到真实组件</span><span class="bar"><i style="width:81.6%"></i><b>217</b></span></li>
+    <li><span class="v">V22</span><span class="date">2026-10-23</span><span class="what">八阶段分级学习，22 项公开教学参考</span><span class="bar"><i style="width:80.8%"></i><b>215</b></span></li>
+    <li><span class="v">V21</span><span class="date">2026-10-22</span><span class="what">B+C 同步陪练六课，后台教学 CMS</span><span class="bar"><i style="width:78.2%"></i><b>208</b></span></li>
+    <li><span class="v">V20</span><span class="date">2026-10-20</span><span class="what">公开访客客户端，受保护后台</span><span class="bar"><i style="width:72.6%"></i><b>193</b></span></li>
+    <li><span class="v">V19</span><span class="date">2026-10-16</span><span class="what">完整客户端、后台与服务端源码；441 项测试</span><span class="bar"><i style="width:72.2%"></i><b>192</b></span></li>
+    <li><span class="v">V18</span><span class="date">2026-10-16</span><span class="what">访客为默认身份，账号可选；原创白色电小提琴动画；388 项测试</span><span class="bar"><i style="width:69.5%"></i><b>185</b></span></li>
+    <li><span class="v">V17.1</span><span class="date">2026-10-16</span><span class="what">iPhone / iPad 音频恢复修复；341 项测试</span><span class="bar"><i style="width:65.8%"></i><b>175</b></span></li>
+    <li><span class="v">V17</span><span class="date">2026-10-16</span><span class="what">修复播放无声，六步动画学习入口；296 项测试</span><span class="bar"><i style="width:64.3%"></i><b>171</b></span></li>
+    <li><span class="v">V16</span><span class="date">2026-10-15</span><span class="what">六步动画学习、CC0 小提琴示范音、社区短视频</span><span class="bar"><i style="width:62.4%"></i><b>166</b></span></li>
+    <li><span class="v">V15</span><span class="date">2026-10-14</span><span class="what">原创弦乐音色、伴奏、MIDI 编辑、私人预设云备份</span><span class="bar"><i style="width:49.6%"></i><b>132</b></span></li>
+    <li><span class="v">V12</span><span class="date">2026-10-12</span><span class="what">手机浏览器入口、四语与国家商标、开机动画、图文教学、离线模式</span><span class="bar na"><i></i><b>—</b></span></li>
+  </ol>
+</div></section>
+
+<section id="sources"><div class="wrap">
+  <div class="two">
+    <div>
+      <div class="sec-head"><h2>还没验证的部分</h2></div>
+      <ul class="limits">
+        <li><span>没有在实体 iPhone、Android、鸿蒙或 Mac 上验收；测试用桌面 Chrome 触控视口和程序生成的音视频输入。</span></li>
+        <li><span>调音器对真实小提琴的准确度、延迟与功耗尚未实测。</span></li>
+        <li><span>Google、Apple、Microsoft、邮箱登录未开通；社区发帖依赖托管平台提供的已验证账号。</span></li>
+        <li><span>Android 壳首次启动需要联网，没有原生 BLE / MIDI 桥接；发布记录写明未做实机测试。</span></li>
+        <li><span>生产数据库和媒体存储的灾难恢复只有方案，未演练。</span></li>
+        <li><span>配套硬件：R5 单板方案已定稿、开发板验证固件已做好，原理图和 PCB 尚未开始，还没上实物。</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="sec-head"><h2>信息来源</h2></div>
+      <div class="src">
+        <div><strong>smartviolin · violinapp 分支</strong><span class="mono">ce224f0 · 10-26</span><p>当前 V29 完整源码与交付记录，本页主要依据。另含 V19–V28.1 各版本源码。</p></div>
+        <div><strong>smartviolin · main 分支</strong><span class="mono">1b0b1c9 · 10-21</span><p>V16 源码快照、V11 演示页，以及 R3–R5 硬件资料。</p></div>
+        <div><strong>vio · main 分支</strong><span class="mono">0687d69 · 10-15</span><p>V15–V18 源码检查点（分卷备份）和 V26 硬件工程快照。</p></div>
+        <div><strong>dzxtqapp</strong><span class="mono">本次写入</span><p>原为空仓库，现存放 V29 源码副本和本页面。</p></div>
+      </div>
+      <p class="checks"><b>本次复核</b>：279 个源文件与 SOURCE-MANIFEST.json 的 SHA256 全部一致；构建得到 149 个资源和 68 首曲目；709 项自动化测试全部通过（Node.js 22.22）；截图由 Chromium 在本地预览中截取。</p>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>Silvio Studio · V29 · 0.29.0</span><span>整理于 2026-10-27，依据 GitHub 现存源码</span></div></footer>
+
+<dialog class="lb" id="lightbox" aria-label="截图大图">
+  <img id="lb-img" alt="">
+  <p id="lb-cap"></p>
+  <button type="button" id="lb-close" aria-label="关闭">×</button>
+</dialog>
+
+<script>
+(function(){
+  var dlg=document.getElementById('lightbox'),img=document.getElementById('lb-img'),cap=document.getElementById('lb-cap');
+  if(!dlg||typeof dlg.showModal!=='function')return;
+  document.querySelectorAll('.shot').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var src=btn.querySelector('img');
+      img.src=src.src;img.alt=src.alt;
+      cap.textContent=(btn.querySelector('.cap strong')||{}).textContent||src.alt;
+      dlg.showModal();
+    });
+  });
+  document.getElementById('lb-close').addEventListener('click',function(){dlg.close();});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+})();
+</script>
+</body>
+</html>

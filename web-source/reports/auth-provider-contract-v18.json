@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "scope": "SmartVio V18 optional app identity and future provider capability contract",
+  "currentAuthority": "Hosted Sites dispatch; application source does not own OAuth callbacks, credentials or sessions",
+  "applicationGuestMode": {
+    "defaultForNewVisitors": true,
+    "localFeaturesRequireLogin": false,
+    "communityReadRoute": "/api/community/public",
+    "communityWriteRequiresTrustedIdentity": true,
+    "localDraftsNeverAutoSubmitOnLogin": true,
+    "doesNotChangeHostingAudienceOrPrivateSiteAccess": true
+  },
+  "routes": {
+    "GET /api/auth/config": "Database-independent, no-store capability declaration. External providers remain configured:false, available:false, status:reserved and signInPath:null.",
+    "GET /api/auth/session": "Database-independent, no-store trusted platform session. Returns authenticated and only user.id/user.displayName; no contact data, role, token or user listing.",
+    "GET /api/community/public": "Always published-only, even with a hosting identity. viewer:null, mine:[], myComments:[]. Never inserts a community account.",
+    "GET /api/community/state": "Trusted identity retains its own submissions. Anonymous requests receive the same published-only view.",
+    "POST /api/community/action": "Requires trusted hosting identity and existing same-origin, disabled-user, content-policy and ownership validation. A local mode or X-Account-Id can never create an identity."
+  },
+  "providers": {
+    "chatgpt": "Available through Sites-owned top-level sign-in and sign-out navigation",
+    "google": "Reserved; no live Google client configured or Google sign-in claim",
+    "apple": "Reserved; no live Apple client configured or Apple sign-in claim",
+    "microsoft": "Reserved; no live Microsoft client configured or Microsoft sign-in claim",
+    "email": "Reserved; no password storage, magic-link delivery or mail sender configured"
+  },
+  "futureProviderAdapter": {
+    "activationPrerequisite": "First confirm the hosting platform supports the external identity provider and configure it using supported server-side capabilities. Otherwise migrate identity through an explicitly designed and tested hosting change.",
+    "browserCapabilityShape": {
+      "id": "google | apple | microsoft | email",
+      "configured": "boolean: true only after real configuration",
+      "available": "boolean: true only when a supported live sign-in route exists",
+      "status": "reserved | available",
+      "signInPath": "null while reserved; otherwise a same-origin relative top-level platform navigation path"
+    },
+    "trustBoundary": "Future provider identities must be verified and mapped server-side into stable site-scoped identity. Browser-supplied IDs, email strings, query parameters, bearer strings and app mode flags are not authentication.",
+    "secrets": "Provider credentials belong in supported hosted runtime secret configuration, never the static bundle, repository, config response or report.",
+    "callbacks": "Do not add a parallel OAuth/session implementation or override /signin-with-chatgpt, /signout-with-chatgpt or /callback while hosted Sites owns identity.",
+    "acceptanceBeforeEnable": [
+      "Real provider redirect, cancellation and error handling",
+      "Same-origin safe return routes and callback/replay protections handled by the authority",
+      "Stable account mapping and deliberate account-linking policy",
+      "Guest features remain available and local drafts are not auto-published",
+      "Community private drafts and pending media remain isolated by server identity",
+      "Live sign-out/session expiry plus iPhone and Android browser verification"
+    ]
+  },
+  "mediaReadPolicy": "Anonymous images/video require a currently published post reference. Private/pending/hidden/deleted references grant no anonymous access; video must also be ready and not withdrawn. Existing no-store and same-origin resource policy remain.",
+  "localValidation": {
+    "apiAuthGuestTests": 10,
+    "newGuestUiTests": 9,
+    "communityApiRegression": "17 cases and 221 assertions",
+    "communityVideoApiRegressionTests": 19,
+    "communityUiTestsIncludingGuestCases": 35,
+    "testEnvironment": "Node built-in SQLite with actual generated migrations, isolated object-storage protocol substitute and frontend VM lifecycle harness",
+    "notVerifiedByTheseTests": "Live external provider login, anonymous access through private hosting audience, physical-device playback or real production account writes"
+  }
+}

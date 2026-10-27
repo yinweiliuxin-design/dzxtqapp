@@ -1,0 +1,26 @@
+Silvio / VELLEN V26 — 多浏览器兼容与 Canva 全界面融合
+2026-10-24
+
+客户端入口：https://smartvio-studio-mobile.politecalf5.chatgpt.site/?v=20261024-v26-devices-1
+后台入口：https://smartvio-studio-mobile.politecalf5.chatgpt.site/admin
+实际部署及最终测试数量以本轮交付报告为准。
+
+本轮范围
+沿用已连接的六页 Canva 原创设计，完善其在全部15个功能页面及首次国家语言选择、乐器选择、账户、菜单中的应用。使用可操作的HTML/CSS组件，保留原功能、四语、访客和离线模式；没有用静态整页设计图替代交互。
+补齐伴奏导入与弦乐按键、MIDI编辑区、音色选中态、节拍器、课程步骤、账户及社区的卡片、配色、操作分组和浅深主题；手机和平板保留可读标签、足够触点及图表内部滚动。
+修正节拍器和音色页补充声音设置的位置。
+音频录制处理输入结束和系统中断：正常请求编码器停止，等最后数据后收尾保存，释放输入和计时器；启动即终止的录音不遗留时长定时器。失败或空文件仍有明确错误，不宣称无效录音保存成功。
+
+测试边界
+用户确认当前无法提供实体手机；本机只读设备检查未发现连接的iPhone/iPad或Android目标。此次不能完成实体iPhone17ProMax、华为、OPPO、vivo、三星等真机验收。
+跨浏览器测试使用Windows Chromium与单独安装在E盘临时目录的Playwright WebKit。后者是实际运行的测试引擎，但不是iOS Safari系统环境。本机WebKit测试构建不暴露AudioContext/MediaRecorder，因此用于布局、按钮和不支持能力的提示检查，不能据此宣称Safari播放或录音已通过。
+Chrome媒体检查使用合成测试输入，覆盖应用播放/录音与保存流程；不代表实体手机扬声器、拾音、蓝牙、输入法、后台恢复或功耗已验收。
+手机尺寸、平板尺寸、横竖屏、四语及明暗矩阵的精确范围见本轮device-*、cross-engine-*和canva-*测试记录。
+
+保留与交付
+客户端公开访问，访客可使用既有本机功能；社区发帖及云端私人数据仍按原认证要求处理。后台仍要求管理员权限，无新增生产数据库迁移。
+现有电子小提琴协议与未配置OAuth接口状态不变。
+源码、正式素材、设计映射、测试代码与报告按持续授权归档至私密yinweiliuxin-design/smartviolin的violinapp分支；不更改main或删除历史。
+构建：node scripts/build-worker.cjs
+测试：node --test tests/*.test.mjs
+发布与备份须以本轮最终元数据、远端内容核验及空目录还原结果为准。

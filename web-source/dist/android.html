@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#faf8f3"><title>Silvio · 安卓测试版</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#faf8f3;color:#252c27;font:16px/1.65 system-ui,-apple-system,sans-serif}main{width:min(100% - 36px,700px);margin:0 auto;padding:max(28px,env(safe-area-inset-top)) 0 max(50px,env(safe-area-inset-bottom))}header{display:flex;align-items:center;gap:12px;margin-bottom:32px}header img{border-radius:18px;width:56px;height:56px}.wordmark{font:36px Georgia,serif}.eyebrow{color:#6e795e;letter-spacing:.15em;font-size:12px}h1{font-size:clamp(28px,6vw,42px);line-height:1.2;margin:12px 0 20px}h2{font-size:20px}p{margin:10px 0;color:#586159}.card{background:#fff;border:1px solid #e3e8de;border-radius:24px;padding:24px;margin:20px 0}.download{display:block;border-radius:16px;background:#3d674e;color:#fff;text-align:center;font-weight:650;text-decoration:none;padding:16px 18px;margin:24px 0 12px;min-height:56px}.sub{font-size:13px}.pill{display:inline-block;background:#e8eee3;color:#3d674e;border-radius:20px;padding:5px 12px;font-size:13px}ol,ul{padding-left:22px}li{margin:10px 0}a{color:#365f49}code{overflow-wrap:anywhere;font-size:12px}details{border-top:1px solid #e6e8e1;padding-top:14px}summary{cursor:pointer;min-height:44px}.footer{font-size:13px;color:#687366}a:focus-visible,summary:focus-visible{outline:3px solid #9ba876;outline-offset:4px}@media(max-width:380px){.card{padding:18px}}
+</style>
+</head>
+<body><main>
+<header><img src="/icons/icon-192.png" alt=""><span class="wordmark">Silvio</span></header>
+<span class="eyebrow">YOUR MUSIC, IN YOUR HANDS</span>
+<h1>把你的琴房<br>装进口袋。</h1>
+<p>iQOO 11 · V2243A 安卓安装测试版。打开后可直接使用访客模式，继续练习、学习、录音与创作。</p>
+<section class="card" aria-label="安装包">
+<span class="pill">测试版 0.27.1 · Android 8.0 及以上</span>
+<a class="download" href="/releases/android/Silvio-V27-iQOO11-test.apk" download="Silvio-V27-iQOO11-test.apk">下载 Android 安装包</a>
+<p class="sub" id="package-info">包名 com.smartvio.studio.test · 独立测试版</p>
+<p class="sub">需要联网首次打开。此版本内置安卓容器，加载当前 Silvio 网页应用；可在应用设置中准备离线包。</p>
+</section>
+<section class="card"><h2>三步开始</h2><ol>
+<li>在手机系统浏览器打开此页，点“下载 Android 安装包”。微信内无法安装时，选择右上角菜单 → 在浏览器打开。</li>
+<li>下载后点开 APK，按系统提示允许此次安装。应用名为“Silvio 测试版”。</li>
+<li>首次打开保持联网，选择国家、语言与乐器；可跳过登录。点击录音或录像时，再允许麦克风或相机权限。</li>
+</ol><p class="sub">安装不会导入其他浏览器保存的录音；测试版使用自己的应用存储。卸载前请导出需要保留的作品。</p></section>
+<section class="card"><h2>请在你的手机上检查</h2><ul>
+<li>曲库示范、练习伴奏、调音器和节拍器是否有声音。</li>
+<li>录音和录像：开始 → 停止 → 回放 → 保存到“文件”。</li>
+<li>本地伴奏与 MIDI 文件导入、编辑和导出。</li>
+<li>手势返回、横竖屏、键盘输入；拒绝权限后能否重新授权。</li>
+</ul><p class="sub">录制时请保持应用前台、屏幕开启。测试版未实现原生蓝牙或 USB MIDI 驱动；电子琴连接取决于系统 WebView 能力，不能据此认定硬件已通过适配。</p>
+<details><summary>安装包校验与测试范围</summary><div id="verification">正在读取安装包校验信息…</div><p class="sub">本机完成构建与静态检查；iQOO 11 真机结果需要此次实际测试确认。</p></details></section>
+<p class="footer"><a href="/?v=20261025-v27-workspaces-1#home">继续使用网页版</a> · 管理后台仍需管理员登录。</p>
+<script>
+fetch('/releases/android/release.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(v=>{
+ document.getElementById('package-info').textContent='包名 '+v.packageName+' · '+(v.apkBytes/1048576).toFixed(2)+' MB · '+v.releaseDate;
+ const box=document.getElementById('verification');box.replaceChildren();const p=document.createElement('p');p.className='sub';p.textContent='安装包 SHA-256：';const c=document.createElement('code');c.textContent=v.apkSha256;box.append(p,c);
+}).catch(()=>{document.getElementById('verification').textContent='校验信息暂时无法加载，请重新打开页面。'});
+</script></main></body></html>

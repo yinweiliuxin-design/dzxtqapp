@@ -1,0 +1,54 @@
+/* V25 original violin illustrations. Code-native paths based on the owner's
+   white open-frame violin photos and the familiar acoustic violin silhouette. */
+.svvi-illustration { display:block; overflow:visible; isolation:isolate; }
+.svvi-illustration path { stroke-linejoin:round; stroke-linecap:round; }
+.svvi-ground { fill:#343139; opacity:.09; }
+.svvi-frame-depth { fill:#b9c3c6; }
+.svvi-frame { fill:#f1f2ed; stroke:#acb8ba; stroke-width:1.4; }
+.svvi-frame-shade { fill:#d1dcda; }
+.svvi-frame-glint { fill:none; stroke:#fff; stroke-width:2.6; }
+.svvi-rib { fill:#774627; }
+.svvi-wood { fill:#a65b2e; stroke:#75402a; stroke-width:1.5; }
+.svvi-wood-face { fill:#d39751; }
+.svvi-wood-centre { fill:#dfad68; opacity:.64; }
+.svvi-purfling { fill:none; stroke:#6f452a; stroke-width:1.3; opacity:.85; }
+.svvi-grain { fill:none; stroke:#985e34; stroke-width:.85; opacity:.48; }
+.svvi-grain-light { stroke:#f1c987; stroke-width:1.2; }
+.svvi-fholes { fill:#4d2d22; stroke:#4d2d22; stroke-width:1; }
+.svvi-neck-white { fill:#eceee9; stroke:#a5b4b6; stroke-width:1.2; }
+.svvi-neck-maple { fill:#c49059; stroke:#7e5335; stroke-width:1.2; }
+.svvi-ebony { fill:#192026; stroke:#0f151a; stroke-width:1; }
+.svvi-peg-shaft { fill:none; stroke:#222a30; stroke-width:5; }
+.svvi-peg-glint { fill:none; stroke:#5a6569; stroke-width:1.7; opacity:.7; }
+.svvi-pegbox-well { fill:#343c3e; }
+.svvi-pegbox-detail { fill:none; stroke:#9da7a6; stroke-width:1.1; }
+.svvi-scroll-carving { fill:none; stroke:#7f8b89; stroke-width:1.6; }
+.svip-violin-acoustic .svvi-scroll-carving { stroke:#845635; }
+.svvi-board-edge { fill:none; stroke:#4b5c62; stroke-width:1.8; }
+.svvi-nut { fill:#747b78; }
+.svvi-bridge-foot-shadow { fill:#263236; opacity:.5; }
+.svvi-bridge { fill:#ead3a5; stroke:#9d8a62; stroke-width:1.2; }
+.svvi-bridge-detail { fill:none; stroke:#b19a72; stroke-width:1.3; }
+.svvi-tailgut { fill:none; stroke:#4f5756; stroke-width:1.8; }
+.svvi-tail-glint { fill:none; stroke:#637173; stroke-width:1.6; }
+.svvi-illustration .svvi-string { fill:none; stroke:#c7cccb; stroke-width:1; }
+.svvi-string-winding { fill:none; stroke-width:1.5; }
+.svvi-fine-tuners { fill:#8d9691; stroke:#39494b; stroke-width:1; }
+.svvi-chin-glint { fill:none; stroke:#536267; stroke-width:1.4; opacity:.65; }
+.svvi-endpin { fill:#333a3d; stroke:#111a1e; stroke-width:1; }
+.svvi-bow-stick { fill:none; stroke:#875437; stroke-width:3.2; }
+.svvi-bow-hair { fill:none; stroke:#d9cdae; stroke-width:2.1; }
+.svvi-bow-tip { fill:#bd9971; stroke:#815e43; stroke-width:1; }
+.svvi-bow-frog { fill:#263034; stroke:#121b21; stroke-width:1; }
+.svvi-bow-metal { fill:none; stroke:#b2b9b7; stroke-width:1.6; }
+:root[data-theme=dark] .svvi-ground { fill:#000; opacity:.28; }
+:root[data-theme=dark] .svvi-frame { fill:#e4e9e4; stroke:#97a7aa; }
+:root[data-theme=dark] .svvi-frame-glint { stroke:#f9fcf6; }
+:root[data-theme=dark] .svvi-wood-face { fill:#d0924c; }
+:root[data-theme=dark] .svvi-wood-centre { fill:#e0ad68; }
+:root[data-theme=dark] .svvi-ebony { fill:#202a30; stroke:#10191f; }
+:root[data-theme=dark] .svvi-board-edge { stroke:#65787e; }
+:root[data-theme=dark] .svvi-illustration .svvi-string { stroke:#d4d9d6; }
+/* Existing teaching geometry and its pause/synchronization hooks stay intact. */
+.sva-art { --sva-line:#949ba1; --sva-green:#5e6870; }
+:root[data-theme=dark] .sva-art { --sva-line:#b5bdc3; --sva-green:#c3cbd0; }

@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-16",
+  "release": "V17.1",
+  "baselineCommit": "d63e7a8e022bddcd41fabce012d7681f2bc55b72",
+  "userReportedEnvironment": "iPhone/iPad Safari or in-app browser; exact OS/model/host app not yet supplied",
+  "status": "code fixes verified; physical iOS sound unverified",
+  "automatedTests": {
+    "passed": 341,
+    "failed": 0,
+    "skipped": 0,
+    "newSinceV17": 45
+  },
+  "browser": {
+    "platform": "Windows Chromium 155 with generated microphone/camera devices",
+    "audioWorkflowsPassed": 15,
+    "soundHelpLanguageViewportCasesPassed": 12,
+    "viewports": [
+      320,
+      390,
+      768
+    ],
+    "languages": [
+      "zh",
+      "en",
+      "ja",
+      "de"
+    ],
+    "evidenceIds": [
+      "ev_f02f495d8eebd75102080cf2e89afd0ee395a1a6a0f3f56ae3d1725ed2d78ae7",
+      "ev_d9af3994b5df301f4fab8436773ef8f76710294519dea5401e9b3fbaaee0c4c3"
+    ],
+    "physicalIOSDevice": false
+  },
+  "fixes": [
+    "Explicit user gestures can retry a pending native resume; late replies are generation guarded",
+    "An old closed AudioContext cannot clear or leak a newer graph",
+    "Microphone permission/route changes are followed by a bounded running-state check before recording",
+    "The final microphone/tuner exit restores the playback audio session without overriding active microphone owners",
+    "Tuner monitoring borrows the unlocked shared context; stopping does not close it or route mic to speakers",
+    "Native media volume setters that throw or ignore writes cannot bypass app volume zero; device-volume guidance is localized",
+    "Enable sound test verifies an advancing context clock and nonzero output; no heard-on-speaker claim"
+  ],
+  "limitations": [
+    "No attached physical iPhone or iPad, no real speaker/headphone/phone-call/lock-screen acceptance",
+    "In-app WKWebView host policies cannot be changed by the website; Safari fallback is user initiated",
+    "Current model, OS version and specific in-app browser remain unknown"
+  ],
+  "officialSources": [
+    "https://webkit.org/blog/6784/new-video-policies-for-ios/",
+    "https://developer.mozilla.org/en-US/docs/Web/API/AudioSession/type",
+    "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/state",
+    "https://developer.apple.com/documentation/webkit/wkwebviewconfiguration/mediatypesrequiringuseractionforplayback",
+    "https://commits.webkit.org/251625@main"
+  ],
+  "testHarnessCorrection": "The first combined QA run allowed another harness to re-enable its button. Fixed with an independent idle marker and sequential reruns; final saved cases all passed."
+}

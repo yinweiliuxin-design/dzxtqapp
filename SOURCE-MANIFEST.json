@@ -1,0 +1,2527 @@
+{
+  "schema": 1,
+  "project": "smartvio-mobile-and-android",
+  "release": "V29",
+  "packageVersion": "0.29.0",
+  "repository": "yinweiliuxin-design/smartviolin",
+  "branch": "violinapp",
+  "repositoryPrefix": "06-App软件/V29-可靠性版本",
+  "generatedAt": "2026-10-26T10:35:48.001Z",
+  "webSourceCommit": "8168d027c520b023398979263dda89f624be76bb",
+  "webSourceFiles": 266,
+  "androidSourceFiles": 13,
+  "sourceFiles": 279,
+  "files": [
+    {
+      "source": "smartvio-mobile/.gitignore",
+      "path": "web-source/.gitignore",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 68,
+      "expectedSha256": "c1b1c4b2de095ff97e03325f1cdf648b9eb14c0afaf83373869d98c3a2f436a6",
+      "expectedGitBlobSha": "1574225f807f3c7159f1d8b74e16687c04abe0a0"
+    },
+    {
+      "source": "smartvio-mobile/.openai/hosting.json",
+      "path": "web-source/.openai/hosting.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 95,
+      "expectedSha256": "2cd4ccc4e189e28d889a425e9003e277ab1bcdac548ded116fdd1481090a7ae1",
+      "expectedGitBlobSha": "d87471cf9a90eb65eea7f3aaf8c18c3fd22b1c0b"
+    },
+    {
+      "source": "smartvio-mobile/README.txt",
+      "path": "web-source/README.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 20774,
+      "expectedSha256": "7a23fb5258ae00492613fe0e7daa41c1428a7b313c8f94a6f3c5ee04043ff8fb",
+      "expectedGitBlobSha": "1276ff748b50e71c6a965e9cedaa2c0cfebd9204"
+    },
+    {
+      "source": "smartvio-mobile/asset-notes/beginner-photo-generation.json",
+      "path": "web-source/asset-notes/beginner-photo-generation.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 14490,
+      "expectedSha256": "b4a2fb182f52ab206654d5982530269302c8057abe8fbca9f7c67d9c504f3ed6",
+      "expectedGitBlobSha": "afa760084d8c4ebeab7fd177d767c6c287a7b0ef"
+    },
+    {
+      "source": "smartvio-mobile/asset-notes/catalog-source-verification.json",
+      "path": "web-source/asset-notes/catalog-source-verification.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 94101,
+      "expectedSha256": "41cb6e5ba4cb7031e88dd59906c8b76a38a111fdc8e47fc10ef8840b4643b320",
+      "expectedGitBlobSha": "ac5edc31166481a2d101f0f0a39c8c6d40bf84ce"
+    },
+    {
+      "source": "smartvio-mobile/asset-notes/song-cover-generation.json",
+      "path": "web-source/asset-notes/song-cover-generation.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 58079,
+      "expectedSha256": "728ff60192149bf469fc7d65374c169e073db2b35aae2b0b7a3d6addcbc808d4",
+      "expectedGitBlobSha": "da2381494471aa0d41fb7659930eb4de99194313"
+    },
+    {
+      "source": "smartvio-mobile/catalog/expansion-20261014.json",
+      "path": "web-source/catalog/expansion-20261014.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 71570,
+      "expectedSha256": "fd78adb5a46a62b1c39826ec62c5309cca4ce4c2ecd2ddf3a14b8febeebe6107",
+      "expectedGitBlobSha": "4d6fbd0d577cce422ae306aaf66a47800bc631d0"
+    },
+    {
+      "source": "smartvio-mobile/db/schema.ts",
+      "path": "web-source/db/schema.ts",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 12706,
+      "expectedSha256": "3743225dba9a76e955a26d8861f0b56eff4fdbfcc4c8b967733ea4c2703774de",
+      "expectedGitBlobSha": "8b15fd87b2481bd5954cea96f7ee94bcef2ba062"
+    },
+    {
+      "source": "smartvio-mobile/dist/LUCIDE-LICENSE.txt",
+      "path": "web-source/dist/LUCIDE-LICENSE.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 3208,
+      "expectedSha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57",
+      "expectedGitBlobSha": "718bb3f0e44153809972abed31839375804bf652"
+    },
+    {
+      "source": "smartvio-mobile/dist/account.css",
+      "path": "web-source/dist/account.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 6504,
+      "expectedSha256": "bb8e3d7c9171d9069015a938e72cfabf8742c9d36b169fd433ec12dbfdbefe0d",
+      "expectedGitBlobSha": "f5ae2427cd04d8e8dddb1efbc7d0887c8ee1bdf9"
+    },
+    {
+      "source": "smartvio-mobile/dist/account.js",
+      "path": "web-source/dist/account.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 21136,
+      "expectedSha256": "0d29f4497263692e10d61a94e4fb3ce182a70d2f19798e3c5c50bdb2f9c3d45d",
+      "expectedGitBlobSha": "ed38b4e9dca8c6e04abaaea314cb5b666e973e55"
+    },
+    {
+      "source": "smartvio-mobile/dist/admin.css",
+      "path": "web-source/dist/admin.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 16771,
+      "expectedSha256": "9166d2e70347416e01f573c8e0af4dfa77d64c562519800bc6e985a9500d7c53",
+      "expectedGitBlobSha": "8e3320cfa3815a888dd4e4a7966fcd56e7352e3e"
+    },
+    {
+      "source": "smartvio-mobile/dist/admin.html",
+      "path": "web-source/dist/admin.html",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2094,
+      "expectedSha256": "1ec69bd7625783defb0bd7ae52ffa26d7e4c50f829d7f39ecbaaed62236a1e79",
+      "expectedGitBlobSha": "0bc58f13f38f8d38500d9dd9c72bb457ada4479d"
+    },
+    {
+      "source": "smartvio-mobile/dist/admin.js",
+      "path": "web-source/dist/admin.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 81740,
+      "expectedSha256": "d90c1095e8d6a9f4a7a61193f73b16067e965264c0f5c3c2b68f87c41cd07350",
+      "expectedGitBlobSha": "001197e271bb129d05a2b4eb6270b8056298b102"
+    },
+    {
+      "source": "smartvio-mobile/dist/android.html",
+      "path": "web-source/dist/android.html",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 4728,
+      "expectedSha256": "570e5ced7cc45c6073859a0a82e8cd8ebd408f98d7f2d88606cd2a558e2b327b",
+      "expectedGitBlobSha": "8cc4e2e010b9612ae9cfa212d602d8c3fb8dd9be"
+    },
+    {
+      "source": "smartvio-mobile/dist/apple-music-theme.css",
+      "path": "web-source/dist/apple-music-theme.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 25902,
+      "expectedSha256": "2c93de1f47a6103a06340f0d286e648ce90b70abb8629e0b194f91bb9f90e815",
+      "expectedGitBlobSha": "436742897f75ea97c55c869b25710dac291b2beb"
+    },
+    {
+      "source": "smartvio-mobile/dist/assets/audio/violin/A3.wav",
+      "path": "web-source/dist/assets/audio/violin/A3.wav",
+      "category": "licensed-app-asset",
+      "evidence": "dist/assets/audio/violin/manifest.json; CC0-1.0; license SHA256 36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673; upstream commit 440300901dfe9275fd84e0b7763af1f8443ae62e",
+      "expectedBytes": 123524,
+      "expectedSha256": "a9131953c5f56c8e7091f6e9c8adbc695dbfdc055a5be8c51f1786fc6983ba51",
+      "expectedGitBlobSha": "4e88fbf12aa43a483dd23efdc3a54582eeb74e8a"
+    },
+    {
+      "source": "smartvio-mobile/dist/assets/audio/violin/A4.wav",
+      "path": "web-source/dist/assets/audio/violin/A4.wav",
+      "category": "licensed-app-asset",
+      "evidence": "dist/assets/audio/violin/manifest.json; CC0-1.0; license SHA256 36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673; upstream commit 440300901dfe9275fd84e0b7763af1f8443ae62e",
+      "expectedBytes": 123524,
+      "expectedSha256": "95204f8a19e1a655b8259c9a1bd64fb229e2d111c69f63656a9fcfcf6f8d28ad",
+      "expectedGitBlobSha": "23ed5b0cda6a45b9cd1beab15c600ec6a4439654"
+    },
+    {
+      "source": "smartvio-mobile/dist/assets/audio/violin/A5.wav",
+      "path": "web-source/dist/assets/audio/violin/A5.wav",
+      "category": "licensed-app-asset",
+      "evidence": "dist/assets/audio/violin/manifest.json; CC0-1.0; license SHA256 36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673; upstream commit 440300901dfe9275fd84e0b7763af1f8443ae62e",
+      "expectedBytes": 123524,
+      "expectedSha256": "4eb52850bfd4265ed548cc497434047be1e510bfc6e24ba2036efaa069689dea",
+      "expectedGitBlobSha": "92bd3897b700346ec431d63124126c486ccd8081"
+    },
+    {
+      "source": "smartvio-mobile/dist/assets/audio/violin/A6.wav",
+      "path": "web-source/dist/assets/audio/violin/A6.wav",
+      "category": "licensed-app-asset",
+      "evidence": "dist/assets/audio/violin/manifest.json; CC0-1.0; license SHA256 36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673; upstream commit 440300901dfe9275fd84e0b7763af1f8443ae62e",
+      "expectedBytes": 123524,
+      "expectedSha256": "f7766cc378eb4df3f6f71bd87cf4a6b349df488a0965ca082de5291ae71ba881",
+      "expectedGitBlobSha": "111c70cfc6a43557216b1944a6c33bcbf24129c2"
+    },
+    {
+      "source": "smartvio-mobile/dist/assets/audio/violin/E4.wav",
+      "path": "web-source/dist/assets/audio/violin/E4.wav",
+      "category": "licensed-app-asset",
+      "evidence": "dist/assets/audio/violin/manifest.json; CC0-1.0; license SHA256 36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673; upstream commit 440300901dfe9275fd84e0b7763af1f8443ae62e",
+      "expectedBytes": 123524,
+      "expectedSha256": "e4ef838ca90a55faa8294e3bb2af09c68ec2eb0deeb3fe85c09792ba41141207",
+      "expectedGitBlobSha": "bf834b7918e6eb419829cca2209401c2b92d477b"
+    },
+    {
+      "source": "smartvio-mobile/dist/assets/audio/violin/E5.wav",
+      "path": "web-source/dist/assets/audio/violin/E5.wav",
+      "category": "licensed-app-asset",
+      "evidence": "dist/assets/audio/violin/manifest.json; CC0-1.0; license SHA256 36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673; upstream commit 440300901dfe9275fd84e0b7763af1f8443ae62e",
+      "expectedBytes": 123524,
+      "expectedSha256": "018f6b1cee9aa9e4951c1d4e5a576ec078a19a10fd11de9dfa9e0c2f1a09fce2",
+      "expectedGitBlobSha": "a2f86f32f48f035254a0f6356b088831b944187c"
+    },
+    {
+      "source": "smartvio-mobile/dist/assets/audio/violin/E6.wav",
+      "path": "web-source/dist/assets/audio/violin/E6.wav",
+      "category": "licensed-app-asset",
+      "evidence": "dist/assets/audio/violin/manifest.json; CC0-1.0; license SHA256 36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673; upstream commit 440300901dfe9275fd84e0b7763af1f8443ae62e",
+      "expectedBytes": 123524,
+      "expectedSha256": "7a226d7b585ab8a77e862f81937885d6269e9a2acf50e0c9c412b8ac3c01d277",
+      "expectedGitBlobSha": "c579ca26667c0b0885d1013b1e4227d1e85a8fa7"
+    },
+    {
+      "source": "smartvio-mobile/dist/assets/audio/violin/LICENSE.txt",
+      "path": "web-source/dist/assets/audio/violin/LICENSE.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 6555,
+      "expectedSha256": "36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673",
+      "expectedGitBlobSha": "670154e3538863b2d9891fd5483160fbdfc89164"
+    },
+    {
+      "source": "smartvio-mobile/dist/assets/audio/violin/manifest.json",
+      "path": "web-source/dist/assets/audio/violin/manifest.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 4616,
+      "expectedSha256": "017ade0f8db0164fb875efb961f9b88862aa85f795bf056d515c4d044d9095f6",
+      "expectedGitBlobSha": "b73e54be7266b628efae695b766ff6f4d7262391"
+    },
+    {
+      "source": "smartvio-mobile/dist/audio-engine.js",
+      "path": "web-source/dist/audio-engine.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 46466,
+      "expectedSha256": "c75f9ac5a0c3eeee3035ea78b30b0b26b34ddefdc90993c68b00f83db73031fa",
+      "expectedGitBlobSha": "8943590703c5f36df37fe0c24431d34e59709679"
+    },
+    {
+      "source": "smartvio-mobile/dist/brands/silvio-wordmark.png",
+      "path": "web-source/dist/brands/silvio-wordmark.png",
+      "category": "original-app-asset",
+      "evidence": "User-provided Silvio wordmark, approved for integration in this app; preserved from V20",
+      "expectedBytes": 210478,
+      "expectedSha256": "d09f2df80e1095b7a60527c5f77738a21813ddbb9db7c3c633ef039eefc48e8f",
+      "expectedGitBlobSha": "735964028a4f4288980b85fe81f9cee917f65590"
+    },
+    {
+      "source": "smartvio-mobile/dist/brands/vellen-wordmark.png",
+      "path": "web-source/dist/brands/vellen-wordmark.png",
+      "category": "original-app-asset",
+      "evidence": "User-provided VELLEN wordmark, approved for integration in this app; preserved from V20",
+      "expectedBytes": 197740,
+      "expectedSha256": "dede05934d790437edd3b56306e7b6618474ba1d652db3b9a3bea43a60209546",
+      "expectedGitBlobSha": "be5d905453d8fc6a7b182c0bf96684fadfb27f7b"
+    },
+    {
+      "source": "smartvio-mobile/dist/canva-refinement.css",
+      "path": "web-source/dist/canva-refinement.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 17248,
+      "expectedSha256": "5c22a7da702da0adf935ad0da5d69c5a653bc5442c6ea2780567c5b83a07c07b",
+      "expectedGitBlobSha": "ce878a1bf01afd3e8939b578cd270e190bd62ed7"
+    },
+    {
+      "source": "smartvio-mobile/dist/client.html",
+      "path": "web-source/dist/client.html",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 7451,
+      "expectedSha256": "1f1872d8e7e43244c8dcb883cbb901d2cfd8fbc4f2ae4746633b94d12d5a4979",
+      "expectedGitBlobSha": "841f065ac4bad3520b0a9fe607eb84f10e42a54c"
+    },
+    {
+      "source": "smartvio-mobile/dist/client.js",
+      "path": "web-source/dist/client.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 170902,
+      "expectedSha256": "0ce5212a4aa93a01a6a028c4eefb702149a7761870543b7e45e41d8e3c1fb06a",
+      "expectedGitBlobSha": "90df41ff6eacc49a228b880c1c9b4af311f4807b"
+    },
+    {
+      "source": "smartvio-mobile/dist/common.js",
+      "path": "web-source/dist/common.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 18814,
+      "expectedSha256": "4a50c6b15b51cc1ab61dd33455516a5801d0cb9cc5451714723a4ddd3766abed",
+      "expectedGitBlobSha": "8b445cdbf88c45cfce55f277380b5bb5d51941c0"
+    },
+    {
+      "source": "smartvio-mobile/dist/community.css",
+      "path": "web-source/dist/community.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 13379,
+      "expectedSha256": "1ff5f36297860943afa3e930be09f33149b5ff9c4897306bf012275c425dde16",
+      "expectedGitBlobSha": "ab431a794ef8a283577fa08c281bc45bbef09c63"
+    },
+    {
+      "source": "smartvio-mobile/dist/community.js",
+      "path": "web-source/dist/community.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 78720,
+      "expectedSha256": "581bc5cf9ea0c718d1c03877b477c4873d84f5e24d63a0bb2cbe4adafd6cd697",
+      "expectedGitBlobSha": "d2e9e14ad39a4d4046e29876e81236db3a4b5160"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s001.jpg",
+      "path": "web-source/dist/covers/s001.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 45106,
+      "expectedSha256": "a80bd61fc5614080c820c1779a8f42e992fd13c9a0e442159976cb38fa98198b",
+      "expectedGitBlobSha": "93bb59043da37cedc74313a163107f0b2413d90f"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s002.jpg",
+      "path": "web-source/dist/covers/s002.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 59916,
+      "expectedSha256": "e2b2c4bba6d761ff3d006691d8f08d74c5e14758bf8afe28f3a68f50e4a1cf46",
+      "expectedGitBlobSha": "9782d784584003d23bc54e3459269b2ec96c301a"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s003.jpg",
+      "path": "web-source/dist/covers/s003.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 44582,
+      "expectedSha256": "70768b3616f330b8a6546a6abee3c5ba5ba0870c4f3f9035d8c4b81804679f7a",
+      "expectedGitBlobSha": "bbf1befae36e7ca9471f1c6ad9354c618655e26a"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s004.jpg",
+      "path": "web-source/dist/covers/s004.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 77078,
+      "expectedSha256": "d22a7bb42950bfb143f5d44e9fa6bb89071e3bc2118bbd8f9af7a43d6a23db6b",
+      "expectedGitBlobSha": "3cacbb76ff20c0e7e3104b2cb3e54755c433f38b"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s005.jpg",
+      "path": "web-source/dist/covers/s005.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 69229,
+      "expectedSha256": "455f81d2fc337ba0e85dec74c785ea8c99ec4a53cb161a8667e3d89063cf132c",
+      "expectedGitBlobSha": "fac7470cb6f5e8d8335516992987911887dde4a9"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s006.jpg",
+      "path": "web-source/dist/covers/s006.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 62106,
+      "expectedSha256": "470b23d962c9d32f0aac90f2d862653e6631b886bded8e86f9319d69116d8f80",
+      "expectedGitBlobSha": "9d8fba968e91a8cba0c42111a334ec035f044219"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s007.jpg",
+      "path": "web-source/dist/covers/s007.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 72545,
+      "expectedSha256": "39750ddd583a9b138874cceee23c6ba8b4a88db977ed60cac62f0a9ee3d01edf",
+      "expectedGitBlobSha": "30ac3a7172ec401a4fd4d9bfc2a9ae5270237981"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s008.jpg",
+      "path": "web-source/dist/covers/s008.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 49071,
+      "expectedSha256": "bd53bcc9a0f3067ee5e31a57cf6c6fedb37303923f8f3df8fe3ab5b70189d19f",
+      "expectedGitBlobSha": "2ead459444de63642b6e92a352a7d7d33b7cda1e"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s009.jpg",
+      "path": "web-source/dist/covers/s009.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 67409,
+      "expectedSha256": "b0cad83ce1bae3b980ca089831a37234196da2d78b9b9c0daf030e3adccd2b03",
+      "expectedGitBlobSha": "ce37869e7615f8509aae00bc5bf1e9dff264b87e"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s010.jpg",
+      "path": "web-source/dist/covers/s010.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 50388,
+      "expectedSha256": "8b167581591867f4b9841c6b52c59def2d368cdd455be94a237768f9d7ac5d72",
+      "expectedGitBlobSha": "8480d5cd615414c514957f5b31ad806e6718cebc"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s011.jpg",
+      "path": "web-source/dist/covers/s011.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 59085,
+      "expectedSha256": "50589e4f97d5634b930c41a0bb97d4dfca0f34441c20d76477b24ef73bd62264",
+      "expectedGitBlobSha": "c4002eb842f7f17f2522c88eb1d7f32e25df4e8e"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s012.jpg",
+      "path": "web-source/dist/covers/s012.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 49150,
+      "expectedSha256": "216f5b03f48f50b5c1e3ce184501fe76f40c60dbd7bbd19b97f90cb5dc0e67bd",
+      "expectedGitBlobSha": "fed25eed9283c28ae8f08f7412621646b4e1bd7d"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s013.jpg",
+      "path": "web-source/dist/covers/s013.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 69580,
+      "expectedSha256": "920a6ba8e6f5385aa40d4ef3e9563deed5a329bad50a75512fd9aa6477f45d43",
+      "expectedGitBlobSha": "5f27cdbcc528cfa0816a07a05ac0e0cd6d2676ed"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s014.jpg",
+      "path": "web-source/dist/covers/s014.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 73024,
+      "expectedSha256": "fdb77113f6719d8da3ae07cefc685fc6bfd81291dec419d6b83c3a20c2e93a01",
+      "expectedGitBlobSha": "68faddcec7034f79d579de93d150ef339ec8a9b2"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s015.jpg",
+      "path": "web-source/dist/covers/s015.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 63213,
+      "expectedSha256": "2edcf8e6dcf231fb2a3de23d459c7ad7b3b11c8fbf619d5e5be5d5a47dc70d77",
+      "expectedGitBlobSha": "0474c844e2e5eac016d7e7cc828dd64c58e01df6"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s016.jpg",
+      "path": "web-source/dist/covers/s016.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 72373,
+      "expectedSha256": "93e64bc4143df69602bdfc5cf9db9fa010055437efaf606e895ba277e1b04571",
+      "expectedGitBlobSha": "2a3828cea1f043860dc03decac33b9f66ca77ca7"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s017.jpg",
+      "path": "web-source/dist/covers/s017.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 63536,
+      "expectedSha256": "418fb8f5b3e68de0d105e1f7f3350da5d7f29957e8d8b33489c5095d9f12d48b",
+      "expectedGitBlobSha": "7bd6b8cfe952f9c60b300f72f30d92ce4e344207"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s018.jpg",
+      "path": "web-source/dist/covers/s018.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 79629,
+      "expectedSha256": "055c65ade15013ecd077b791f44b79e0d57c1379477111ff8915fe9a684f48be",
+      "expectedGitBlobSha": "d733fd43490c7e86ee491a34ee1c593704277af0"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s019.jpg",
+      "path": "web-source/dist/covers/s019.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 88790,
+      "expectedSha256": "c87a1f3a42164b6fee9d1fb1fca6894a08e5a2f8254b3c807a73b60c4cd5440a",
+      "expectedGitBlobSha": "83bddbd3f2f40c2f9a2b3aeb1745bc8ca788342d"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s020.jpg",
+      "path": "web-source/dist/covers/s020.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 62897,
+      "expectedSha256": "3a9109ca2f62a89cd2636d4cc5e9e882a50e8d1a95ae40dfb69bd22fb1bb375c",
+      "expectedGitBlobSha": "4be55ef9339caa1a9fc1be596b31808dd1dff3e4"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s021.jpg",
+      "path": "web-source/dist/covers/s021.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 68176,
+      "expectedSha256": "d95f80b47ce2dc734e15f7bfc5289e72c32734d08cc848b9fc39c8fa05a354f8",
+      "expectedGitBlobSha": "01918cb655522e215d67d76334186b7e9f52b126"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s022.jpg",
+      "path": "web-source/dist/covers/s022.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 56479,
+      "expectedSha256": "1ffed426f1ddebc1371a69cd62dd664eb467c6efc70f7e6fbeb7888a0a448dfc",
+      "expectedGitBlobSha": "1d1e0481fbb1c98ff72f76b31f9bc18cf5d64c93"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s023.jpg",
+      "path": "web-source/dist/covers/s023.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 60144,
+      "expectedSha256": "6d2da60db136a7d8ad795d0cd60e1d90ea13cc2b7a9da3998a0541000013c150",
+      "expectedGitBlobSha": "07365dc92f9b8b670d9df8cc63962c7bf19c5ad8"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s024.jpg",
+      "path": "web-source/dist/covers/s024.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 57597,
+      "expectedSha256": "68f81f8e415901f3b1e62f500be8c39a4442f5c71055d1fc8e2d2a0027e8a78d",
+      "expectedGitBlobSha": "ea11cafc407491ab7d35b5db529a979e1af50eeb"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s025.jpg",
+      "path": "web-source/dist/covers/s025.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 77459,
+      "expectedSha256": "b4a3a2cbdae3480b115b77967b248b91afe27e423db552fa321c06cb3517e967",
+      "expectedGitBlobSha": "ac90a81fd900d6fdd42ce1ee3c45374ef8247a18"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s026.jpg",
+      "path": "web-source/dist/covers/s026.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 43477,
+      "expectedSha256": "fabed6ad06dd542ad73a396a982ad639375355c498a8e45fb076aaceab4632d4",
+      "expectedGitBlobSha": "7dbbfe52fe587ac5d0c5fb6a4352b4fe62f02b5b"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s027.jpg",
+      "path": "web-source/dist/covers/s027.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 66631,
+      "expectedSha256": "d61f5f5a7870a136e49c38a660ff02cf962787407587332773ccf05c923b5035",
+      "expectedGitBlobSha": "26fb3ba950da9b7b5bb313cd5bba2c942d13e48b"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s028.jpg",
+      "path": "web-source/dist/covers/s028.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 65999,
+      "expectedSha256": "a02e4ae5c3943b7029822d6835086e84eaca0b6dd2b02dbf54fd6c280ea9778d",
+      "expectedGitBlobSha": "c986cb236f63a06490e436c53c90f6d249603f25"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s029.jpg",
+      "path": "web-source/dist/covers/s029.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 51646,
+      "expectedSha256": "fb2920acf62c774550aeed2cd1a2286856899428dfa8a8ce109164fe84986cca",
+      "expectedGitBlobSha": "530696b23280b00a15c04ddb584233dc59ee1460"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s030.jpg",
+      "path": "web-source/dist/covers/s030.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 67786,
+      "expectedSha256": "6d2814fdbd660a309f2decfb5ba63452141b9022aaa0dd91b89e89e2b7d1c83c",
+      "expectedGitBlobSha": "f96eda9736556ae12a8059cddf832e0ed0161192"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s031.jpg",
+      "path": "web-source/dist/covers/s031.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 80526,
+      "expectedSha256": "3376619699a8a77240cce552b705b8de00fc53c5da25d3cf5bd5be45e5eb4e30",
+      "expectedGitBlobSha": "0fcc6803dfc633c265b087d2abdcce0f77f78b0c"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s032.jpg",
+      "path": "web-source/dist/covers/s032.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 73214,
+      "expectedSha256": "728263cf9cefaad2a146253d94196ebe7ee5540c6ca63019394490150508bee7",
+      "expectedGitBlobSha": "62cea2105b3d648d427d9143d534b4382fac3680"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s033.jpg",
+      "path": "web-source/dist/covers/s033.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 64376,
+      "expectedSha256": "696fac10ab1f84f532f667638a7bb23878ffeaa90c5cb165dc0e9902df01123e",
+      "expectedGitBlobSha": "3bb2a8956292702157fe25d95e91d124b7f5c096"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s034.jpg",
+      "path": "web-source/dist/covers/s034.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 74601,
+      "expectedSha256": "286ed2919487c75685a6f11e8d9f36f2b735a6ac72c0aab303387687693b1ade",
+      "expectedGitBlobSha": "41a555d46396f5173afa58be323b510621a9351c"
+    },
+    {
+      "source": "smartvio-mobile/dist/covers/s035.jpg",
+      "path": "web-source/dist/covers/s035.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/song-cover-generation.json; original AI-generated artwork record",
+      "expectedBytes": 63372,
+      "expectedSha256": "d2d6a5cb0dbbd5d25ab8330258c7425b4c591c5e7e4c25071c6fb8c0d57adf39",
+      "expectedGitBlobSha": "42d74c825c7946cc7c9316a52ae90e42b4dc7064"
+    },
+    {
+      "source": "smartvio-mobile/dist/curriculum-data.js",
+      "path": "web-source/dist/curriculum-data.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 21286,
+      "expectedSha256": "2667a0e0810904871d4c719fb641da2ec659d63781d282815c7a4625bfe4ff62",
+      "expectedGitBlobSha": "3f925e4e176f1c48693918aeb3972dd285e5858c"
+    },
+    {
+      "source": "smartvio-mobile/dist/curriculum.css",
+      "path": "web-source/dist/curriculum.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 7470,
+      "expectedSha256": "a38e431f66eb4995a9d10c7339dfb6b120d962d9253d5894e2990600fb1b859f",
+      "expectedGitBlobSha": "ad5901673a439ae65cce3613762a18b3a8bb7f97"
+    },
+    {
+      "source": "smartvio-mobile/dist/curriculum.js",
+      "path": "web-source/dist/curriculum.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 25294,
+      "expectedSha256": "622ff368c2e137ee62e2897a8a635f95dc2ac1c1f5fd8c91185e6d48b76012d0",
+      "expectedGitBlobSha": "42f23e8e9c2f57f51de86a75162839a270875911"
+    },
+    {
+      "source": "smartvio-mobile/dist/device-bridge.js",
+      "path": "web-source/dist/device-bridge.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 29341,
+      "expectedSha256": "6dff3d8672d1f7f8f83ead60fe33ea1f0b98eef229fa16315e069714a16ac1e9",
+      "expectedGitBlobSha": "78ca558767e1674f9d15f5b400e3d5a463f63af9"
+    },
+    {
+      "source": "smartvio-mobile/dist/favicon.svg",
+      "path": "web-source/dist/favicon.svg",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 278,
+      "expectedSha256": "aea21c1655f464243a74d45138b831b7ae6d9695c7c13503817d0ccbf9695746",
+      "expectedGitBlobSha": "12ec36067e8bd02bbf157df81199b462329d59a1"
+    },
+    {
+      "source": "smartvio-mobile/dist/i18n.js",
+      "path": "web-source/dist/i18n.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 143249,
+      "expectedSha256": "07025c60d62153a21bc056140654352fda8b8b84c3d6d9328cf80f053b261305",
+      "expectedGitBlobSha": "8b7344d6f368ca9a8468508ce95ba7b2f23173a3"
+    },
+    {
+      "source": "smartvio-mobile/dist/icons/apple-touch-icon.png",
+      "path": "web-source/dist/icons/apple-touch-icon.png",
+      "category": "original-app-asset",
+      "evidence": "Original SmartVio app icon/brand UI asset preserved from the authorized V20 source",
+      "expectedBytes": 4376,
+      "expectedSha256": "5fb2057faf557f39b3c1295f1a2600f20d1c67f60e6c95846418f2c465e46355",
+      "expectedGitBlobSha": "90cdd0efc89339390430a4630fc79f3204d59d18"
+    },
+    {
+      "source": "smartvio-mobile/dist/icons/icon-192.png",
+      "path": "web-source/dist/icons/icon-192.png",
+      "category": "original-app-asset",
+      "evidence": "Original SmartVio app icon/brand UI asset preserved from the authorized V20 source",
+      "expectedBytes": 4218,
+      "expectedSha256": "efe59c3e46191aa85ffcfb607b1d4b5ee0af84adae30c5636cc86f17c6e92acb",
+      "expectedGitBlobSha": "e511d239d9b9aefd1480788d5d9bbe06cfac4317"
+    },
+    {
+      "source": "smartvio-mobile/dist/icons/icon-512.png",
+      "path": "web-source/dist/icons/icon-512.png",
+      "category": "original-app-asset",
+      "evidence": "Original SmartVio app icon/brand UI asset preserved from the authorized V20 source",
+      "expectedBytes": 13814,
+      "expectedSha256": "8600ad9482987361705718eb23015e52d4f07807ab03b658a351873bfa69cd9f",
+      "expectedGitBlobSha": "2e5b758cef6e684d5db775cbfa8be6abfd042ff4"
+    },
+    {
+      "source": "smartvio-mobile/dist/identity.js",
+      "path": "web-source/dist/identity.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 1780,
+      "expectedSha256": "be280c7fa8aa39ff048354e1f5840bfacd5803df617a6146d583b186a910b1df",
+      "expectedGitBlobSha": "1d5638445ce2663015716f15d2d05dcb227d8d16"
+    },
+    {
+      "source": "smartvio-mobile/dist/index.html",
+      "path": "web-source/dist/index.html",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 7451,
+      "expectedSha256": "1f1872d8e7e43244c8dcb883cbb901d2cfd8fbc4f2ae4746633b94d12d5a4979",
+      "expectedGitBlobSha": "841f065ac4bad3520b0a9fe607eb84f10e42a54c"
+    },
+    {
+      "source": "smartvio-mobile/dist/instrument-profile.css",
+      "path": "web-source/dist/instrument-profile.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 10984,
+      "expectedSha256": "6e8ce7b55f115b3e2ae9987d72e52a710b9d0cd802de0f35dbce951fe8e11d3e",
+      "expectedGitBlobSha": "a233e35db715a0702e48ce0396eab448363b149a"
+    },
+    {
+      "source": "smartvio-mobile/dist/instrument-profile.js",
+      "path": "web-source/dist/instrument-profile.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 28496,
+      "expectedSha256": "cfc688d46bc11f17990d8061c4af8c6eb2c77d9ad22d37b3a30520eeb0501983",
+      "expectedGitBlobSha": "b9ee5a52e2a9ee11666e7e078dba3047a9c92f84"
+    },
+    {
+      "source": "smartvio-mobile/dist/interface-v25.css",
+      "path": "web-source/dist/interface-v25.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 23237,
+      "expectedSha256": "bfb7dd8c0b022611312b21926ad5190d8b5e37810db6dc1a587836b7b3829c07",
+      "expectedGitBlobSha": "6cb4a863296047ebfa8c4abade451c47b80e9745"
+    },
+    {
+      "source": "smartvio-mobile/dist/interface-v26.css",
+      "path": "web-source/dist/interface-v26.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 18687,
+      "expectedSha256": "b7c3bd4288e6e77711096f177ef0e71dfab1f2518d99d7803d13f86564f35afa",
+      "expectedGitBlobSha": "f465aad40fedb0a9ee0ed19f3e8b6148520d93cd"
+    },
+    {
+      "source": "smartvio-mobile/dist/interface-v27.css",
+      "path": "web-source/dist/interface-v27.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 19309,
+      "expectedSha256": "1fd53fd171b8eeef08c9b701a02cda94b12b8974e403b536ad6ea16f6db7b835",
+      "expectedGitBlobSha": "a9f5d4b51a81127b1b3adb1564c15c4dc754b1b3"
+    },
+    {
+      "source": "smartvio-mobile/dist/interface-v28.css",
+      "path": "web-source/dist/interface-v28.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 4873,
+      "expectedSha256": "9de8bf7ed201174f577543ca3c492f6497b1914c1d71acfc0ad394158e86885b",
+      "expectedGitBlobSha": "d3591eef87d1fdb1195cd2d7f0d3612287980699"
+    },
+    {
+      "source": "smartvio-mobile/dist/learning-journey.js",
+      "path": "web-source/dist/learning-journey.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 30171,
+      "expectedSha256": "0d05177cc0c6e32daab591e65d27872060d29080db11e85da7f2e3638bda18f0",
+      "expectedGitBlobSha": "01f037f3d90583d530c20d8b14467f555220df08"
+    },
+    {
+      "source": "smartvio-mobile/dist/learning-path.css",
+      "path": "web-source/dist/learning-path.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 11733,
+      "expectedSha256": "34398fd6dfb30c4916fadb187e059beaa8d7a572057e596b4bb8ffba18fa80f4",
+      "expectedGitBlobSha": "ace0a3c7344dc82ee3489f161ef67cbf50cf5bdb"
+    },
+    {
+      "source": "smartvio-mobile/dist/learning-path.js",
+      "path": "web-source/dist/learning-path.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 26863,
+      "expectedSha256": "4c69eaa849eb7eec6a453a919a4d27fa0d41528e23a41dd73df70ea8986b436c",
+      "expectedGitBlobSha": "3682841301855b4f3aecca9d52b1a27f8857b2a5"
+    },
+    {
+      "source": "smartvio-mobile/dist/learning/confidence.jpg",
+      "path": "web-source/dist/learning/confidence.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/beginner-photo-generation.json; original AI-generated artwork record",
+      "expectedBytes": 119311,
+      "expectedSha256": "b24d6af5abd4a39c1fa89001269fa111d24cb5677c5652df6856dcb6a3332474",
+      "expectedGitBlobSha": "09fe9ce917cbb0b36388316d40dec6f93be47d36"
+    },
+    {
+      "source": "smartvio-mobile/dist/learning/listen.jpg",
+      "path": "web-source/dist/learning/listen.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/beginner-photo-generation.json; original AI-generated artwork record",
+      "expectedBytes": 86990,
+      "expectedSha256": "89e776fc674d58079bd151fbfea80044d5114a309cd2f570264125da4abed848",
+      "expectedGitBlobSha": "cc45582caa0c09dbdecef7b779a09fa6022f616a"
+    },
+    {
+      "source": "smartvio-mobile/dist/learning/phrase.jpg",
+      "path": "web-source/dist/learning/phrase.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/beginner-photo-generation.json; original AI-generated artwork record",
+      "expectedBytes": 83259,
+      "expectedSha256": "6356f4f6f53e8cb782d55f78af868186cfa0297d5910eed29baba84d1b285620",
+      "expectedGitBlobSha": "aa1478a2cf57e5850abdbcf4c469c53ca14b6f63"
+    },
+    {
+      "source": "smartvio-mobile/dist/learning/record.jpg",
+      "path": "web-source/dist/learning/record.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/beginner-photo-generation.json; original AI-generated artwork record",
+      "expectedBytes": 94290,
+      "expectedSha256": "9879ac94d8f5988235c44cfb6e18e0e12310650157c5b661187358abb58ac72c",
+      "expectedGitBlobSha": "f8bfefd48dff46283a65f0ef3f4efdd9c31f09e4"
+    },
+    {
+      "source": "smartvio-mobile/dist/learning/tuner.jpg",
+      "path": "web-source/dist/learning/tuner.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/beginner-photo-generation.json; original AI-generated artwork record",
+      "expectedBytes": 75461,
+      "expectedSha256": "55207d659bd8f016f3dcd1c55c5156e2cd0bf8120a871a83c70e1a6ef5b98669",
+      "expectedGitBlobSha": "081d2016d6b1c411ea4a1bf43bcca74913a09d96"
+    },
+    {
+      "source": "smartvio-mobile/dist/learning/welcome.jpg",
+      "path": "web-source/dist/learning/welcome.jpg",
+      "category": "original-app-asset",
+      "evidence": "asset-notes/beginner-photo-generation.json; original AI-generated artwork record",
+      "expectedBytes": 88904,
+      "expectedSha256": "4b91fb4fff1d98cbcf066a3d712897bbfcd967f40bc34d0eb852553ebb8edc76",
+      "expectedGitBlobSha": "35b24de8d00d2609ce25cc276765875fd44d45b1"
+    },
+    {
+      "source": "smartvio-mobile/dist/lesson-camera.css",
+      "path": "web-source/dist/lesson-camera.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 1000,
+      "expectedSha256": "e2492269763ee9790ed85928bc1c1623c6eb292d6db9ce05ff23a9152b808d51",
+      "expectedGitBlobSha": "52993560bf0b2b28a6165f7b469c2298e1ce6b4e"
+    },
+    {
+      "source": "smartvio-mobile/dist/lesson-camera.js",
+      "path": "web-source/dist/lesson-camera.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 12717,
+      "expectedSha256": "35be8f73904fc63b5d9a510a693601ab4f27563ff0f7203e1fd555dc1305de02",
+      "expectedGitBlobSha": "66435f94c0130a2e5be5826a5d2fdd65e6347bf6"
+    },
+    {
+      "source": "smartvio-mobile/dist/lesson-client.css",
+      "path": "web-source/dist/lesson-client.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 20986,
+      "expectedSha256": "d46d7279be8723a797aaf6f4817d665a5e6b022540a449cfe500e6013b7f4f67",
+      "expectedGitBlobSha": "3b9e38f20ddb8fd78b8fcc0fe25b2bece3aafa5f"
+    },
+    {
+      "source": "smartvio-mobile/dist/lesson-client.js",
+      "path": "web-source/dist/lesson-client.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 66281,
+      "expectedSha256": "7a9fa0d742da1c855b1f480d20d740054d27a165dc6a806de5eb877782b8fd5d",
+      "expectedGitBlobSha": "929fca0f29e3bb90238e649dee74cc44ede2bb08"
+    },
+    {
+      "source": "smartvio-mobile/dist/lesson-data.js",
+      "path": "web-source/dist/lesson-data.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 9030,
+      "expectedSha256": "17768e19940c2f7825f4a058fd18145302ea3d0357f1e8cf71915923b4577e26",
+      "expectedGitBlobSha": "59f0d2da8a0a02e183a2404a3c0f022d3726a21d"
+    },
+    {
+      "source": "smartvio-mobile/dist/lesson-engine.js",
+      "path": "web-source/dist/lesson-engine.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 16708,
+      "expectedSha256": "d07d1b441bd9cda65ef929878c27df52c3f579f2de7a477e4799e6e9fb2834d5",
+      "expectedGitBlobSha": "ef5563d4880edbd94447fafcab79d19dedd41655"
+    },
+    {
+      "source": "smartvio-mobile/dist/lesson-progress-cloud.js",
+      "path": "web-source/dist/lesson-progress-cloud.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 9100,
+      "expectedSha256": "958ddf6721351b69737f91cae040c94df16fc9c428a7316a546cc6a79e0ee610",
+      "expectedGitBlobSha": "d715d415fea15a26087c0af629796ec27a210f85"
+    },
+    {
+      "source": "smartvio-mobile/dist/lucide.min.js",
+      "path": "web-source/dist/lucide.min.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 397450,
+      "expectedSha256": "ab85225ecc1daa2033607856f03dd2dabcbc08e2d260a5b97e17c690aa929766",
+      "expectedGitBlobSha": "e214bc7dfbe475ab06587a8efa20cca5ce136ca4"
+    },
+    {
+      "source": "smartvio-mobile/dist/manifest-de.webmanifest",
+      "path": "web-source/dist/manifest-de.webmanifest",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 654,
+      "expectedSha256": "443a54c4a06e035f26355ef20bb1dd78438384b153d1d22d57917719b9210471",
+      "expectedGitBlobSha": "026411ab1ce3f34f3cc5b0561d40a25047354843"
+    },
+    {
+      "source": "smartvio-mobile/dist/manifest-en.webmanifest",
+      "path": "web-source/dist/manifest-en.webmanifest",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 651,
+      "expectedSha256": "c66f54583069f96985aabd7ba359091c33afed4371c2850cb60e4565f3a181d4",
+      "expectedGitBlobSha": "fe05e443292aef5454f0e5182652390ce5b3dcb0"
+    },
+    {
+      "source": "smartvio-mobile/dist/manifest-ja.webmanifest",
+      "path": "web-source/dist/manifest-ja.webmanifest",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 694,
+      "expectedSha256": "f3e2c61f0f0ab6964a88b2516c26677edb3aacfcf02769dfb6bad393664e3fdb",
+      "expectedGitBlobSha": "1e80937810ac26a12aa8b0a2adcee7d2729bca7b"
+    },
+    {
+      "source": "smartvio-mobile/dist/manifest-vellen-de.webmanifest",
+      "path": "web-source/dist/manifest-vellen-de.webmanifest",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 654,
+      "expectedSha256": "443a54c4a06e035f26355ef20bb1dd78438384b153d1d22d57917719b9210471",
+      "expectedGitBlobSha": "026411ab1ce3f34f3cc5b0561d40a25047354843"
+    },
+    {
+      "source": "smartvio-mobile/dist/manifest-vellen-en.webmanifest",
+      "path": "web-source/dist/manifest-vellen-en.webmanifest",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 651,
+      "expectedSha256": "ff8e3de3a28e4dc8e835fcf344b1a190889da779d163ecadb443f8ceaa123927",
+      "expectedGitBlobSha": "0e7805b29ad1597891d0d51a880e2d0b5035a05d"
+    },
+    {
+      "source": "smartvio-mobile/dist/manifest-vellen-ja.webmanifest",
+      "path": "web-source/dist/manifest-vellen-ja.webmanifest",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 700,
+      "expectedSha256": "93f8d639a894288d14218e3608ab804e6a1fcf9d5e1199253cafb47e5cd0ebe3",
+      "expectedGitBlobSha": "b0d76f4740bc434f827f83926930e9849d7ef4c8"
+    },
+    {
+      "source": "smartvio-mobile/dist/manifest-vellen-zh.webmanifest",
+      "path": "web-source/dist/manifest-vellen-zh.webmanifest",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 640,
+      "expectedSha256": "fa417cdae7eb057db0183374804896755a821e33b3c32673113af17fe41b0e1b",
+      "expectedGitBlobSha": "c9fce971ceefddd552d95fa6cc82c01cd5a0078c"
+    },
+    {
+      "source": "smartvio-mobile/dist/manifest-zh.webmanifest",
+      "path": "web-source/dist/manifest-zh.webmanifest",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 640,
+      "expectedSha256": "b2a87de9249fbedf04d68fcf5dc93cbb7a48244d5194fcc0b0b2db6b565c6235",
+      "expectedGitBlobSha": "5c3f7ac8288a139ba19ecedd8d212b1ffcc97f0a"
+    },
+    {
+      "source": "smartvio-mobile/dist/manifest.webmanifest",
+      "path": "web-source/dist/manifest.webmanifest",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 590,
+      "expectedSha256": "2ea73f5808ce0beb8b8f2b24da841e68c9144dab8cd3f42f00d8694470631f0a",
+      "expectedGitBlobSha": "a5ce73c398f65662c034172c68b1ba28911419ad"
+    },
+    {
+      "source": "smartvio-mobile/dist/media-store.js",
+      "path": "web-source/dist/media-store.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 24257,
+      "expectedSha256": "d22f8efefca9424dd96390d8a29143640fc567976164f3542c9c3fd0257f9e9a",
+      "expectedGitBlobSha": "7956dbfdfaa4ac61f66d756d730421281108d850"
+    },
+    {
+      "source": "smartvio-mobile/dist/midi.js",
+      "path": "web-source/dist/midi.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 45321,
+      "expectedSha256": "b7293c177385a0aee6c840b11ea1128836ed2add2e60e426bd26cbbd9889ef7b",
+      "expectedGitBlobSha": "32ab92a831d1f943874fa62bd2e2b3a09d989a38"
+    },
+    {
+      "source": "smartvio-mobile/dist/mobile-refinement-v28.css",
+      "path": "web-source/dist/mobile-refinement-v28.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2664,
+      "expectedSha256": "91cc8743e65fe238ff6d7259e5c7043731ef34bf8ae5de73014e52f26bb6505d",
+      "expectedGitBlobSha": "5a2ac1bcee4e9ae8d27bd06959144588b4163eee"
+    },
+    {
+      "source": "smartvio-mobile/dist/module.png",
+      "path": "web-source/dist/module.png",
+      "category": "original-app-asset",
+      "evidence": "Existing original SmartVio concept illustration, preserved from V20; not a physical prototype photograph",
+      "expectedBytes": 1551200,
+      "expectedSha256": "818d1f3d2497105b22c6c15ffa0d9e366142c5b018fb32a11e85c871630cf63b",
+      "expectedGitBlobSha": "a9ffab7026186250b93ca0b116d25e21727caa44"
+    },
+    {
+      "source": "smartvio-mobile/dist/offline.js",
+      "path": "web-source/dist/offline.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 5239,
+      "expectedSha256": "3d33a19e25566677b3203231d062d5154a0253e8d8a70b1917bb48ef0e1d3b07",
+      "expectedGitBlobSha": "cfd00e6ecd295fcc49c7607c5300ca765c2dd9e9"
+    },
+    {
+      "source": "smartvio-mobile/dist/performance.js",
+      "path": "web-source/dist/performance.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 35954,
+      "expectedSha256": "18758c052618b06eabcba081b567c05ee8c36ec895a700663837d929549c9e53",
+      "expectedGitBlobSha": "7513518ba6dfd172e503931c0893b85f03e89796"
+    },
+    {
+      "source": "smartvio-mobile/dist/pitch.js",
+      "path": "web-source/dist/pitch.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 9018,
+      "expectedSha256": "f0f40f3706c2f215247920044f9c1f721cbdf81af2913be85ac2adb76c03c37f",
+      "expectedGitBlobSha": "ce83e90a80c0ec9642e01303bc9a1d33293c19e6"
+    },
+    {
+      "source": "smartvio-mobile/dist/practice-controls-v28.css",
+      "path": "web-source/dist/practice-controls-v28.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 4559,
+      "expectedSha256": "9baa9535aecea5af8fccef010d3e98aa8f3f1dd023a3fad26ffc267839c92b34",
+      "expectedGitBlobSha": "69e7335a7223ce8f4d63ae6d58429a3762556d1f"
+    },
+    {
+      "source": "smartvio-mobile/dist/preset-cloud.css",
+      "path": "web-source/dist/preset-cloud.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 612,
+      "expectedSha256": "d1d37049246d279e6449b3fb137e8d75f311ef4a5a5ba2fe274b930d02f697a9",
+      "expectedGitBlobSha": "89d0c4a13d8149e2262e159202b80b0f9f5cfccb"
+    },
+    {
+      "source": "smartvio-mobile/dist/preset-cloud.js",
+      "path": "web-source/dist/preset-cloud.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 15693,
+      "expectedSha256": "1b7fad12974f05ffaf8552e1deedd4bd6707b72d79425335a76898c5ace8ac79",
+      "expectedGitBlobSha": "daff4bc8590deb5afd8f20ef5f210ad4212d345b"
+    },
+    {
+      "source": "smartvio-mobile/dist/recording-center.css",
+      "path": "web-source/dist/recording-center.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 11233,
+      "expectedSha256": "a9ce42fde843a5d43bb65320d8a9f66882618c6ad7bfa3e0c22fa0da0b3246cc",
+      "expectedGitBlobSha": "e8480c98cc90c162fd91b2603bcfc9b6065342b4"
+    },
+    {
+      "source": "smartvio-mobile/dist/recording-center.js",
+      "path": "web-source/dist/recording-center.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 22267,
+      "expectedSha256": "aff04eda39afc04c42136559095e2752252888988e44d114249ea0ceb596de62",
+      "expectedGitBlobSha": "f41743d54beca59b585f2fd037625dd0f52affb0"
+    },
+    {
+      "source": "smartvio-mobile/dist/release.js",
+      "path": "web-source/dist/release.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 191,
+      "expectedSha256": "3d7ebdf879d590f0afa03dcb064d2dc5f3d418740461067a8e1be082a4e38bd3",
+      "expectedGitBlobSha": "91f9e576070df6db21974caa754ef7b479d0867d"
+    },
+    {
+      "source": "smartvio-mobile/dist/releases/android/Silvio-V27-iQOO11-test.apk",
+      "path": "web-source/dist/releases/android/Silvio-V27-iQOO11-test.apk",
+      "category": "original-app-asset",
+      "evidence": "Existing signed own V27 Android shell; exact SHA/size/package bound by apk-provenance.json. Loads current web, not rebuilt or physically tested in V29.",
+      "expectedBytes": 37481,
+      "expectedSha256": "5f864c788a188aec85730b96f76086a73951e7a2578111fa90a6896656472e9c",
+      "expectedGitBlobSha": "03f552ec94821e6b9c6b88cb097f47dc3885c1e3"
+    },
+    {
+      "source": "smartvio-mobile/dist/releases/android/release.json",
+      "path": "web-source/dist/releases/android/release.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 645,
+      "expectedSha256": "dcc42365ec5c9de4b4ce3bd89a2eca25c2f51a810da54fd0110b118cc9e64b2f",
+      "expectedGitBlobSha": "883cdff8d9440ff338a06b7fd09f5254b0128f3a"
+    },
+    {
+      "source": "smartvio-mobile/dist/reliability-ui.js",
+      "path": "web-source/dist/reliability-ui.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 17574,
+      "expectedSha256": "5d3c7f31ce8a9fdb9390984d6ea27470c6dcdc71a24935f6c8da8e411daecbec",
+      "expectedGitBlobSha": "7824572f136cff64467b9015940000cc63c45586"
+    },
+    {
+      "source": "smartvio-mobile/dist/reliability-v29.css",
+      "path": "web-source/dist/reliability-v29.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 4140,
+      "expectedSha256": "d9c9a7e77e0c3775c97dd9e32d60cc619b512cdc6b8fab9095960fe918fc2e71",
+      "expectedGitBlobSha": "e081672c0a7113364ceff32e47551783bf0f0140"
+    },
+    {
+      "source": "smartvio-mobile/dist/reports/SmartVio-feasibility-20261014.pdf",
+      "path": "web-source/dist/reports/SmartVio-feasibility-20261014.pdf",
+      "category": "own-report",
+      "evidence": "Tracked SmartVio report; source commit binds exact bytes",
+      "expectedBytes": 539016,
+      "expectedSha256": "d40cd85d31f4d4a3c384ec4d2a97da7fcfecb5a50d139c797ea6732156ddef0d",
+      "expectedGitBlobSha": "f2f3cc827d3fd2160bdd45dbdae8c50c208a1d58"
+    },
+    {
+      "source": "smartvio-mobile/dist/reports/SmartVio-feasibility-20261015.pdf",
+      "path": "web-source/dist/reports/SmartVio-feasibility-20261015.pdf",
+      "category": "own-report",
+      "evidence": "Tracked SmartVio report; source commit binds exact bytes",
+      "expectedBytes": 354193,
+      "expectedSha256": "ca76f11331566641697cef8a496c80791830ab097447e47f955035d93de95fb4",
+      "expectedGitBlobSha": "f2d1a2a12fabeb180ba83280da2b08876ea8fb2a"
+    },
+    {
+      "source": "smartvio-mobile/dist/reports/backend-validation-20261014.json",
+      "path": "web-source/dist/reports/backend-validation-20261014.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 3749,
+      "expectedSha256": "a6a62cac698e8cf0799862050385194ebb06e846e129e48785391fddfc6bf9f1",
+      "expectedGitBlobSha": "ccef54bf450e51cf8535f66562ce500e229ac512"
+    },
+    {
+      "source": "smartvio-mobile/dist/reports/browser-validation-20261014.json",
+      "path": "web-source/dist/reports/browser-validation-20261014.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 24021,
+      "expectedSha256": "17689306fc73c0474dd222c551184c729a222bd57dc00ba8502025ef9dead74d",
+      "expectedGitBlobSha": "eb4467acdf904bf0c4ce3ebf9e21a8bb4e957789"
+    },
+    {
+      "source": "smartvio-mobile/dist/reports/feasibility-20261014.html",
+      "path": "web-source/dist/reports/feasibility-20261014.html",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 45605,
+      "expectedSha256": "fd7f95b8e53bdb9d67d0abad88a99a612ae72f05abcb6584592564a30c293f75",
+      "expectedGitBlobSha": "f4eb6dba537fbc00e6a3ff190a637cb345ec0470"
+    },
+    {
+      "source": "smartvio-mobile/dist/reports/feasibility-20261015.html",
+      "path": "web-source/dist/reports/feasibility-20261015.html",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 10055,
+      "expectedSha256": "cceada211e59ac2c0c2efc0b375370880d90f02a416570580d133f9473f645e1",
+      "expectedGitBlobSha": "9c4a4172d57d1176ce77e95215ed1140e24ce18d"
+    },
+    {
+      "source": "smartvio-mobile/dist/reports/release-current.html",
+      "path": "web-source/dist/reports/release-current.html",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 8894,
+      "expectedSha256": "2223ab7920da016f6a07d6afd05267d3a6e2134468f6ec05d35c98e981fe8ddd",
+      "expectedGitBlobSha": "2b167d03661c76565bd9612c6985bbb0c41e6c8a"
+    },
+    {
+      "source": "smartvio-mobile/dist/review-v28-community.txt",
+      "path": "web-source/dist/review-v28-community.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 10556,
+      "expectedSha256": "74c046ae6b9d07850df8a58b7adf6d6278f76c6b94f175ad90acf5a6fb39ec65",
+      "expectedGitBlobSha": "09a99c53f6ce94e8eb697c6dbdee0823425024ea"
+    },
+    {
+      "source": "smartvio-mobile/dist/review-v28-release.txt",
+      "path": "web-source/dist/review-v28-release.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 3870,
+      "expectedSha256": "57644679ae8655655f36e784cc5026c33393ac71c1ac228749ba4feafe0b2b92",
+      "expectedGitBlobSha": "4f5bf99afd047d101a419a584d413ad06e7238e5"
+    },
+    {
+      "source": "smartvio-mobile/dist/review-v28-tuner.txt",
+      "path": "web-source/dist/review-v28-tuner.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 7507,
+      "expectedSha256": "8efb0e3fb8b31ef610a84d9525106faefd7b3362101473c379f7a84e0156db40",
+      "expectedGitBlobSha": "a5a3fc1164b6368e8e580f42766a2d289a689673"
+    },
+    {
+      "source": "smartvio-mobile/dist/review-v28.html",
+      "path": "web-source/dist/review-v28.html",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 26659,
+      "expectedSha256": "97caef169d4caed8a1830d4818989f2998cd323e24e9b5345a8516fe56995210",
+      "expectedGitBlobSha": "a126b2be7c85b733c7d53345372a3a8780d68df5"
+    },
+    {
+      "source": "smartvio-mobile/dist/score-model.js",
+      "path": "web-source/dist/score-model.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 6455,
+      "expectedSha256": "4466e21a207d7b4324df52d1441b5ff0be25950eefe48633aa4927258084cf02",
+      "expectedGitBlobSha": "48851de5160a096f2567823cd667d94a7eed150e"
+    },
+    {
+      "source": "smartvio-mobile/dist/seed.js",
+      "path": "web-source/dist/seed.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 83828,
+      "expectedSha256": "74ed6bd3a01539153e69de9051e03bb7cafb93d979b70085997e01c70b96b3cb",
+      "expectedGitBlobSha": "f97058ea785dbc649abaa94f3e50c1fae60de182"
+    },
+    {
+      "source": "smartvio-mobile/dist/style.css",
+      "path": "web-source/dist/style.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 119450,
+      "expectedSha256": "c35a8339d51233dae6f515d926eabfb9364b55d07b7b7ca211583b414aed1f99",
+      "expectedGitBlobSha": "81f1ef6453f4c6ddb3f3a0e4f7cad6e153185b0d"
+    },
+    {
+      "source": "smartvio-mobile/dist/sw.js",
+      "path": "web-source/dist/sw.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 10678,
+      "expectedSha256": "ce9309d089b170d26ca681804012a24acf0c34644251bf8ea81c8951b1a8cea6",
+      "expectedGitBlobSha": "1dedceef61ed945badde055adc01f4eab7d84184"
+    },
+    {
+      "source": "smartvio-mobile/dist/tutorial.css",
+      "path": "web-source/dist/tutorial.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 16376,
+      "expectedSha256": "e9656fd8931d07c6d63f9f39aad1826d16ffabb9aabba35c2e72414f325cd2bd",
+      "expectedGitBlobSha": "fc69f233f45a3bbff12b070345c502c7e72572e2"
+    },
+    {
+      "source": "smartvio-mobile/dist/tutorial.js",
+      "path": "web-source/dist/tutorial.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 46240,
+      "expectedSha256": "f21112a5fe602305de3260ab017cc84a1e1b0b13f33f28516dfa2eab3dd927a5",
+      "expectedGitBlobSha": "67ae51d7cbb7203d2486b7440a7f9e8567f1699a"
+    },
+    {
+      "source": "smartvio-mobile/dist/video-capture.js",
+      "path": "web-source/dist/video-capture.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 6909,
+      "expectedSha256": "b854e43ea83243e02ddfbc154c96626cfa9fa2f4ed6a51ee04c92d10063b8f0f",
+      "expectedGitBlobSha": "2a519e10953fb85a1a7890031fc973e2cd9fa312"
+    },
+    {
+      "source": "smartvio-mobile/dist/viewport.js",
+      "path": "web-source/dist/viewport.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 1577,
+      "expectedSha256": "c52872f54c3e1e58190a48b5a3058f4c61798976e6adc59316a117172c605f6a",
+      "expectedGitBlobSha": "a6c28b31cdc73f76f824f2956f856d62c304400a"
+    },
+    {
+      "source": "smartvio-mobile/dist/violin-art.css",
+      "path": "web-source/dist/violin-art.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 6681,
+      "expectedSha256": "fce58e95b8daf722b81613a9e52487549e66ba298d33b38e36e5b8f52c18bbb2",
+      "expectedGitBlobSha": "a8b8dd01b3b88b4b00f792c98705aa6462bfcd89"
+    },
+    {
+      "source": "smartvio-mobile/dist/violin-art.js",
+      "path": "web-source/dist/violin-art.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 16113,
+      "expectedSha256": "2f14a7a32d0ea19c21574bb24e4df472ded544b6548ec008dbca725003e69be2",
+      "expectedGitBlobSha": "f8b52085ce0fb26cd20abd94d08e9d2fbc3d394e"
+    },
+    {
+      "source": "smartvio-mobile/dist/violin-illustration.css",
+      "path": "web-source/dist/violin-illustration.css",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 3378,
+      "expectedSha256": "dc1483e67eba4c94e2f266a5368542bd17fc02f99d7179ad89ca5e313b2acd6e",
+      "expectedGitBlobSha": "9583091d70a4f25ceac4d6024387583b84692159"
+    },
+    {
+      "source": "smartvio-mobile/dist/violin-tuner.js",
+      "path": "web-source/dist/violin-tuner.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 5060,
+      "expectedSha256": "fdba108e0fe711949def60167323b9baddcefbb273af711b6b662821783e9c39",
+      "expectedGitBlobSha": "7c8950a995a8f26af65582187290c644b6ec3c7c"
+    },
+    {
+      "source": "smartvio-mobile/dist/violin.png",
+      "path": "web-source/dist/violin.png",
+      "category": "original-app-asset",
+      "evidence": "Existing original SmartVio concept violin illustration, preserved from V20; not a competitor asset or physical prototype photograph",
+      "expectedBytes": 966251,
+      "expectedSha256": "2934c234811bb047777974d059b00233a1f8e425f5b55ebc4ea5fb9967baa07a",
+      "expectedGitBlobSha": "5938be2b659475f69014fb31e8cf53e0eeeef4a0"
+    },
+    {
+      "source": "smartvio-mobile/dist/visuals/violin-acoustic-v27.svg",
+      "path": "web-source/dist/visuals/violin-acoustic-v27.svg",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2046,
+      "expectedSha256": "12096d825656ccc310cce672533eb8523b6b951f5ab602959a69ed42f9289b8d",
+      "expectedGitBlobSha": "405ce834c5f6c74592daf0790568b4fefc69a019"
+    },
+    {
+      "source": "smartvio-mobile/dist/visuals/violin-electric-v27.svg",
+      "path": "web-source/dist/visuals/violin-electric-v27.svg",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2143,
+      "expectedSha256": "50f2da348983a42ba204bb68c3c3e4748a8c1aed7c45a2db81bec20cbb5d49df",
+      "expectedGitBlobSha": "773c1a6f471e7b4f4143e5c87b06140ee9672a64"
+    },
+    {
+      "source": "smartvio-mobile/dist/workspace-backup.js",
+      "path": "web-source/dist/workspace-backup.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 30980,
+      "expectedSha256": "3c9045e72f42bf986d73f1a44e0e100bf2c3909059307e4873863723896adb43",
+      "expectedGitBlobSha": "c49828e9e7d08415dcc4e2962804d1c6ae2ebbb4"
+    },
+    {
+      "source": "smartvio-mobile/dist/workspace-state.js",
+      "path": "web-source/dist/workspace-state.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 3471,
+      "expectedSha256": "c4c050f501cef7d375902e48db15a4f91cd4cebb7066c955f98ae0a2d4c6db86",
+      "expectedGitBlobSha": "35af8a161947b95b0ea91eac1fdff9c23be994c5"
+    },
+    {
+      "source": "smartvio-mobile/drizzle.config.ts",
+      "path": "web-source/drizzle.config.ts",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 133,
+      "expectedSha256": "98ce916dbc6ac36109c0c41d0d39bdf7d4c97d00bfe875f7e2267766307abba7",
+      "expectedGitBlobSha": "c4ce96ef61ddf6a930dd8538bb436598122fce8a"
+    },
+    {
+      "source": "smartvio-mobile/drizzle/0000_wise_roland_deschain.sql",
+      "path": "web-source/drizzle/0000_wise_roland_deschain.sql",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 6552,
+      "expectedSha256": "abaf9c1a0fd9a108aa4eedc6a61e430fa109c1b437a4ec0fbcc87fd324b8b8f3",
+      "expectedGitBlobSha": "82bbe9ed17b8447b91a3e36eab5298d056d0ed7f"
+    },
+    {
+      "source": "smartvio-mobile/drizzle/0001_furry_zarek.sql",
+      "path": "web-source/drizzle/0001_furry_zarek.sql",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 129,
+      "expectedSha256": "aa30c2d99662875a2c37ad57603d3cec649bc8802c206ef2a55c11a471db2dee",
+      "expectedGitBlobSha": "a3f389d0e43c5a7f52f03c96dac2dfae745f32c2"
+    },
+    {
+      "source": "smartvio-mobile/drizzle/0002_learn_onboarding.sql",
+      "path": "web-source/drizzle/0002_learn_onboarding.sql",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 954,
+      "expectedSha256": "213dfca8c6b72878611367b186902c21b05ddcda7f6ef3821dcbd89b63f7f1b9",
+      "expectedGitBlobSha": "65851a61e7b7bf47a29a16fa8916a364db7fe1a9"
+    },
+    {
+      "source": "smartvio-mobile/drizzle/0003_private_preset_backup.sql",
+      "path": "web-source/drizzle/0003_private_preset_backup.sql",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 940,
+      "expectedSha256": "2a6ba61c11cd59630f979d118b232db3bf894c32af2f1a669518e3c899ac380b",
+      "expectedGitBlobSha": "85b5b8ae21ec4e284285454c4e030933c58cf092"
+    },
+    {
+      "source": "smartvio-mobile/drizzle/0004_community_videos.sql",
+      "path": "web-source/drizzle/0004_community_videos.sql",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2516,
+      "expectedSha256": "4bbdfeae86b71f9db5e782d1edfa78d61cfcc4e15547b6e9a380cdb10315a18d",
+      "expectedGitBlobSha": "a704ce8b2f8a07dad1eafb62de2717624049e3e7"
+    },
+    {
+      "source": "smartvio-mobile/drizzle/0005_lesson_studio.sql",
+      "path": "web-source/drizzle/0005_lesson_studio.sql",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 1775,
+      "expectedSha256": "674252e1f5f1ff79d657d1c2f20e79ee1435fef234c4dab087e09441ee1abcc6",
+      "expectedGitBlobSha": "14eb3905c0575168cfb855a78fcb533378274030"
+    },
+    {
+      "source": "smartvio-mobile/drizzle/meta/0000_snapshot.json",
+      "path": "web-source/drizzle/meta/0000_snapshot.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 24022,
+      "expectedSha256": "f829f68d0e6ab7d5f65f07024973bb3c915f7c1472ef651ababefb938e493ecf",
+      "expectedGitBlobSha": "177b1a6e1b8bc1a9e2f7d9320581115669b34983"
+    },
+    {
+      "source": "smartvio-mobile/drizzle/meta/0001_snapshot.json",
+      "path": "web-source/drizzle/meta/0001_snapshot.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 24399,
+      "expectedSha256": "71c03615f9765b65cd6e70d9b9f058cdfc38b6bcf61bd603737995571e616fbf",
+      "expectedGitBlobSha": "56aa8ead5f8326daf1f06bc4e8e99f9a49f532b7"
+    },
+    {
+      "source": "smartvio-mobile/drizzle/meta/0002_snapshot.json",
+      "path": "web-source/drizzle/meta/0002_snapshot.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 25934,
+      "expectedSha256": "06e8e92cd10d2b2b0562f8e8880c7d17e57755ac95da45bd46d4af6de1d9098b",
+      "expectedGitBlobSha": "7fe53002c6c396bd2232534e923fc4ed21ad5c21"
+    },
+    {
+      "source": "smartvio-mobile/drizzle/meta/0003_snapshot.json",
+      "path": "web-source/drizzle/meta/0003_snapshot.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 28484,
+      "expectedSha256": "4b00a8cf401b89ac57ec210c0277152fe601da4697743c53912bc99bfc839478",
+      "expectedGitBlobSha": "3b93a21c5f8481367fe29fa641cac270a950162d"
+    },
+    {
+      "source": "smartvio-mobile/drizzle/meta/0004_snapshot.json",
+      "path": "web-source/drizzle/meta/0004_snapshot.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 35859,
+      "expectedSha256": "bcff4f0f68fd9d3915dcf17d9abfb1cf9aab32f3281ce8f4ab8fa693224ba3d5",
+      "expectedGitBlobSha": "00014994263a1395bf941b7afbe4a787ed1a4982"
+    },
+    {
+      "source": "smartvio-mobile/drizzle/meta/0005_snapshot.json",
+      "path": "web-source/drizzle/meta/0005_snapshot.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 42650,
+      "expectedSha256": "3dedea1483d400e1a94acec66337e26a940c4fa7fbf215335bb9ae0e6342709f",
+      "expectedGitBlobSha": "b9d848161ff35f86a193ec5b4fdbc69037e36944"
+    },
+    {
+      "source": "smartvio-mobile/drizzle/meta/_journal.json",
+      "path": "web-source/drizzle/meta/_journal.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 927,
+      "expectedSha256": "9a89391cf6dc19d36bcea2012767fcaa940f32c0b4ab45f06445031e011109e8",
+      "expectedGitBlobSha": "963e2cf7bc791fe48e4edafd2abd469bb7934b3b"
+    },
+    {
+      "source": "smartvio-mobile/mobile-home-preview.jpg",
+      "path": "web-source/mobile-home-preview.jpg",
+      "category": "original-app-asset",
+      "evidence": "Generated screenshot of the SmartVio client interface; no private account/browser data",
+      "expectedBytes": 25568,
+      "expectedSha256": "7d02abbe408e40430a7aa6ca530c3e459a4da6e7b418db984515156c17bd9e61",
+      "expectedGitBlobSha": "9c3b476d61bb0723861635c78c784a3b176208f2"
+    },
+    {
+      "source": "smartvio-mobile/package.json",
+      "path": "web-source/package.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 450,
+      "expectedSha256": "b950449cfc8a1e46b8399ca43212a28bc702709c120f9d643b4cb4e66137f9fb",
+      "expectedGitBlobSha": "9745ccf7a7bd1ed38cb33a63b7c5abc002b71f3b"
+    },
+    {
+      "source": "smartvio-mobile/pnpm-lock.yaml",
+      "path": "web-source/pnpm-lock.yaml",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 29303,
+      "expectedSha256": "97091aed83475654b0e893650f93371ce587c574cb55d46f8a3cc5fccf521b12",
+      "expectedGitBlobSha": "3f97e0c8c2ab693064bb54a2ab34199d68c278db"
+    },
+    {
+      "source": "smartvio-mobile/pnpm-workspace.yaml",
+      "path": "web-source/pnpm-workspace.yaml",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 29,
+      "expectedSha256": "ac02d96368617c760f093cfe61fdec64b6244007ab3553e0d6621f706f54a353",
+      "expectedGitBlobSha": "5ed0b5af0d45919f64c66edfb16a5f4512461fa1"
+    },
+    {
+      "source": "smartvio-mobile/release.json",
+      "path": "web-source/release.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 165,
+      "expectedSha256": "a11345c41d45dba9d7a7bf2b5b83e0ab4676782dd99be9633f9dbaa38b2720db",
+      "expectedGitBlobSha": "65947dc0a6fc00289ea421cdaef5a0cf7da7e1f3"
+    },
+    {
+      "source": "smartvio-mobile/reports/auth-provider-contract-v18.json",
+      "path": "web-source/reports/auth-provider-contract-v18.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 4519,
+      "expectedSha256": "41a47aefa54e6f5504962ce98f975a5938be27ee13c5580eaa4a48f98022dac2",
+      "expectedGitBlobSha": "167d155b3b6897b1f0656b525514d55118e57824"
+    },
+    {
+      "source": "smartvio-mobile/reports/ios-audio-repair-20261016.json",
+      "path": "web-source/reports/ios-audio-repair-20261016.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2594,
+      "expectedSha256": "afca25823ba348519595d18d8fc0b1a0ddcefc7f7e0ba1b09cb88298db4e5868",
+      "expectedGitBlobSha": "3cd677fc1fea6ebd782b09250d0546489deac776"
+    },
+    {
+      "source": "smartvio-mobile/reports/v16/audio-assets-independent-qa.json",
+      "path": "web-source/reports/v16/audio-assets-independent-qa.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 23501,
+      "expectedSha256": "3be1143b970040720b93260ebcb007c49a514fc5f8172edf4d29459ef9890f10",
+      "expectedGitBlobSha": "fc0ba7fdc583c1ae50e47c0d29b2cf3ed850d37a"
+    },
+    {
+      "source": "smartvio-mobile/reports/v16/audio-feasibility.json",
+      "path": "web-source/reports/v16/audio-feasibility.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 3707,
+      "expectedSha256": "80c4033b2628a1a6ba69f34e60f09820d0ac22d5a23019c1671dec96b30fc9a5",
+      "expectedGitBlobSha": "9116e2ca58b76a1695f38a4eae3ddaccf9217790"
+    },
+    {
+      "source": "smartvio-mobile/reports/v16/audio-implementation.json",
+      "path": "web-source/reports/v16/audio-implementation.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 4422,
+      "expectedSha256": "7a2c3423667c0a27f1bd6e0847b1c03b4f93296a16fc953cc5e0928001a6f29f",
+      "expectedGitBlobSha": "85e8a250b691b0df695649eab2957114c43342f9"
+    },
+    {
+      "source": "smartvio-mobile/reports/v16/browser-final-verification.json",
+      "path": "web-source/reports/v16/browser-final-verification.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 15935,
+      "expectedSha256": "5bb1c0978439848df57ebc69d68af4026b8add4538774ba945c12638a87d8da2",
+      "expectedGitBlobSha": "8365e9e9d30480a650d1cced0706a5a62774b316"
+    },
+    {
+      "source": "smartvio-mobile/reports/v16/community-feasibility.json",
+      "path": "web-source/reports/v16/community-feasibility.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 39322,
+      "expectedSha256": "16a8678b144f6724af2a6595366c37cd7b565a33bf1c1d55d851d7f80070b2d9",
+      "expectedGitBlobSha": "5821902119094511db012b2b5737b2154df68b13"
+    },
+    {
+      "source": "smartvio-mobile/reports/v16/full-tests-final.txt",
+      "path": "web-source/reports/v16/full-tests-final.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 28272,
+      "expectedSha256": "fc64dd5a1f1758bdfa301a7260fead221e4875aecc0c110c52bda494c029df0b",
+      "expectedGitBlobSha": "fe1c183f447dde92154af06d3405c771420b7761"
+    },
+    {
+      "source": "smartvio-mobile/reports/v16/learning-midi-feasibility.json",
+      "path": "web-source/reports/v16/learning-midi-feasibility.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 24816,
+      "expectedSha256": "78c31205c356243fb5e275b92f5ee8db43c4d65f468290462323d116fce35db3",
+      "expectedGitBlobSha": "20d5432e71b1f70aa0a273d2b57985351450cde7"
+    },
+    {
+      "source": "smartvio-mobile/reports/v16/learning-midi-implementation.json",
+      "path": "web-source/reports/v16/learning-midi-implementation.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2736,
+      "expectedSha256": "3b7403ea1227a97211d4fa8f08bd90a8f41e909beddac29006412a083a90c67e",
+      "expectedGitBlobSha": "29acf58cf439a21473e8493c85b53fdfaebad4cd"
+    },
+    {
+      "source": "smartvio-mobile/reports/v16/preview-v16-protocol-qa.json",
+      "path": "web-source/reports/v16/preview-v16-protocol-qa.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 1756,
+      "expectedSha256": "744d8aef591114845b20a8137880f6b1f2fa8d61987f8a409ec935bac241a14a",
+      "expectedGitBlobSha": "1f11bf86e51f0d75bb320f85e5951889c55d8770"
+    },
+    {
+      "source": "smartvio-mobile/reports/v16/self-review-before-implementation.json",
+      "path": "web-source/reports/v16/self-review-before-implementation.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2185,
+      "expectedSha256": "b6b4770ddd35cb5f09b2f9fd2f40b978d62dddbddff965849556e78861604738",
+      "expectedGitBlobSha": "d0eb5e89cdc6ebecae8af4253ad2860e3a020147"
+    },
+    {
+      "source": "smartvio-mobile/reports/v16/validation.json",
+      "path": "web-source/reports/v16/validation.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2292,
+      "expectedSha256": "3a9a79adfebaa4271aca89967e7b4597a54df57ae918f0468d84251f010ffc70",
+      "expectedGitBlobSha": "5e29a02972c4a2629864f911a4d07baa3806dd49"
+    },
+    {
+      "source": "smartvio-mobile/reports/v18-delivery-validation.json",
+      "path": "web-source/reports/v18-delivery-validation.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 4913,
+      "expectedSha256": "ac9fa9c46f24913bea9857d03b114a846b2c415cdcb9483f035e6c4f8e5a8d33",
+      "expectedGitBlobSha": "2e0188fdd477b21e934c732a7bd4d7705887ebf6"
+    },
+    {
+      "source": "smartvio-mobile/reports/v19-recording-validation.json",
+      "path": "web-source/reports/v19-recording-validation.json",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 17975,
+      "expectedSha256": "a2f82a3ad61a0eccb9b0fd3340d536981cddf926fc86b38f066461712338a44d",
+      "expectedGitBlobSha": "6fe4dbf27c9874789452d76a6af96e1ba2154873"
+    },
+    {
+      "source": "smartvio-mobile/reports/v21-client-guide.txt",
+      "path": "web-source/reports/v21-client-guide.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2991,
+      "expectedSha256": "fdc5d5a0f0d7bb703a2eeacbc36514dbadc21176fec5221e0c734b4714c11ae7",
+      "expectedGitBlobSha": "89ae7e8d7d5b8f1adc0f4a2718a4119ba75632e0"
+    },
+    {
+      "source": "smartvio-mobile/reports/v21-lesson-cms.txt",
+      "path": "web-source/reports/v21-lesson-cms.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 4235,
+      "expectedSha256": "ba9797ee8b9fbc24ab4ccfd9f8cabfcffb4d5e874a6c87a40a092cba2565f1ae",
+      "expectedGitBlobSha": "ef8b34620b959a1b01625cbe1563a765d4efd60d"
+    },
+    {
+      "source": "smartvio-mobile/reports/v22-curriculum-guide.txt",
+      "path": "web-source/reports/v22-curriculum-guide.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 3784,
+      "expectedSha256": "395115e49aff1907fef1ffd158230b0c1c86a436416afa21414fc916af2e06e8",
+      "expectedGitBlobSha": "3f475ab3a697562304ec509c7ca0b3fcaf9977ea"
+    },
+    {
+      "source": "smartvio-mobile/reports/v22-release-notes.txt",
+      "path": "web-source/reports/v22-release-notes.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2884,
+      "expectedSha256": "5ddc858ef30c9fd85b5a8c69af5d49eac0d721ba70fd25accce61195a00e52d5",
+      "expectedGitBlobSha": "00d6ef711c8fa4524c03ce28122d235fa7a5db2c"
+    },
+    {
+      "source": "smartvio-mobile/reports/v23-release-notes.txt",
+      "path": "web-source/reports/v23-release-notes.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2510,
+      "expectedSha256": "cdc5140f99acdbb19279ec6f9ad5de9f7082c9bbda50abae1fa8f4034026c7a4",
+      "expectedGitBlobSha": "a9a841dcb48d5b6344d5a001491f75248493f0f9"
+    },
+    {
+      "source": "smartvio-mobile/reports/v24-release-notes.txt",
+      "path": "web-source/reports/v24-release-notes.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2716,
+      "expectedSha256": "dfd0b600d6d668bd025d97c6b0ac7bf0be1b37b3551d377f9b6b691ba43401f8",
+      "expectedGitBlobSha": "bde0cbf0f17485cb32c164299c28f5e14d839028"
+    },
+    {
+      "source": "smartvio-mobile/reports/v25-release-notes.txt",
+      "path": "web-source/reports/v25-release-notes.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 3585,
+      "expectedSha256": "197865fc51ef17c632e06fe39cc70196567d86cf3d78ff696fe71899cdfa5f60",
+      "expectedGitBlobSha": "c87f7a2cb657500893a462af75889700c1596180"
+    },
+    {
+      "source": "smartvio-mobile/reports/v26-release-notes.txt",
+      "path": "web-source/reports/v26-release-notes.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2693,
+      "expectedSha256": "e9cc3e1e12f312b866052e5a373135bbbc91dbd2c604cf3d0bc13445c61d9447",
+      "expectedGitBlobSha": "a7678a8285f3bac94c52f58d443fd23c3cb0a391"
+    },
+    {
+      "source": "smartvio-mobile/reports/v27-release-notes.txt",
+      "path": "web-source/reports/v27-release-notes.txt",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2867,
+      "expectedSha256": "82c1b0ad1360fd424b5e22b617214d4bd6ed562d24e72d49b981bf44e3071c62",
+      "expectedGitBlobSha": "96bafc7bca87a52b135d081a069d91f5e05f3ea9"
+    },
+    {
+      "source": "smartvio-mobile/scripts/apply-catalog.cjs",
+      "path": "web-source/scripts/apply-catalog.cjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 1457,
+      "expectedSha256": "4d36db85eeadabc2b9d4097ba1240db4c5a57f0f058cf0f3c07256acd4195076",
+      "expectedGitBlobSha": "6b4b8063cf5793cfd05c907e4cfef1cf3b7abbca"
+    },
+    {
+      "source": "smartvio-mobile/scripts/build-worker.cjs",
+      "path": "web-source/scripts/build-worker.cjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 6146,
+      "expectedSha256": "1258bec29ee16ed887bb84fa019e6592ed6546bd25f6624b367e716fd02558b7",
+      "expectedGitBlobSha": "f34b2961d7f446a1d6fa046585d9a05e8fe756e4"
+    },
+    {
+      "source": "smartvio-mobile/scripts/convert-violin-samples.py",
+      "path": "web-source/scripts/convert-violin-samples.py",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 5448,
+      "expectedSha256": "ad4b429b857c839f3c079949c6b5d614810b5c7692a3d300d929a94f7b678701",
+      "expectedGitBlobSha": "881d65bae3f3089730b43ec98a9d82699c9f1dac"
+    },
+    {
+      "source": "smartvio-mobile/scripts/package-release.cjs",
+      "path": "web-source/scripts/package-release.cjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 3362,
+      "expectedSha256": "69fef1a3304ee7d2904adaf2afb8ea25c7efaf606ed272404304d105f72ad37a",
+      "expectedGitBlobSha": "c6438e339ca28b5d3755a892c316eba13ef31842"
+    },
+    {
+      "source": "smartvio-mobile/scripts/prepare-source-backup.cjs",
+      "path": "web-source/scripts/prepare-source-backup.cjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 16604,
+      "expectedSha256": "f1ce6eebdd4cdc32ed2b1503a084f237e35daa6fc11b9778f5cb0ecd85de8be5",
+      "expectedGitBlobSha": "40d9c91af8dbc603dcbeaf87e82e5ef38d73f970"
+    },
+    {
+      "source": "smartvio-mobile/scripts/preview.mjs",
+      "path": "web-source/scripts/preview.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 10641,
+      "expectedSha256": "6af53daafe5f379d6c2f6923a8c06e3eae44e127c6c5864078e5b0482d3941d8",
+      "expectedGitBlobSha": "b9fa6cf86a090217294ee50729f0b929463f6c71"
+    },
+    {
+      "source": "smartvio-mobile/scripts/qa-ios-audio.js",
+      "path": "web-source/scripts/qa-ios-audio.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 3408,
+      "expectedSha256": "53908b2341e28bbf591f3d318e4a8ba5f6774c41d4da4e7422601080755a52d6",
+      "expectedGitBlobSha": "a20cfc6e81f98d8bdb909a1c70a79a25f116455b"
+    },
+    {
+      "source": "smartvio-mobile/scripts/qa-v16.html",
+      "path": "web-source/scripts/qa-v16.html",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 22325,
+      "expectedSha256": "11751dfe77f1d68f527902596892e5d244655deff4c5c23abeea0dc6441d1c9c",
+      "expectedGitBlobSha": "c2ce28f3ca587fe9f1fa3accc32b1323b2b7389e"
+    },
+    {
+      "source": "smartvio-mobile/scripts/qa-v17-admin.js",
+      "path": "web-source/scripts/qa-v17-admin.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 22498,
+      "expectedSha256": "1590ed7f4c3663a765ad64dd17ebb9a64b9f885a39d9b42cadd5338c8b5b155e",
+      "expectedGitBlobSha": "074176c951c6541d444a119cbf1fb741914ebe41"
+    },
+    {
+      "source": "smartvio-mobile/scripts/qa-v17-workflows.js",
+      "path": "web-source/scripts/qa-v17-workflows.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 23547,
+      "expectedSha256": "bf01f4f1c3b7f67a8bba429a7a3f41bb8e4e5776125e5a2cc30f4a872ea309c8",
+      "expectedGitBlobSha": "0a92c53442599eec450cc0b9ab76ffece0775fca"
+    },
+    {
+      "source": "smartvio-mobile/scripts/qa-v17.html",
+      "path": "web-source/scripts/qa-v17.html",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 13657,
+      "expectedSha256": "7cdb75761171324d8db5ef8c6b9c8d71407b22a0437ee3c93918a2f559d24d2a",
+      "expectedGitBlobSha": "119abc7f8f519aabf5d72d2a2e3a4d93006702bc"
+    },
+    {
+      "source": "smartvio-mobile/scripts/qa-v18.html",
+      "path": "web-source/scripts/qa-v18.html",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 10049,
+      "expectedSha256": "5b4c04dfaf2e808a8a3d90d095a393a2a0b04e4229e99239777d3a1b2ec18ae0",
+      "expectedGitBlobSha": "906b6f89cf6453c4e098567eb1b65e6db3a3ae56"
+    },
+    {
+      "source": "smartvio-mobile/scripts/qa-v19-recording.html",
+      "path": "web-source/scripts/qa-v19-recording.html",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 1816,
+      "expectedSha256": "66203c7cbd1bdc3c9eec4bf020011c68132212c145bc61f921b4eaea1e5810d4",
+      "expectedGitBlobSha": "78ab1011fed00f861127db556e39d6fc92dc4315"
+    },
+    {
+      "source": "smartvio-mobile/scripts/qa-v19-recording.js",
+      "path": "web-source/scripts/qa-v19-recording.js",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 12559,
+      "expectedSha256": "b9b07ff234337d04b9b0c33e99abd41a2c1cdb5a98526ce858c2d08e6181fc52",
+      "expectedGitBlobSha": "65e679f5d45e6b09c29338e791613deb215de467"
+    },
+    {
+      "source": "smartvio-mobile/scripts/render-feasibility-report.py",
+      "path": "web-source/scripts/render-feasibility-report.py",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 15530,
+      "expectedSha256": "030a1bf8b8212b1f74130998b64a58d5e4a220275763e472571352391c40f594",
+      "expectedGitBlobSha": "48f485bceb4ede90ae485d663fdb91d3363a9b7e"
+    },
+    {
+      "source": "smartvio-mobile/scripts/render-v16-report.py",
+      "path": "web-source/scripts/render-v16-report.py",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 13265,
+      "expectedSha256": "c0aece7f95714b9e86ff7bf7290c8eb00811b6619843244a7460621718aed382",
+      "expectedGitBlobSha": "97c891d5659b86d3d2b518a8ef69ea4dd090a3ad"
+    },
+    {
+      "source": "smartvio-mobile/scripts/render-v17-delivery.py",
+      "path": "web-source/scripts/render-v17-delivery.py",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 33792,
+      "expectedSha256": "b5cbb15ea1a605e045bee345dfa90ddfbf4a5fdd96356c4011a8d4993aeca786",
+      "expectedGitBlobSha": "9871123c7cfd2d92f29603deb3eec0e5abe90012"
+    },
+    {
+      "source": "smartvio-mobile/scripts/sync-release.cjs",
+      "path": "web-source/scripts/sync-release.cjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2263,
+      "expectedSha256": "44f33bc93757234bb16c2532ddeabc30b9f305386644362de6510eefb476d66e",
+      "expectedGitBlobSha": "a7b05496becaaa493fe7332a4cf0055dbb63e844"
+    },
+    {
+      "source": "smartvio-mobile/scripts/validate-catalog.cjs",
+      "path": "web-source/scripts/validate-catalog.cjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 10114,
+      "expectedSha256": "963476dbe320ad8f43e5f5a8cf3a567f5695a7d66a4ba170833e0ccd1db92c19",
+      "expectedGitBlobSha": "88ae755706a02dbc8e02251beff957e0b4f2bf52"
+    },
+    {
+      "source": "smartvio-mobile/scripts/verify-build.cjs",
+      "path": "web-source/scripts/verify-build.cjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 1345,
+      "expectedSha256": "37db2a3306eba439123767d2192dd64ea9d6d5aa8538c1482eeba0a538fbc02b",
+      "expectedGitBlobSha": "14e3b1c2257eb8c516ad37988f9ac1441e695823"
+    },
+    {
+      "source": "smartvio-mobile/tests/account-ui.test.mjs",
+      "path": "web-source/tests/account-ui.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 16575,
+      "expectedSha256": "bad89b2399075fddaf0472436a9e51bf95989923a01c394fa688f61cba9ca856",
+      "expectedGitBlobSha": "58167e0f7f2684c272760d42e1d0607b7836a567"
+    },
+    {
+      "source": "smartvio-mobile/tests/admin-access.test.mjs",
+      "path": "web-source/tests/admin-access.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 5186,
+      "expectedSha256": "35cb0ecdb2e314d9202b1224516e4e502612a8cd1e17bfbed0b9bc4721f3ddef",
+      "expectedGitBlobSha": "02e3c313ab4dafec6e03dc05684cf7bb16eadd0a"
+    },
+    {
+      "source": "smartvio-mobile/tests/audio-engine.test.mjs",
+      "path": "web-source/tests/audio-engine.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 73249,
+      "expectedSha256": "f6ef3493bff2190fcaeae6745b1a849374c3d3cf506630209158918cc2fb6e11",
+      "expectedGitBlobSha": "18418c7703f9ea460804927d6a4fe80ce6119290"
+    },
+    {
+      "source": "smartvio-mobile/tests/audio-output-clock.test.mjs",
+      "path": "web-source/tests/audio-output-clock.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 1458,
+      "expectedSha256": "ff70c7ce3a8d44cf3c281ccf57c8c05e15919c723f54cd4984072ab64203dcf0",
+      "expectedGitBlobSha": "86d3ea4ec096d079f96ebabca7ecc7527c6ac32f"
+    },
+    {
+      "source": "smartvio-mobile/tests/auth-guest.test.mjs",
+      "path": "web-source/tests/auth-guest.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 10727,
+      "expectedSha256": "b87364e6a6c834ed78525a00a05d0b0cd9e952ef43a8c4cdb5b7e717637e435f",
+      "expectedGitBlobSha": "1688f52a170478863674286ffddc6fb3ac45cd30"
+    },
+    {
+      "source": "smartvio-mobile/tests/ble-midi.test.mjs",
+      "path": "web-source/tests/ble-midi.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 8450,
+      "expectedSha256": "bb51ae81cf17bf786abec7127d537e7acbe94f60cff9a6fcbd1d8924459fe8af",
+      "expectedGitBlobSha": "364903a2e011b4b4d1e20f8671fa71e8e7c077ed"
+    },
+    {
+      "source": "smartvio-mobile/tests/client-audible-resume.test.mjs",
+      "path": "web-source/tests/client-audible-resume.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 5085,
+      "expectedSha256": "0beb0612c16c6c2f440fad2091d71bbf26479c599e92a578102567ce8d3def3f",
+      "expectedGitBlobSha": "a9fb0c2d86f57109a1b4d33ee875990f99fee47c"
+    },
+    {
+      "source": "smartvio-mobile/tests/client-audio-gesture.test.mjs",
+      "path": "web-source/tests/client-audio-gesture.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 5210,
+      "expectedSha256": "bd2ef84f91a1ea709fb98e4c3293c14fdeeada89cd84508a1838fa20228babb4",
+      "expectedGitBlobSha": "a751adf5beb5c25aeaae8098916e68e9ba053c9e"
+    },
+    {
+      "source": "smartvio-mobile/tests/client-instrument.test.mjs",
+      "path": "web-source/tests/client-instrument.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 18478,
+      "expectedSha256": "fdf4701dd4a52b29eb34a012cab6b9980b047269b4905ea1a73e583c37bee804",
+      "expectedGitBlobSha": "64f6f6c10bf8db9c8cdc86605730e4658cba3ef5"
+    },
+    {
+      "source": "smartvio-mobile/tests/client-practice-resume.test.mjs",
+      "path": "web-source/tests/client-practice-resume.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 4372,
+      "expectedSha256": "0f85f68b97ae718192fd39719183c18edb14ed5c3eeae1c19a3f18ea73e9b15f",
+      "expectedGitBlobSha": "45417623603871a32b943bdd8a13e16b79eb30ec"
+    },
+    {
+      "source": "smartvio-mobile/tests/client-recording.test.mjs",
+      "path": "web-source/tests/client-recording.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 19976,
+      "expectedSha256": "b419c324f80761d80a30339165fa2b4bce1c80ad82d3c497bd3f0b4501c893ea",
+      "expectedGitBlobSha": "cb31c10a3ae91c79e2a61bdfd010e6533e5ec171"
+    },
+    {
+      "source": "smartvio-mobile/tests/client-workflows.test.mjs",
+      "path": "web-source/tests/client-workflows.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 5559,
+      "expectedSha256": "b7fe19e7fffb31589f9b06f2ebd500b4d168777ac96cd8c2bf9476f7c842092a",
+      "expectedGitBlobSha": "348e46a2fb8a3df35afc18866a1a0763727778c8"
+    },
+    {
+      "source": "smartvio-mobile/tests/community-api.test.mjs",
+      "path": "web-source/tests/community-api.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 38117,
+      "expectedSha256": "de4bd391ea22f11beeff9d1f20d3c0f0d87e9d1ecd915291085c13ad3709094b",
+      "expectedGitBlobSha": "579923aa7a0940dd1aee95d6434b8a8d1551e403"
+    },
+    {
+      "source": "smartvio-mobile/tests/community-video-ui.test.mjs",
+      "path": "web-source/tests/community-video-ui.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 35408,
+      "expectedSha256": "1ecc3739cb90e94e7e6df786c5889fd9ae6c56241cc7de104e8fd2f39dc3540a",
+      "expectedGitBlobSha": "1e9cd3ed1ed8be1b14fda1641f307361aa25fcc7"
+    },
+    {
+      "source": "smartvio-mobile/tests/community-video.test.mjs",
+      "path": "web-source/tests/community-video.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 35389,
+      "expectedSha256": "8be69d5841ecab68c2af0237c20935d8bcd640897db8fd055f3c4a3e9b60a5ce",
+      "expectedGitBlobSha": "7ed4ada1bb1bbaa084b52ab5b66a03cdb21476fe"
+    },
+    {
+      "source": "smartvio-mobile/tests/curriculum.test.mjs",
+      "path": "web-source/tests/curriculum.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 12160,
+      "expectedSha256": "ef735be8f365c37ca51cd1abc5e312ddea58215e1e11de340972836daca0a23e",
+      "expectedGitBlobSha": "c0acf3d38f27eed87fc0c821dfec988cba702205"
+    },
+    {
+      "source": "smartvio-mobile/tests/d1-sqlite.mjs",
+      "path": "web-source/tests/d1-sqlite.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2749,
+      "expectedSha256": "3b7e474a9a01feb7faa0fdd10cd3e64a23fffd6aefd3c1721fa59241534c0cf3",
+      "expectedGitBlobSha": "efef2334c42a7248c9f13d8cd848c9cca0b1435c"
+    },
+    {
+      "source": "smartvio-mobile/tests/device-bridge.test.mjs",
+      "path": "web-source/tests/device-bridge.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 20667,
+      "expectedSha256": "24fcf9f4665b45228bbcc347b9713c432dbe81bd1dcc80f73f5132ad6c6bc6b7",
+      "expectedGitBlobSha": "355600447cb10e58fcb48006b75110233b98d585"
+    },
+    {
+      "source": "smartvio-mobile/tests/instrument-profile.test.mjs",
+      "path": "web-source/tests/instrument-profile.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 7162,
+      "expectedSha256": "029dcf1431a26eb5e4c0b0c02353c3c0faa93874cc7163f83fe9b9b739d24f74",
+      "expectedGitBlobSha": "a8a22098867b43dad46135e335e6982a3175facd"
+    },
+    {
+      "source": "smartvio-mobile/tests/learning-journey.test.mjs",
+      "path": "web-source/tests/learning-journey.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 12746,
+      "expectedSha256": "5ae8fd96a9292517d1fa2cef74bc7a3288b54538842b8117360196d8192ab9ad",
+      "expectedGitBlobSha": "2b39c860edb9d7746a5a17e482145973a1e8a60e"
+    },
+    {
+      "source": "smartvio-mobile/tests/learning-path.test.mjs",
+      "path": "web-source/tests/learning-path.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 14111,
+      "expectedSha256": "f08015aa18562f0376d86b077a719c7389fbf62788a663f02baf8b1bd933edf6",
+      "expectedGitBlobSha": "ea6a096fc9de358e7d7cb1caa502a3416a2860c3"
+    },
+    {
+      "source": "smartvio-mobile/tests/lesson-camera.test.mjs",
+      "path": "web-source/tests/lesson-camera.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2909,
+      "expectedSha256": "1d09cd56a60662197040fd776c3c274c655f481f307f9b79680c02602ac1b940",
+      "expectedGitBlobSha": "6e70695f382cea789a4ed53908884360975aa070"
+    },
+    {
+      "source": "smartvio-mobile/tests/lesson-client.test.mjs",
+      "path": "web-source/tests/lesson-client.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 31037,
+      "expectedSha256": "6a55621605e8436f159296f32fa3182e451fd79b80746b0d36304b9f8a051170",
+      "expectedGitBlobSha": "816f8d06dbd3c0e91fa890f40f8269a9972ccd4d"
+    },
+    {
+      "source": "smartvio-mobile/tests/lesson-engine.test.mjs",
+      "path": "web-source/tests/lesson-engine.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 17376,
+      "expectedSha256": "dbe05b1b19eeb0f1340d5694576cfa9632fcbddc79c6c51b3079c1109b0da25c",
+      "expectedGitBlobSha": "79ee8522e027cc00e62caab141a5470da9568c17"
+    },
+    {
+      "source": "smartvio-mobile/tests/lesson-progress-cloud.test.mjs",
+      "path": "web-source/tests/lesson-progress-cloud.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 11684,
+      "expectedSha256": "26b8997f0c45255e981aab981963c7af6a4ac70bda9d8f575c3af824e3ac8f36",
+      "expectedGitBlobSha": "342cc1f6830a984571a86d6f3fb4c8544fd3eae3"
+    },
+    {
+      "source": "smartvio-mobile/tests/lessons-api.test.mjs",
+      "path": "web-source/tests/lessons-api.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 10871,
+      "expectedSha256": "8e2e34896dd2a33bb5d0892321ec4be048c252f195aa27633d5fdbad3fc37b9f",
+      "expectedGitBlobSha": "04f3a315398ae0cf177ce6ac2cde55d0b52b41b8"
+    },
+    {
+      "source": "smartvio-mobile/tests/local-preset.test.mjs",
+      "path": "web-source/tests/local-preset.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 7795,
+      "expectedSha256": "ac399b97cee6645381ec3d226757160fa8d0620c2e03d8c99b61dd7d128575de",
+      "expectedGitBlobSha": "16c5bea010be2cdea404e8d6358cfcc46d7fb01d"
+    },
+    {
+      "source": "smartvio-mobile/tests/midi.test.mjs",
+      "path": "web-source/tests/midi.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 28389,
+      "expectedSha256": "70502515aa3dd1dafc3d1fdbde4265aead9ce35499d48c9f817a4cd13fea2200",
+      "expectedGitBlobSha": "51694d59b5fcfc1183ccb72bf3ad221891f5b4bb"
+    },
+    {
+      "source": "smartvio-mobile/tests/performance.test.mjs",
+      "path": "web-source/tests/performance.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 33008,
+      "expectedSha256": "6484b629f7a825b75b7cf15af378921c79d94e697eee6234bbbb4db1370b18e4",
+      "expectedGitBlobSha": "56003f5807dbcec328943688520db4cfa376761b"
+    },
+    {
+      "source": "smartvio-mobile/tests/pitch-monitor.test.mjs",
+      "path": "web-source/tests/pitch-monitor.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 4848,
+      "expectedSha256": "2ca091ff8a9311b27667cb63ece8becfe84a9fa300061327c8ef52fa4ec59996",
+      "expectedGitBlobSha": "5a9685110fdcd7ed98b91869563b02aa56b6238e"
+    },
+    {
+      "source": "smartvio-mobile/tests/preset-api.test.mjs",
+      "path": "web-source/tests/preset-api.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 18804,
+      "expectedSha256": "986404d90dcc6d51ad543e27a77606eb15f8394c81561671241e900b33b90567",
+      "expectedGitBlobSha": "e6fea5c3602f7d0c14eb14ddf62292cecd06a787"
+    },
+    {
+      "source": "smartvio-mobile/tests/recording-center.test.mjs",
+      "path": "web-source/tests/recording-center.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 7137,
+      "expectedSha256": "034e4bead290a21e5d6d703fa9a343cdda98009206ae992ea04e87e9b07cdfc7",
+      "expectedGitBlobSha": "3063adea54d67e3c6b832618cec5892967d96ce3"
+    },
+    {
+      "source": "smartvio-mobile/tests/release-asset-versions.test.mjs",
+      "path": "web-source/tests/release-asset-versions.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 4601,
+      "expectedSha256": "b26a0666ea989a7aaf111772499dd5ca8e0dc7f1cc6860db40d5f077e16d528c",
+      "expectedGitBlobSha": "5a8a57cc5cf62d86b9a244e197aac7fcb810453e"
+    },
+    {
+      "source": "smartvio-mobile/tests/source-backup.test.mjs",
+      "path": "web-source/tests/source-backup.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 5714,
+      "expectedSha256": "d882f09ab2afa753147e46b726da99f7ee992298519b5b4c621ae26655d7954c",
+      "expectedGitBlobSha": "8edc0216e55d691ca46c897cccb4ca195afe4c94"
+    },
+    {
+      "source": "smartvio-mobile/tests/video-capture.test.mjs",
+      "path": "web-source/tests/video-capture.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 13287,
+      "expectedSha256": "37b86cc3688ace5a9cde9016988583844b1229fbad5e0440d8c418f2b443662f",
+      "expectedGitBlobSha": "09264bd8c36a8465370e7aff18416d971a882239"
+    },
+    {
+      "source": "smartvio-mobile/tests/video-inspection.test.mjs",
+      "path": "web-source/tests/video-inspection.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 30489,
+      "expectedSha256": "8163da77ff409b6b4fb7795e0f0a1a03f246d0348b290c3fd1312dba5c8e1ea7",
+      "expectedGitBlobSha": "2be54f65da27bb69a3576544eaef716bb3b920ed"
+    },
+    {
+      "source": "smartvio-mobile/tests/viewport.test.mjs",
+      "path": "web-source/tests/viewport.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 8692,
+      "expectedSha256": "7a7cbd0bb54e15474171ca9b646398811ed0ae8b91a745353a69618f22b0a690",
+      "expectedGitBlobSha": "250936ed5b67280b2c19a0ca5425712a23c0cf00"
+    },
+    {
+      "source": "smartvio-mobile/tests/violin-art.test.mjs",
+      "path": "web-source/tests/violin-art.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2334,
+      "expectedSha256": "6f509a7a0fef46aba85d5fc02589dd13f9457049451afce87687d222e8c7a982",
+      "expectedGitBlobSha": "e5f05b88725f277ae5348a895050fe510977b193"
+    },
+    {
+      "source": "smartvio-mobile/tests/violin-illustration.test.mjs",
+      "path": "web-source/tests/violin-illustration.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 2318,
+      "expectedSha256": "fac21e1bac009994ecbd50b9c5c749db15a76d32b8ef8e804f1568898cc6b1a1",
+      "expectedGitBlobSha": "6696319ea3352021d0a4c83b8e02892d206e56aa"
+    },
+    {
+      "source": "smartvio-mobile/tests/violin-teaching-v28.test.mjs",
+      "path": "web-source/tests/violin-teaching-v28.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 3979,
+      "expectedSha256": "3b6903cad072c02455d7a63328836fada4f3dea442439d3439d8d605ef8a1c8a",
+      "expectedGitBlobSha": "6933008b4e13a691b17f20cef9f753b25829c5c7"
+    },
+    {
+      "source": "smartvio-mobile/tests/violin-tuner.test.mjs",
+      "path": "web-source/tests/violin-tuner.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 7202,
+      "expectedSha256": "888cee222259078932e0ed5d5c0092c16ffe4e1c57b35e3f62e39c2967f3b571",
+      "expectedGitBlobSha": "59c2658121d8633b9803183434b59e171a4c0c53"
+    },
+    {
+      "source": "smartvio-mobile/tests/workspace-backup.test.mjs",
+      "path": "web-source/tests/workspace-backup.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 24216,
+      "expectedSha256": "17d4ab673f0ed49e72577768ca913a4d6f97e6dad025e8430f6226f964bc4e17",
+      "expectedGitBlobSha": "1214c7247540a80ec13ac33133893da38e6efd90"
+    },
+    {
+      "source": "smartvio-mobile/tests/workspace-state.test.mjs",
+      "path": "web-source/tests/workspace-state.test.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 3247,
+      "expectedSha256": "c0fec8d7fd6fe88b4132ad3d2337ab0addec193bf64ba3e138157ba3a465c2f8",
+      "expectedGitBlobSha": "b0dcfac0e50dcc751bc9fb3abd29b588bf6c8c37"
+    },
+    {
+      "source": "smartvio-mobile/worker/community.mjs",
+      "path": "web-source/worker/community.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 65299,
+      "expectedSha256": "f96f5053b7ca4b930f80531dc8cd1b3184f593b8a7a5556147b00fe3ea41a781",
+      "expectedGitBlobSha": "b5d7f3708bf5e7e924bba07d132556b7f87e72db"
+    },
+    {
+      "source": "smartvio-mobile/worker/lessons.mjs",
+      "path": "web-source/worker/lessons.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 15376,
+      "expectedSha256": "7503829084bec23356980aeae0922683a0653719629b070be54af255e5fbe56e",
+      "expectedGitBlobSha": "3d9aa52dba64849c91424f07295076def71fa3d7"
+    },
+    {
+      "source": "smartvio-mobile/worker/video-inspection.mjs",
+      "path": "web-source/worker/video-inspection.mjs",
+      "category": "app-source",
+      "evidence": "Current committed original source: client/admin/server, editable SVG, tests, schema/migrations and dependency locks.",
+      "expectedBytes": 34008,
+      "expectedSha256": "e56d34eb3a2bfbb2fc7cf211c6424d6ff16c64c5137261b3e877a582a575d84c",
+      "expectedGitBlobSha": "5f106255df17b2510af4912fb4de5a5d5b613dc1"
+    },
+    {
+      "source": "android-iqoo11/AndroidManifest.xml",
+      "path": "android-source/AndroidManifest.xml",
+      "category": "app-source",
+      "evidence": "Complete original Android shell, native bridge, tests, configuration and reproducible build scripts.",
+      "expectedBytes": 1782,
+      "expectedSha256": "529c785f156a75d0fa3b19ab73d4494b09ba1baae50bc73cb6cb54725e74877a",
+      "expectedGitBlobSha": "be0a2546a912e52642065e70b1a025be30f48ffe"
+    },
+    {
+      "source": "android-iqoo11/ASSET-PROVENANCE.txt",
+      "path": "android-source/ASSET-PROVENANCE.txt",
+      "category": "app-source",
+      "evidence": "Complete original Android shell, native bridge, tests, configuration and reproducible build scripts.",
+      "expectedBytes": 701,
+      "expectedSha256": "aba9bfa078beff3f44ddd0832ba7dbd695e839174f62379f9940bace84b4f930",
+      "expectedGitBlobSha": "f3a9710a0a2b0056be1b47220d3fb3b425f8c5d0"
+    },
+    {
+      "source": "android-iqoo11/assets/bridge.js",
+      "path": "android-source/assets/bridge.js",
+      "category": "app-source",
+      "evidence": "Complete original Android shell, native bridge, tests, configuration and reproducible build scripts.",
+      "expectedBytes": 5541,
+      "expectedSha256": "ef5d180dc0f9217cfff09d70ed95fc584e66c8ed2ce53d481588b8b159746095",
+      "expectedGitBlobSha": "69bd1b1662fb20a8eada0416542c313195096a1a"
+    },
+    {
+      "source": "android-iqoo11/build.ps1",
+      "path": "android-source/build.ps1",
+      "category": "app-source",
+      "evidence": "Complete original Android shell, native bridge, tests, configuration and reproducible build scripts.",
+      "expectedBytes": 15104,
+      "expectedSha256": "3aeaf825ca577814c5d5da8a78db0742b758f160bc70859147cd55f11f3ffeec",
+      "expectedGitBlobSha": "c3a585037e9993870f0b46fb3385dee068dcc61b"
+    },
+    {
+      "source": "android-iqoo11/README.md",
+      "path": "android-source/README.md",
+      "category": "app-source",
+      "evidence": "Complete original Android shell, native bridge, tests, configuration and reproducible build scripts.",
+      "expectedBytes": 3415,
+      "expectedSha256": "dac2c850f1b65e00ecd3fbcf584229a928d99c168d844f1c9a993fd0bbc2a528",
+      "expectedGitBlobSha": "c00024c6117c3b91aa59b3adff8edade70a14a54"
+    },
+    {
+      "source": "android-iqoo11/res/drawable/app_icon.png",
+      "path": "android-source/res/drawable/app_icon.png",
+      "category": "original-app-asset",
+      "evidence": "Exact existing app asset dist/icons/icon-192.png; Original SmartVio app icon/brand UI asset preserved from the authorized V20 source",
+      "expectedBytes": 4218,
+      "expectedSha256": "efe59c3e46191aa85ffcfb607b1d4b5ee0af84adae30c5636cc86f17c6e92acb",
+      "expectedGitBlobSha": "e511d239d9b9aefd1480788d5d9bbe06cfac4317"
+    },
+    {
+      "source": "android-iqoo11/res/values/strings.xml",
+      "path": "android-source/res/values/strings.xml",
+      "category": "app-source",
+      "evidence": "Complete original Android shell, native bridge, tests, configuration and reproducible build scripts.",
+      "expectedBytes": 118,
+      "expectedSha256": "213cbe65edd29acd243d35499b2a7f5b22cd1a01bfb787199090a4a8568f5729",
+      "expectedGitBlobSha": "abbbbedfd0d173fcba54faff3ee0784db7a6cddc"
+    },
+    {
+      "source": "android-iqoo11/res/values/styles.xml",
+      "path": "android-source/res/values/styles.xml",
+      "category": "app-source",
+      "evidence": "Complete original Android shell, native bridge, tests, configuration and reproducible build scripts.",
+      "expectedBytes": 573,
+      "expectedSha256": "7e984f8d2a7401d726680616986ca7f09dd363ddc426d2e8b415f779df4166fb",
+      "expectedGitBlobSha": "f9f91373f773e583d7df431af7a403e906e7be49"
+    },
+    {
+      "source": "android-iqoo11/res/xml/network_security_config.xml",
+      "path": "android-source/res/xml/network_security_config.xml",
+      "category": "app-source",
+      "evidence": "Complete original Android shell, native bridge, tests, configuration and reproducible build scripts.",
+      "expectedBytes": 232,
+      "expectedSha256": "eb5f5c57a88fc656cb97ee142694b996b286064ba973e51e0158bcdff08b34f2",
+      "expectedGitBlobSha": "b1a5329aab872f136cc013ebdd55e27b38c7a4b6"
+    },
+    {
+      "source": "android-iqoo11/src/com/smartvio/studio/test/MainActivity.java",
+      "path": "android-source/src/com/smartvio/studio/test/MainActivity.java",
+      "category": "app-source",
+      "evidence": "Complete original Android shell, native bridge, tests, configuration and reproducible build scripts.",
+      "expectedBytes": 29546,
+      "expectedSha256": "4d6b54fa85eaf878c91e181f5bea7783143036c80d871d7af16c2b5fef6f1697",
+      "expectedGitBlobSha": "2b8dd0c17a87a359705ff82f29413915e194f39b"
+    },
+    {
+      "source": "android-iqoo11/src/com/smartvio/studio/test/NativePolicy.java",
+      "path": "android-source/src/com/smartvio/studio/test/NativePolicy.java",
+      "category": "app-source",
+      "evidence": "Complete original Android shell, native bridge, tests, configuration and reproducible build scripts.",
+      "expectedBytes": 4190,
+      "expectedSha256": "3a8bbdfbbe6958739f606a18f07ae0320c28c12bc6c3fecf901d6a5492a4b335",
+      "expectedGitBlobSha": "17a9e913460f6a15657ae28ba6eb04c891f88bcc"
+    },
+    {
+      "source": "android-iqoo11/tests/bridge.test.cjs",
+      "path": "android-source/tests/bridge.test.cjs",
+      "category": "app-source",
+      "evidence": "Complete original Android shell, native bridge, tests, configuration and reproducible build scripts.",
+      "expectedBytes": 4917,
+      "expectedSha256": "4c6444c051d96fcf2573b32f5119f73f94301e0e0ef65411ab814e19d7f3f3b0",
+      "expectedGitBlobSha": "97022c6cd1bcb3890638d3f10508f08b90aedb8d"
+    },
+    {
+      "source": "android-iqoo11/tests/NativePolicyTest.java",
+      "path": "android-source/tests/NativePolicyTest.java",
+      "category": "app-source",
+      "evidence": "Complete original Android shell, native bridge, tests, configuration and reproducible build scripts.",
+      "expectedBytes": 6054,
+      "expectedSha256": "09277ce6f7ee6af2dbf89c04c9292288f599cb3aee767a1cd4877169f561137b",
+      "expectedGitBlobSha": "ad85c298381947966e4363be4d430b1ed1144c0b"
+    }
+  ]
+}

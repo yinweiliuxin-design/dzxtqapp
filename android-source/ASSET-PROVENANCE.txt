@@ -1,0 +1,14 @@
+Silvio Android test build 0.27.1 / 2701
+
+res/drawable/app_icon.png
+Source: existing first-party SmartVio V27 client asset
+E:/codex/Documents/亚马逊图片/sites/smartvio-mobile/dist/icons/icon-192.png
+SHA256: EFE59C3E46191AA85FFCFB607B1D4B5EE0AF84ADAE30C5636CC86F17C6E92ACB
+Action: copied without visual modification; no third-party image downloaded.
+
+Online client source:
+https://smartvio-studio-mobile.politecalf5.chatgpt.site/?v=20261025-v27-workspaces-1
+
+Native source and bridge.js were authored for this test build. No competitor APK,
+proprietary decompiled code, external analytics SDK or Android dependency library
+is embedded. Public web content is loaded from the existing client origin.
