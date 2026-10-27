@@ -92,6 +92,24 @@ section{padding-block:clamp(36px,6vw,64px);border-top:1px solid var(--line)}
 .sec-head h2{font-family:var(--f-head);font-size:var(--step-3);line-height:1.25;font-weight:700;letter-spacing:-.01em}
 .sec-head p{grid-column:1/-1;color:var(--muted);max-width:44em}
 
+/* one-click preview */
+.launch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.os{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.os h3{font-size:var(--step-1);font-weight:650}
+.os p{color:var(--muted);font-size:var(--step--1)}
+.os .file{font-family:var(--f-mono);font-size:.95rem;background:var(--accent-soft);color:var(--accent);border-radius:8px;padding:6px 10px;align-self:flex-start;overflow-wrap:anywhere}
+.launch-after{margin-top:18px;display:grid;gap:10px}
+.launch-after dl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px 18px;margin:0}
+.launch-after dt{font-size:.75rem;color:var(--muted);letter-spacing:.06em}
+.launch-after dd{margin:0;font-size:.85rem}
+.note{font-size:var(--step--1);color:var(--muted)}
+.accept{margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
+.accept h3{font-size:var(--step-0);font-weight:650;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.accept h3 small{font-weight:400;color:var(--muted);font-size:var(--step--1)}
+.covered{list-style:none;margin:12px 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.covered li{display:inline-flex;align-items:center;gap:6px;font-size:var(--step--1);background:var(--ok-soft);color:var(--ok);border-radius:999px;padding:3px 11px}
+.covered li::before{content:"✓";font-weight:700}
+
 /* gallery */
 .group{margin-top:26px}
 .group:first-of-type{margin-top:0}
@@ -192,11 +210,14 @@ dialog.lb button{position:absolute;top:8px;right:8px;min-width:44px;min-height:4
   .feat:not(:nth-child(4n+1)){padding-left:0;border-left:0}
   .feat:nth-child(2n){padding-left:18px;border-left:1px solid var(--line)}
   .code-grid,.two{grid-template-columns:minmax(0,1fr)}
+  .launch-after dl{grid-template-columns:repeat(2,minmax(0,1fr))}
   .road{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:720px){
   .hero .wrap{grid-template-columns:minmax(0,1fr)}
   .sec-head{grid-template-columns:minmax(0,1fr)}
+  .launch{grid-template-columns:minmax(0,1fr)}
+  .launch-after dl{grid-template-columns:minmax(0,1fr)}
   .hero-phones{order:-1;max-width:360px;width:100%;margin:0 auto}
   .label dl{grid-template-columns:repeat(2,minmax(0,1fr))}
   .tl li,.tl-head{grid-template-columns:3.6em minmax(0,1fr) 7.5em}
@@ -226,7 +247,8 @@ dialog.lb button{position:absolute;top:8px;right:8px;min-width:44px;min-height:4
     <h1>V29 <em>可靠性</em>版本</h1>
     <p class="lede">调音按选中的目标弦判准，作品可以整包备份和恢复，网络不稳时课程照常打开。本页整理自 GitHub 中现存的源码和交付记录，所有截图都来自同一份代码在本地运行的结果。</p>
     <div class="actions">
-      <a class="btn primary" href="https://smartvio-studio-mobile.politecalf5.chatgpt.site/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>打开线上客户端</a>
+      <a class="btn primary" href="#preview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>一键预览</a>
+      <a class="btn" href="https://smartvio-studio-mobile.politecalf5.chatgpt.site/" target="_blank" rel="noopener">线上客户端</a>
       <a class="btn" href="https://github.com/yinweiliuxin-design/dzxtqapp" target="_blank" rel="noopener">dzxtqapp 仓库</a>
       <a class="btn" href="https://github.com/yinweiliuxin-design/smartviolin/tree/violinapp/06-App%E8%BD%AF%E4%BB%B6/V29-%E5%8F%AF%E9%9D%A0%E6%80%A7%E7%89%88%E6%9C%AC" target="_blank" rel="noopener">V29 源码出处</a>
     </div>
@@ -247,6 +269,35 @@ dialog.lb button{position:absolute;top:8px;right:8px;min-width:44px;min-height:4
     <div class="phone front"><img src="page/screens/home.webp" alt="" width="585" height="1266"></div>
   </div>
 </div></div>
+
+<section id="preview"><div class="wrap">
+  <div class="sec-head">
+    <h2>一键预览</h2>
+    <div class="tally"><span class="st ok">验收 37 / 37 通过</span><span class="st ok">页面脚本错误 0</span></div>
+    <p>在电脑上一次启动客户端、服务端接口、本地数据库和后台管理端，浏览器自动打开。以本机测试管理员身份运行，社区发帖、云备份、课程云进度和后台审核都能直接用。需要 Node.js 22.5 以上（建议 24 LTS），不用安装依赖。</p>
+  </div>
+  <div class="launch">
+    <div class="os"><h3>Windows</h3><p>双击仓库根目录的</p><code class="file">一键预览.cmd</code></div>
+    <div class="os"><h3>macOS</h3><p>双击仓库根目录的</p><code class="file">一键预览.command</code></div>
+    <div class="os"><h3>任意系统</h3><p>在仓库根目录运行</p><code class="file">node start-preview.mjs</code></div>
+  </div>
+  <div class="launch-after">
+    <dl>
+      <div><dt>App</dt><dd class="mono">http://127.0.0.1:18912/</dd></div>
+      <div><dt>后台</dt><dd class="mono">http://127.0.0.1:18912/admin</dd></div>
+      <div><dt>本机数据</dt><dd class="mono">web-source/.preview/</dd></div>
+      <div><dt>常用参数</dt><dd class="mono">--port · --role user|anonymous · --reset · --no-open</dd></div>
+    </dl>
+    <p class="note">只监听本机，手机无法直接打开；手机请用线上客户端。麦克风和摄像头只在 localhost 或 HTTPS 下可用。</p>
+  </div>
+  <div class="accept">
+    <h3>逐项验收覆盖的功能 <small><span class="mono">node tools/acceptance.cjs</span>，Chromium 手机视口，生成的 440 Hz 麦克风信号与虚拟摄像头</small></h3>
+    <ul class="covered">
+      <li>首次引导与乐器选择</li><li>曲库搜索、分类、收藏</li><li>示范聆听出声</li><li>麦克风跟奏（A4 · 0 音分）</li><li>伴奏播放与弦乐按键</li><li>动作跟练与课程云进度</li><li>六步主线与八阶段学习</li><li>录音、录像、四轨</li><li>音色预设与云备份</li><li>MIDI 导出再导入</li><li>调音器判准（440.0 Hz 稳定）</li><li>节拍器</li><li>社区发帖、短视频、点赞评论</li><li>后台审核与九个管理页</li><li>导出记录与作品包恢复</li><li>离线断网重开</li><li>语言、主题、访客切换</li>
+    </ul>
+    <p class="note">蓝牙 MIDI 和真实小提琴需要实体设备，验收只确认入口会给出明确提示。</p>
+  </div>
+</div></section>
 
 <section id="screens"><div class="wrap">
   <div class="sec-head">

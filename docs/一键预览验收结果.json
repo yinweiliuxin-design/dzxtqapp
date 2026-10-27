@@ -1,0 +1,347 @@
+{
+  "base": "http://127.0.0.1:18960/",
+  "at": "2026-10-27T11:27:09.162Z",
+  "passed": 37,
+  "total": 37,
+  "results": [
+    {
+      "name": "开机动画与国家语言选择",
+      "pass": true,
+      "detail": {
+        "countries": 6
+      }
+    },
+    {
+      "name": "选择乐器（电子/原声）",
+      "pass": true,
+      "detail": {
+        "instrument": "electric"
+      }
+    },
+    {
+      "name": "账号：使用已验证账号登录",
+      "pass": true,
+      "detail": {
+        "user": "preview-owner"
+      }
+    },
+    {
+      "name": "首页",
+      "pass": true,
+      "detail": {
+        "title": "首页"
+      }
+    },
+    {
+      "name": "曲库：搜索、分类、收藏",
+      "pass": true,
+      "detail": {
+        "search": "卡农→S006",
+        "beginner": 4,
+        "favorites": [
+          "S001"
+        ]
+      }
+    },
+    {
+      "name": "练习：示范聆听出声",
+      "pass": true,
+      "detail": {
+        "state": "running",
+        "advanced": 1.27,
+        "peakRms": 0.0136
+      }
+    },
+    {
+      "name": "练习：麦克风跟奏",
+      "pass": true,
+      "detail": {
+        "live": "正在跟奏 · A4 · 0 音分"
+      }
+    },
+    {
+      "name": "伴奏与弦乐：播放伴奏",
+      "pass": true,
+      "detail": {
+        "t": 1.610749,
+        "paused": false,
+        "muted": false,
+        "vol": 0.75,
+        "advanced": 1.2
+      }
+    },
+    {
+      "name": "伴奏与弦乐：弦乐按键与音阶",
+      "pass": true,
+      "detail": {
+        "state": "running",
+        "advanced": 1.02,
+        "peakRms": 0.0205
+      }
+    },
+    {
+      "name": "动作跟练：课程列表来自服务端并可播放",
+      "pass": true,
+      "detail": {
+        "lessons": 6,
+        "state": "running",
+        "advanced": 1.53,
+        "peakRms": 0.0207,
+        "seek": 1.75
+      }
+    },
+    {
+      "name": "动作跟练：账号云进度读写",
+      "pass": true,
+      "detail": {
+        "merge": "本课云进度已确认；本机记录保留。",
+        "read": "已切换乐器，原有记录仍然保留。",
+        "api": 200
+      }
+    },
+    {
+      "name": "学习：六步主线与八阶段",
+      "pass": true,
+      "detail": {
+        "tryTab": "true",
+        "stages": 8,
+        "detail": true
+      }
+    },
+    {
+      "name": "创作：麦克风录音并保存",
+      "pass": true,
+      "detail": {
+        "media": "0→1"
+      }
+    },
+    {
+      "name": "创作：摄像头视频录制并保存",
+      "pass": true,
+      "detail": {
+        "media": "1→2"
+      }
+    },
+    {
+      "name": "创作：四轨录制与播放",
+      "pass": true,
+      "detail": {
+        "tracks": "2→3",
+        "state": "running",
+        "advanced": 1.02,
+        "peakRms": 0.0158
+      }
+    },
+    {
+      "name": "声音工作台：切换音色、试听、保存与导出预设",
+      "pass": true,
+      "detail": {
+        "preset": "Warm",
+        "peakRms": 0.028,
+        "export": "download"
+      }
+    },
+    {
+      "name": "声音工作台：预设云备份",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "hasBackup": true
+      }
+    },
+    {
+      "name": "MIDI：添加音符、导出 .mid、再导入、试听",
+      "pass": true,
+      "detail": {
+        "export": "MIDI.mid 67B",
+        "notice": "已保存到当前浏览器。",
+        "playing": "running"
+      }
+    },
+    {
+      "name": "调音器：A 弦 440 Hz 输入判准",
+      "pass": true,
+      "detail": {
+        "note": "A4",
+        "hz": "检测频率 440.0 Hz",
+        "feedback": "稳定接近目标音",
+        "state": "in-tune"
+      }
+    },
+    {
+      "name": "调音器：参考音",
+      "pass": true,
+      "detail": {
+        "state": "running",
+        "advanced": 1.03,
+        "peakRms": 0.0374
+      }
+    },
+    {
+      "name": "节拍器：启动、调速、停止",
+      "pass": true,
+      "detail": {
+        "bpm": "85",
+        "state": "running",
+        "advanced": 1.27,
+        "peakRms": 0.0285
+      }
+    },
+    {
+      "name": "设备：MIDI 端口检测与蓝牙入口（真实琴需实机）",
+      "pass": true,
+      "detail": {
+        "midi": "Permission to use Web MIDI API was not granted.",
+        "ble": "当前浏览器不支持安全的 Web Bluetooth，请使用支持的浏览器或原生端"
+      }
+    },
+    {
+      "name": "社区：发布投稿并在“我的投稿”中出现",
+      "pass": true,
+      "detail": {
+        "notice": "当前浏览器不支持安全的 Web Bluetooth，请使用支持的浏览器或原生端"
+      }
+    },
+    {
+      "name": "社区：上传短视频并加入投稿",
+      "pass": true,
+      "detail": {
+        "webmBytes": 182047,
+        "title": "空弦短视频",
+        "status": "pending",
+        "attachments": [
+          "video"
+        ]
+      }
+    },
+    {
+      "name": "后台：管理员审核并发布投稿",
+      "pass": true,
+      "detail": {
+        "identity": "admin",
+        "queue": true,
+        "approved": 2,
+        "courses": true
+      }
+    },
+    {
+      "name": "社区：审核通过后公开可见",
+      "pass": true,
+      "detail": {
+        "publicPosts": [
+          "空弦短视频",
+          "一键预览验收"
+        ],
+        "video": {
+          "url": "/api/community/videos/31517e1a-a1d1-4e02-9478-c80a25713145",
+          "status": 206,
+          "type": "video/webm",
+          "decoded": true,
+          "size": [
+            320,
+            240
+          ]
+        }
+      }
+    },
+    {
+      "name": "社区：点赞与评论",
+      "pass": true,
+      "detail": {
+        "like": "♡ 0→♥ 1",
+        "comments": 1
+      }
+    },
+    {
+      "name": "后台：九个管理页面",
+      "pass": true,
+      "detail": {
+        "overview": "总览",
+        "courses": "课程与内容",
+        "moderation": "内容审核",
+        "reports": "举报处理",
+        "users": "用户概览",
+        "settings": "社区设置",
+        "catalog": "曲库显示",
+        "audit": "操作审计",
+        "plans": "后续模块"
+      }
+    },
+    {
+      "name": "设置：导出练习记录与 CSV",
+      "pass": true,
+      "detail": {
+        "json": "download",
+        "csv": "download"
+      }
+    },
+    {
+      "name": "设置：导出完整作品包（含录音录像）",
+      "pass": true,
+      "detail": {
+        "file": "Silvio-workspace-20261027-112622.zip",
+        "bytes": 351625,
+        "media": 3
+      }
+    },
+    {
+      "name": "设置：准备离线资源",
+      "pass": true,
+      "detail": {
+        "status": "离线资源已就绪"
+      }
+    },
+    {
+      "name": "离线：断网后重新打开仍可用",
+      "pass": true,
+      "detail": {
+        "title": "调音器"
+      }
+    },
+    {
+      "name": "设置：切换语言与深色主题",
+      "pass": true,
+      "detail": {
+        "en": "Settings",
+        "theme": "dark"
+      }
+    },
+    {
+      "name": "设置：切换为原声小提琴",
+      "pass": true,
+      "detail": {
+        "header": "声音输入"
+      }
+    },
+    {
+      "name": "产品探索",
+      "pass": true,
+      "detail": {
+        "modal": true
+      }
+    },
+    {
+      "name": "作品包：在全新浏览器中恢复",
+      "pass": true,
+      "detail": {
+        "exported": 3,
+        "restored": 3
+      }
+    },
+    {
+      "name": "账号：切回访客",
+      "pass": true,
+      "detail": {
+        "guestReadOnly": true
+      }
+    }
+  ],
+  "pageErrors": [],
+  "environment": {
+    "browser": "Playwright Chromium (headless), 390×844 touch viewport",
+    "microphone": "generated 440 Hz sine via --use-file-for-fake-audio-capture",
+    "camera": "Chromium fake video device",
+    "node": "22.22",
+    "launcher": "node start-preview.mjs --instance acceptance --reset"
+  }
+}

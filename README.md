@@ -4,6 +4,40 @@
 
 打开 [`index.html`](index.html) 查看 App 页面：首次引导与全部功能页截图、V29 改进项状态、功能一览、代码结构和 V12–V29 版本记录。
 
+## 一键预览
+
+在电脑上启动完整的 App：客户端、服务端接口、本地数据库和后台管理端一起运行，浏览器自动打开。
+
+| 系统 | 操作 |
+|---|---|
+| Windows | 双击 `一键预览.cmd` |
+| macOS | 双击 `一键预览.command`（首次需在“系统设置 › 隐私与安全性”中允许） |
+| 任意系统 | 在仓库根目录运行 `node start-preview.mjs` |
+
+需要 Node.js 22.5 或更高版本（建议 24 LTS），无需 `npm install`。启动后：
+
+- App：<http://127.0.0.1:18912/>
+- 后台：<http://127.0.0.1:18912/admin>
+- 身份：本机测试管理员 `preview-owner`，所以社区发帖、云备份、课程云进度和后台审核都能直接使用；在 App 里也可以切回访客
+- 数据：保存在 `web-source/.preview/`，重启后保留
+
+常用参数：`--port 18920` 换端口，`--role user` 或 `--role anonymous` 换成普通账号或未登录访客，`--reset` 清空本地预览数据，`--no-open` 不自动打开浏览器，`--help` 查看全部。
+
+预览只监听本机 `127.0.0.1`，手机无法直接访问；麦克风、摄像头只在 `localhost` 或 HTTPS 下可用。手机上请使用线上客户端。
+
+### 功能验收
+
+`tools/acceptance.cjs` 会自动启动一个独立的预览实例（数据在 `web-source/.preview/acceptance/`），用 Chromium 模拟手机、生成 440 Hz 麦克风信号和虚拟摄像头，逐项操作 37 个功能点，结束后关闭实例：
+
+```sh
+npm i -D playwright && npx playwright install chromium   # 首次
+node tools/acceptance.cjs
+```
+
+最近一次结果见 [`docs/一键预览验收结果.json`](docs/一键预览验收结果.json)：37 / 37 通过，页面脚本错误 0。覆盖首次引导、曲库、练习与麦克风跟奏、伴奏、动作跟练与课程云进度、学习路径、录音 / 录像 / 四轨、音色与预设云备份、MIDI 导入导出、调音器判准、节拍器、社区发帖 / 短视频 / 点赞评论、后台审核与九个管理页、导出与作品包恢复、离线断网、语言与主题、乐器切换、访客切换。
+
+蓝牙 MIDI 和真实小提琴需要实体设备，验收只确认了入口会给出明确提示。
+
 ## 目录
 
 | 路径 | 内容 |
@@ -14,8 +48,12 @@
 | `android-source/` | V29 Android WebView 壳源码（13 个文件） |
 | `SOURCE-MANIFEST.json` | 上述 279 个源文件的逐文件 SHA256 清单 |
 | `docs/V29-交付说明.txt` | V29 原交付说明（R01–R14 状态、验证范围） |
+| `start-preview.mjs`、`一键预览.cmd`、`一键预览.command` | 一键预览启动器 |
+| `tools/acceptance.cjs`、`docs/一键预览验收结果.json` | 功能验收脚本及最近一次结果 |
 
-## 本地运行
+## 手动运行
+
+一键预览做的就是下面这些步骤：
 
 ```sh
 cd web-source
