@@ -156,9 +156,10 @@ function launchPreview(){
     await click('[data-action="recorder-mode"][data-mode="audio"]');return {media:m0+'→'+m1};
   });
   await step('创作：四轨录制与播放',async()=>{
-    const l0=await mediaCount();await reveal('[data-pref="barCount"]');await p.locator('[data-pref="barCount"]').selectOption({index:0});await wait(400);await click('[data-action="record-loop"][data-track="0"]');await wait(4000);await click('[data-action="stop-record"][data-track="0"]');let l1=l0;for(let i=0;i<30&&l1<=l0;i++){await wait(500);l1=await mediaCount();}
+    const l0=await mediaCount();await reveal('[data-pref="barCount"]');await p.locator('[data-pref="barCount"]').selectOption({index:0});await wait(400);const t0=Date.now();await click('[data-action="record-loop"][data-track="0"]');await wait(800);const status=await p.textContent('#record-status');let l1=l0;for(let i=0;i<40&&l1<=l0;i++){await wait(250);l1=await mediaCount();}const stoppedAfter=(Date.now()-t0)/1000;
+    ok(/自动停止/.test(status)&&stoppedAfter>2.5&&stoppedAfter<6,'1 小节（80 BPM 4/4，约 3 秒）未自动停止：'+stoppedAfter+'s '+status);
     await click('[data-action="play-loops"]');const a=await audio(1200);await click('[data-action="stop-loops"]');
-    ok(a.state==='running'&&l1>l0,'四轨 '+l0+'→'+l1+' '+JSON.stringify(a));return {tracks:l0+'→'+l1,...a};
+    ok(a.state==='running'&&l1>l0,'四轨 '+l0+'→'+l1+' '+JSON.stringify(a));return {tracks:l0+'→'+l1,autoStopSeconds:+stoppedAfter.toFixed(1),...a};
   });
 
   await step('声音工作台：切换音色、试听、保存与导出预设',async()=>{
@@ -201,7 +202,7 @@ function launchPreview(){
   await step('设备：MIDI 端口检测与蓝牙入口（真实琴需实机）',async()=>{
     await go('device');await click('[data-action="detect-midi"]');await wait(1200);const n1=await notice();
     await click('[data-action="connect-ble-midi"]');await wait(1200);const n2=await notice();
-    ok(n1&&n2,'没有给出设备状态提示');return {midi:n1.slice(0,50),ble:n2.slice(0,50)};
+    ok(n1&&n2&&/[\u4e00-\u9fff]/.test(n1)&&!/Permission|not granted|Requested device/i.test(n1+n2),'设备提示缺失或含浏览器英文原文：'+n1+' / '+n2);return {midi:n1.slice(0,50),ble:n2.slice(0,50)};
   });
 
   await step('社区：发布投稿并在“我的投稿”中出现',async()=>{
@@ -221,10 +222,11 @@ function launchPreview(){
     await p.locator('dialog[open] [data-svc-field="rights"]').check();
     const up=p.waitForResponse(r=>r.url().includes('/api/community/videos')&&r.request().method()==='POST',{timeout:20000});
     await p.setInputFiles('dialog[open] [data-svc-field="video"]',f);const ur=await up;ok(ur.status()<300,'视频上传 '+ur.status());await wait(1500);
-    await click('dialog[open] [data-svc-action="attach-video"]');await wait(1200);
+    const marked=await p.evaluate(()=>{const label=document.querySelector('dialog[open] [data-svc-field="rights"]')?.closest('label');return {needed:!!label?.classList.contains('svc-check-needed'),hint:label?.querySelector('.svc-check-hint')?.textContent||'',list:document.querySelector('dialog[open] .svc-video-operations')?.textContent||'',attachButton:!!document.querySelector('dialog[open] [data-svc-action="attach-video"]')};});
+    ok(marked.needed&&marked.hint&&!marked.attachButton&&/已加入草稿/.test(marked.list),'权属确认未标记或仍提供加入按钮 '+JSON.stringify(marked));
     await p.locator('dialog[open] [data-svc-field="rights"]').check();await click('dialog[open] [data-svc-action="submit"]');
     let st;for(let i=0;i<20;i++){await wait(800);st=await p.evaluate(async()=>{const r=await fetch('/api/community/state',{credentials:'same-origin'});const j=await r.json();return (j.mine||[]).map(x=>({title:x.title,status:x.status,attachments:(x.attachments||[]).map(a=>a.type||a.kind)}));});if(st.some(x=>x.title==='空弦短视频'))break;}
-    const v=st.find(x=>x.title==='空弦短视频');ok(v&&v.attachments.length,'服务端投稿缺少视频 '+JSON.stringify(st));return {webmBytes:fs.statSync(f).size,...v};
+    const v=st.find(x=>x.title==='空弦短视频');ok(v&&v.attachments.length,'服务端投稿缺少视频 '+JSON.stringify(st));return {webmBytes:fs.statSync(f).size,rightsHint:marked.hint,...v};
   });
   await step('后台：管理员审核并发布投稿',async()=>{
     const a=await ctx.newPage();await a.goto(base+'admin',{waitUntil:'networkidle'});await wait(1500);

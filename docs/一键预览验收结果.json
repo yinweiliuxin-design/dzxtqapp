@@ -1,6 +1,6 @@
 {
   "base": "http://127.0.0.1:18960/",
-  "at": "2026-10-27T11:27:09.162Z",
+  "at": "2026-11-02T12:10:23.498Z",
   "passed": 37,
   "total": 37,
   "results": [
@@ -49,7 +49,7 @@
       "detail": {
         "state": "running",
         "advanced": 1.27,
-        "peakRms": 0.0136
+        "peakRms": 0.0135
       }
     },
     {
@@ -63,11 +63,11 @@
       "name": "伴奏与弦乐：播放伴奏",
       "pass": true,
       "detail": {
-        "t": 1.610749,
+        "t": 1.655899,
         "paused": false,
         "muted": false,
         "vol": 0.75,
-        "advanced": 1.2
+        "advanced": 1.21
       }
     },
     {
@@ -85,8 +85,8 @@
       "detail": {
         "lessons": 6,
         "state": "running",
-        "advanced": 1.53,
-        "peakRms": 0.0207,
+        "advanced": 1.52,
+        "peakRms": 0.0206,
         "seek": 1.75
       }
     },
@@ -127,9 +127,10 @@
       "pass": true,
       "detail": {
         "tracks": "2→3",
+        "autoStopSeconds": 3.2,
         "state": "running",
         "advanced": 1.02,
-        "peakRms": 0.0158
+        "peakRms": 0.0155
       }
     },
     {
@@ -137,7 +138,7 @@
       "pass": true,
       "detail": {
         "preset": "Warm",
-        "peakRms": 0.028,
+        "peakRms": 0.0287,
         "export": "download"
       }
     },
@@ -184,14 +185,14 @@
         "bpm": "85",
         "state": "running",
         "advanced": 1.27,
-        "peakRms": 0.0285
+        "peakRms": 0.0262
       }
     },
     {
       "name": "设备：MIDI 端口检测与蓝牙入口（真实琴需实机）",
       "pass": true,
       "detail": {
-        "midi": "Permission to use Web MIDI API was not granted.",
+        "midi": "没有获得权限。请在浏览器或系统设置中允许本站使用该设备后重试。",
         "ble": "当前浏览器不支持安全的 Web Bluetooth，请使用支持的浏览器或原生端"
       }
     },
@@ -206,7 +207,8 @@
       "name": "社区：上传短视频并加入投稿",
       "pass": true,
       "detail": {
-        "webmBytes": 182047,
+        "webmBytes": 182611,
+        "rightsHint": "已添加附件：提交前请勾选此项，确认权属。",
         "title": "空弦短视频",
         "status": "pending",
         "attachments": [
@@ -233,7 +235,7 @@
           "一键预览验收"
         ],
         "video": {
-          "url": "/api/community/videos/31517e1a-a1d1-4e02-9478-c80a25713145",
+          "url": "/api/community/videos/ea08c2d5-1433-45d4-a5d6-ace4d9cd0c22",
           "status": 206,
           "type": "video/webm",
           "decoded": true,
@@ -279,8 +281,8 @@
       "name": "设置：导出完整作品包（含录音录像）",
       "pass": true,
       "detail": {
-        "file": "Silvio-workspace-20261027-112622.zip",
-        "bytes": 351625,
+        "file": "Silvio-workspace-20261102-120937.zip",
+        "bytes": 334891,
         "media": 3
       }
     },
@@ -338,6 +340,7 @@
   ],
   "pageErrors": [],
   "environment": {
+    "release": "V29.1 (0.29.1)",
     "browser": "Playwright Chromium (headless), 390×844 touch viewport",
     "microphone": "generated 440 Hz sine via --use-file-for-fake-audio-capture",
     "camera": "Chromium fake video device",

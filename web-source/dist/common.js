@@ -7,6 +7,9 @@ const icon=n=>'<i data-lucide="'+E(n)+'"></i>';
 const icons=()=>window.lucide?.createIcons();
 let svState=structuredClone(window.SV_SEED),svToken=null,svOnline=false;
 let noticeTimer;
+/* Browser and device APIs reject with English DOMException text; map those to a localized message. */
+const DEVICE_ERROR_TEXT={NotAllowedError:'没有获得权限。请在浏览器或系统设置中允许本站使用该设备后重试。',PermissionDeniedError:'没有获得权限。请在浏览器或系统设置中允许本站使用该设备后重试。',SecurityError:'没有获得权限。请在浏览器或系统设置中允许本站使用该设备后重试。',NotFoundError:'没有找到可用的设备，或已取消选择。',DevicesNotFoundError:'没有找到可用的设备，或已取消选择。',NotReadableError:'设备正被其他应用占用或暂时无法读取，请关闭其他应用后重试。',AbortError:'操作被中断，请重试。',NotSupportedError:'当前浏览器不支持这项功能。',NetworkError:'设备连接中断，请靠近设备后重试。'};
+function userError(error,fallback='操作没有完成，请重试。'){const text=String(error?.message||'');if(/[\u3400-\u9fff]/.test(text))return text;return DEVICE_ERROR_TEXT[error?.name]||fallback;}
 function notify(message){const el=$('#notice');if(!el)return;el.textContent=window.SVLocale?.text(message)||message;el.style.display='block';clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>{el.style.display='none';},4200);}
 function modal(html){$('#modal-body').innerHTML=html;if(!$('#modal').open)$('#modal').showModal();icons();window.SVLocale?.translate($('#modal'));}
 function fmtMoney(n,code){try{return new Intl.NumberFormat(undefined,{style:'currency',currency:code}).format(n);}catch{return code+' '+Number(n).toFixed(2);}}

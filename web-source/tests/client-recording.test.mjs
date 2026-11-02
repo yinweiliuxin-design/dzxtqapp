@@ -12,11 +12,11 @@ const plain=value=>JSON.parse(JSON.stringify(value));
 function deferred(){let resolve,reject;const promise=new Promise((yes,no)=>{resolve=yes;reject=no;});promise.catch(()=>{});return {promise,resolve,reject};}
 const flush=()=>new Promise(resolve=>setImmediate(resolve));
 function harness(options={}){
-  const requests=[],videoRequests=[],permissionQueue=[],videoQueue=[],saved=[],notices=[],renders=[],intervals=new Map(),plays=[],stops=[],persisted=[];
+  const requests=[],videoRequests=[],permissionQueue=[],videoQueue=[],saved=[],notices=[],renders=[],intervals=new Map(),timeouts=new Map(),plays=[],stops=[],persisted=[];
   let now=1000,sequence=0,refreshes=0,selectedSong={id:'S001',title:'First melody'};
   function recorder(source='microphone',{failure=null}={}){const done=deferred();let finished=false;const run={source,stream:{id:'camera-stream'},finished:done.promise,stopCalls:0,stop(){run.stopCalls++;if(!finished){finished=true;if(failure)done.reject(failure);else done.resolve({blob:new Blob(['captured media'],{type:'audio/webm'}),duration:2.5,source});}return done.promise;},complete(){if(!finished){finished=true;done.resolve({blob:new Blob(['captured media'],{type:'audio/webm'}),duration:2.5,source});}},fail(error){if(!finished){finished=true;done.reject(error);}}};return run;}
   const preview={id:'camera-preview'};
-  const context={page:'studio',capture:null,capturePending:false,captureGeneration:0,saving:false,recordTimer:null,captureRequestedKind:null,recordingError:'',lastSavedRecordingId:null,
+  const context={page:'studio',capture:null,capturePending:false,captureGeneration:0,saving:false,recordTimer:null,loopStopTimer:null,captureRequestedKind:null,recordingError:'',lastSavedRecordingId:null,
     prefs:{source:'synth',recordingSource:'microphone',recordingFacing:'user',preset:'Acoustic',effects:{volume:.75},a4:440,lang:'zh',...options.prefs},
     workspace:{state:()=>({practiceSource:options.lesson?'guided':'catalog'})},lessons:{selectedLesson:()=>options.lesson,state:()=>({transport:{rate:options.lessonRate||1}})},
     crypto:{randomUUID:()=>`capture-${++sequence}`},performance:{now:()=>now},Date,Promise,Error,Blob,
@@ -27,13 +27,14 @@ function harness(options={}){
     persist(){persisted.push(plain(context.prefs));return true;},notify:message=>notices.push(message),
     finishPractice:()=>options.finishPracticeGate?.promise||Promise.resolve(),
     setInterval(fn,ms){const id=++sequence;intervals.set(id,{fn,ms});return id;},clearInterval:id=>intervals.delete(id),
+    setTimeout(fn,ms){const id=++sequence;timeouts.set(id,{fn,ms});return id;},clearTimeout:id=>timeouts.delete(id),
     engine:{startCapture(captureSource,limits){requests.push({source:captureSource,limits:plain(limits)});const next=permissionQueue.shift();return next?.promise||Promise.resolve(recorder(captureSource));},setPreset(){},setEffects(){},play(plan,settings){plays.push({plan:plain(plan),settings:plain(settings)});return options.playGate?.promise||Promise.resolve({started:true});},stop(){stops.push(now);}},
     videoManager:{start(settings){videoRequests.push(settings);return videoQueue.shift()?.promise||Promise.resolve(recorder('microphone'));},cancel(){videoRequests.push({cancelled:true});}},
     SVMediaStore:{async put(row){saved.push(row);if(options.saveError)throw options.saveError;return options.saveGate?options.saveGate.promise:{persisted:true};}},
     async refreshMedia(){refreshes++;}
   };
   vm.createContext(context);vm.runInContext(actual,context,{filename:'client.js:actualRecording',timeout:1000});
-  return {context,requests,videoRequests,saved,notices,renders,intervals,plays,stops,persisted,preview,recorder,
+  return {context,requests,videoRequests,saved,notices,renders,intervals,timeouts,plays,stops,persisted,preview,recorder,
     start:(kind='recording',trackIndex)=>context.actualRecording.startRecord(kind,trackIndex),stop:()=>context.actualRecording.stopRecord(),
     deferPermission(){const gate=deferred();permissionQueue.push(gate);return gate;},deferVideo(){const gate=deferred();videoQueue.push(gate);return gate;},setClock:value=>now=value,setSong:value=>selectedSong=value,refreshes:()=>refreshes};
 }
@@ -53,6 +54,17 @@ test('recording the current guided lesson uses the same title, notes and chosen 
 
 test('guided recording accepts a published plain-string title without using unrelated library music',async()=>{
   const h=harness({lesson:{title:'Published phrase',events:[{midi:62,start:0,end:2}]},prefs:{recordingSource:'synth'}});await h.start();assert.equal(h.context.capture.name,'录音 · Published phrase');assert.ok(h.plays[0].plan[0].freq>293&&h.plays[0].plan[0].freq<294);await h.stop();
+});
+test('loop capture stops itself at the project length from tempo, meter and bar count',async()=>{
+  const h=harness({prefs:{source:'microphone',bpm:80,meter:'6/8',barCount:2}});await h.start('loop',0);
+  const [[id,timer]]=[...h.timeouts];assert.equal(timer.ms,4500);assert.equal(h.context.capture.autoStopMs,4500);
+  h.timeouts.delete(id);timer.fn();await flush();await flush();
+  assert.equal(h.saved.length,1);assert.equal(h.saved[0].kind,'loop');assert.equal(h.context.capture,null);assert.equal(h.timeouts.size,0);
+});
+test('stopping a loop early clears its automatic stop and one-shot takes never schedule one',async()=>{
+  const h=harness({prefs:{source:'microphone',bpm:120,meter:'4/4',barCount:1}});await h.start('loop',1);assert.equal([...h.timeouts.values()][0].ms,2000);
+  await h.stop();assert.equal(h.timeouts.size,0);assert.equal(h.saved.length,1);
+  await h.start('recording');assert.equal(h.timeouts.size,0);assert.equal(h.context.capture.autoStopMs,undefined);await h.stop();assert.equal(h.saved.length,2);
 });
 test('loop capture keeps its independent input source and bounded two-minute limit',async()=>{
   const h=harness({prefs:{source:'microphone',recordingSource:'synth'}});await h.start('loop',2);assert.deepEqual(h.requests,[{source:'microphone',limits:{maxDurationMs:120000}}]);assert.equal(h.context.capture.trackIndex,2);assert.equal(h.context.prefs.recordingSource,'synth');assert.equal(h.plays.length,0);await h.stop();assert.equal(h.saved[0].kind,'loop');assert.equal(h.saved[0].name,'循环轨 3 · First melody');assert.equal(h.context.lastSavedRecordingId,null);
