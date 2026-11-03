@@ -108,6 +108,13 @@ await test('ready upload attaches only to its original session, binds owner and 
   const requests=[];const h=harness({fetch:async(path,options)=>{requests.push({path,options});return response({ok:true,media:media(options.headers['X-Client-Request-Id'])},201);}}),d=readyDraft(h);await h.api.uploadVideo(new Blob(['x'],{type:'video/mp4'}));assert.equal(d.attachments.length,1);assert.equal(d.cloudOwnerId,'alice');assert.equal(d.rightsConfirmed,false);assert.equal(requests[0].options.headers['X-Account-Id'],'alice');assert.equal(requests[0].options.cache,'no-store');assert.match(h.api.snapshot().message,/added to the draft/);assert.equal(h.timers.size,0);
 });
 
+await test('after an upload the rights box is marked and the upload list no longer offers the same video',async()=>{
+  const h=harness({fetch:async(path,options)=>response({ok:true,media:media(options.headers['X-Client-Request-Id'])},201)}),d=readyDraft(h);await h.api.uploadVideo(new Blob(['x'],{type:'video/mp4'}));
+  assert.equal(d.rightsConfirmed,false);assert.match(h.api.snapshot().dialog.innerHTML,/svc-check-needed/);
+  const list=h.api.videoOperationHTML();assert.doesNotMatch(list,/data-svc-action="attach-video"/);assert.match(list,/Added to a draft/);
+  const check=h.api.snapshot().dialog.fields.get('rights');check.checked=true;h.api.onDialogChange({target:check});h.api.refreshEditor();
+  assert.equal(d.rightsConfirmed,true);assert.doesNotMatch(h.api.snapshot().dialog.innerHTML,/svc-check-needed/);
+});
 await test('late upload after another draft opens is cleaned and cannot attach to either draft',async()=>{
   const gate=deferred(),calls=[];let id;const h=harness({fetch:async(path,options)=>{calls.push(path);if(path==='/api/community/videos'){id=options.headers['X-Client-Request-Id'];return gate.promise;}return response({ok:true,media:media(id,'cancelled',5)});}}),d1=readyDraft(h),pending=h.api.uploadVideo(new Blob(['x'],{type:'video/mp4'}));const d2=readyDraft(h);gate.resolve(response({ok:true,media:media(id)},201));await pending;assert.equal(d1.attachments.length,0);assert.equal(d2.attachments.length,0);assert(calls.includes('/api/community/videos/'+id+'/cancel'));assert.equal(h.api.snapshot().videoOperations.length,0);assert.match(h.api.snapshot().message,/confirmed video cleanup/);
 });

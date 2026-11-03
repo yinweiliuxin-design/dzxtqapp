@@ -25,7 +25,9 @@
    if(at<suppressedUntil)return clear('reference','reference-suppressed',meta);
    if(meta.clipping===true||Number.isFinite(meta.peak)&&meta.peak>=.985)return clear('overload','clipping',meta);
    if(meta.reason==='below-noise-gate'||meta.reason==='no-input'||Number.isFinite(meta.rms)&&meta.rms<(Number.isFinite(meta.gate)?meta.gate:state.gate))return clear('no-input',meta.reason||'below-noise-gate',meta);
-   if(meta.valid!==true||!Number.isFinite(meta.confidence)||meta.confidence<.85||!Number.isFinite(hz)||hz<80||hz>3000)return clear('uncertain',meta.reason||'unreliable-input',meta);
+   if(meta.valid!==true||!Number.isFinite(meta.confidence)||meta.confidence<.85||!Number.isFinite(hz)||hz<80||hz>3000){clear('uncertain',meta.reason||'unreliable-input',meta);
+    // Keep the rough reading for display only; it never counts as reliable or in tune.
+    if(Number.isFinite(hz)&&hz>=80&&hz<=3000&&meta.reason!=='ambiguous-octave')state.frequency=hz;return clone();}
    const raw=1200*Math.log2(hz/targetHz());
    if(Math.abs(raw)>180){clear('wrong-string',Math.abs(raw)>1000?'octave-or-wrong-string':'wrong-string',meta);state.frequency=hz;return clone();}
    if(frames.length&&(at-frames[frames.length-1].at>150||Math.abs(raw-frames[frames.length-1].cents)>12)){frames=[];holdStart=null;}

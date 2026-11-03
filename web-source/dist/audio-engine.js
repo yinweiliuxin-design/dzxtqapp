@@ -21,9 +21,12 @@
   // CC0 VSCO-2-CE, pinned source and conversion hashes in assets/audio/violin/manifest.json.
   const VIOLIN_SAMPLES=[['A3',57],['E4',64],['A4',69],['E5',76],['A5',81],['E6',88],['A6',93]].map(([note,midi])=>Object.freeze({note,midi,url:'assets/audio/violin/'+note+'.wav',bytes:123524,duration:2.8,loopStart:.84,loopEnd:2.6}));
   class AudioEngineError extends Error{
-    constructor(code,message,cause){super(message);this.name='AudioEngineError';this.code=code;this.causeName=cause?.name||null;}
+    constructor(code,message,cause){super(message);this.name='AudioEngineError';this.code=code;this.causeName=cause?.name||null;this.causeMessage=cause?.message||null;}
   }
-  const error=(code,message,cause)=>new AudioEngineError(code,message+(cause?.message?'：'+cause.message:''),cause);
+  // Browser and device APIs reject with English text; show a short localized cause and keep the original on the error.
+  const CAUSE_TEXT={NotAllowedError:'权限未开启，请在浏览器或系统设置中允许后重试',PermissionDeniedError:'权限未开启，请在浏览器或系统设置中允许后重试',SecurityError:'当前页面不允许使用该设备',NotFoundError:'没有找到可用的输入设备',DevicesNotFoundError:'没有找到可用的输入设备',OverconstrainedError:'没有找到符合要求的输入设备',NotReadableError:'设备正被其他应用占用或暂时无法读取',TrackStartError:'设备正被其他应用占用或暂时无法读取',AbortError:'操作被中断，请重试',NotSupportedError:'当前浏览器不支持这项功能',EncodingError:'音频格式无法解码'};
+  const causeText=cause=>{const text=String(cause?.message||'');return /[\u3400-\u9fff]/.test(text)?text:(CAUSE_TEXT[cause?.name]||'');};
+  const error=(code,message,cause)=>{const reason=causeText(cause);return new AudioEngineError(code,message+(reason?'：'+reason:''),cause);};
   // Follow the sample at the output device, not the ahead-of-time render clock.
   function audibleContextTime(ctx,now){
     const current=Number.isFinite(ctx?.currentTime)?Math.max(0,ctx.currentTime):0;

@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Silvio V29 App</title>
+<title>Silvio V29.2 App</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Silvio 电子小提琴 App 当前代码版本 V29：页面截图、功能、代码结构与版本记录。">
+<meta name="description" content="Silvio 电子小提琴 App 当前代码版本 V29.2（基于 V29）：页面截图、功能、代码结构与版本记录。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Noto+Serif+SC:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -237,7 +237,7 @@ dialog.lb button{position:absolute;top:8px;right:8px;min-width:44px;min-height:4
 <body>
 <header class="top"><div class="wrap">
   <div class="mark"><b>Silvio</b><span>电子小提琴 App · 当前代码版本</span></div>
-  <span class="chip cur">V29 · 0.29.0</span>
+  <span class="chip cur">V29.2 · 0.29.2</span>
 </div></header>
 
 <main>
@@ -248,6 +248,7 @@ dialog.lb button{position:absolute;top:8px;right:8px;min-width:44px;min-height:4
     <p class="lede">调音按选中的目标弦判准，作品可以整包备份和恢复，网络不稳时课程照常打开。本页整理自 GitHub 中现存的源码和交付记录，所有截图都来自同一份代码在本地运行的结果。</p>
     <div class="actions">
       <a class="btn primary" href="#preview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>一键预览</a>
+      <a class="btn" href="https://claude.ai/artifact/9rJcYr7ohYTN1fnpp6sAbT" target="_blank" rel="noopener">手机在线预览</a>
       <a class="btn" href="https://smartvio-studio-mobile.politecalf5.chatgpt.site/" target="_blank" rel="noopener">线上客户端</a>
       <a class="btn" href="https://github.com/yinweiliuxin-design/dzxtqapp" target="_blank" rel="noopener">dzxtqapp 仓库</a>
       <a class="btn" href="https://github.com/yinweiliuxin-design/smartviolin/tree/violinapp/06-App%E8%BD%AF%E4%BB%B6/V29-%E5%8F%AF%E9%9D%A0%E6%80%A7%E7%89%88%E6%9C%AC" target="_blank" rel="noopener">V29 源码出处</a>
@@ -288,7 +289,7 @@ dialog.lb button{position:absolute;top:8px;right:8px;min-width:44px;min-height:4
       <div><dt>本机数据</dt><dd class="mono">web-source/.preview/</dd></div>
       <div><dt>常用参数</dt><dd class="mono">--port · --role user|anonymous · --reset · --no-open</dd></div>
     </dl>
-    <p class="note">只监听本机，手机无法直接打开；手机请用线上客户端。麦克风和摄像头只在 localhost 或 HTTPS 下可用。</p>
+    <p class="note">只监听本机，手机无法直接打开。手机请用<a href="https://claude.ai/artifact/9rJcYr7ohYTN1fnpp6sAbT" target="_blank" rel="noopener">在线预览</a>：客户端与服务端接口都在浏览器里运行，数据只存在该浏览器；麦克风、摄像头、离线模式在在线预览中不可用。</p>
   </div>
   <div class="accept">
     <h3>逐项验收覆盖的功能 <small><span class="mono">node tools/acceptance.cjs</span>，Chromium 手机视口，生成的 440 Hz 麦克风信号与虚拟摄像头</small></h3>
@@ -436,27 +437,29 @@ node scripts/preview.mjs        <span class="c"># 127.0.0.1:18912</span></pre></
 <section id="history"><div class="wrap">
   <div class="sec-head">
     <h2>版本记录</h2>
-    <p>右侧条形为该版本完整源码的文件数（按 266 等比例绘制），取自各版本的源码清单；V12 未单独备份。</p>
+    <p>右侧条形为该版本完整源码的文件数（按 270 等比例绘制），取自各版本的源码清单；V12 未单独备份。</p>
   </div>
   <div class="tl-head" aria-hidden="true"><span>版本</span><span>日期</span><span>主要变化</span><span>源码文件</span></div>
   <ol class="tl">
-    <li class="now"><span class="v">V29</span><span class="date">2026-10-26</span><span class="what">可靠性：调音判准、作品包备份恢复、弱网课程、可选云进度；709 项测试</span><span class="bar"><i style="width:100%"></i><b>266</b></span></li>
-    <li><span class="v">V28.1</span><span class="date">2026-10-25</span><span class="what">手机商标、同步陪练控件、曲目封面入口与缓存版本热修</span><span class="bar"><i style="width:95.5%"></i><b>254</b></span></li>
-    <li><span class="v">V28</span><span class="date">2026-10-25</span><span class="what">原声 / 电子示范一致、教学音画同步、录制画幅修复</span><span class="bar"><i style="width:94.4%"></i><b>251</b></span></li>
-    <li><span class="v">V27</span><span class="date">2026-10-25</span><span class="what">明亮小提琴设计，主导航改为五项；Android 测试壳</span><span class="bar"><i style="width:89.8%"></i><b>239</b></span></li>
-    <li><span class="v">V26</span><span class="date">2026-10-24</span><span class="what">设计扩展到全部 15 个功能页；WebKit / Chrome 适配，录音中断修复</span><span class="bar"><i style="width:86.5%"></i><b>230</b></span></li>
-    <li><span class="v">V25</span><span class="date">2026-10-24</span><span class="what">Safari 视窗与安全区布局，真实比例的两种小提琴插图</span><span class="bar"><i style="width:85.7%"></i><b>228</b></span></li>
-    <li><span class="v">V24</span><span class="date">2026-10-23</span><span class="what">电子 / 原声小提琴双入口</span><span class="bar"><i style="width:83.5%"></i><b>222</b></span></li>
-    <li><span class="v">V23</span><span class="date">2026-10-23</span><span class="what">Canva 六页视觉落地到真实组件</span><span class="bar"><i style="width:81.6%"></i><b>217</b></span></li>
-    <li><span class="v">V22</span><span class="date">2026-10-23</span><span class="what">八阶段分级学习，22 项公开教学参考</span><span class="bar"><i style="width:80.8%"></i><b>215</b></span></li>
-    <li><span class="v">V21</span><span class="date">2026-10-22</span><span class="what">B+C 同步陪练六课，后台教学 CMS</span><span class="bar"><i style="width:78.2%"></i><b>208</b></span></li>
-    <li><span class="v">V20</span><span class="date">2026-10-20</span><span class="what">公开访客客户端，受保护后台</span><span class="bar"><i style="width:72.6%"></i><b>193</b></span></li>
-    <li><span class="v">V19</span><span class="date">2026-10-16</span><span class="what">完整客户端、后台与服务端源码；441 项测试</span><span class="bar"><i style="width:72.2%"></i><b>192</b></span></li>
-    <li><span class="v">V18</span><span class="date">2026-10-16</span><span class="what">访客为默认身份，账号可选；原创白色电小提琴动画；388 项测试</span><span class="bar"><i style="width:69.5%"></i><b>185</b></span></li>
-    <li><span class="v">V17.1</span><span class="date">2026-10-16</span><span class="what">iPhone / iPad 音频恢复修复；341 项测试</span><span class="bar"><i style="width:65.8%"></i><b>175</b></span></li>
-    <li><span class="v">V17</span><span class="date">2026-10-16</span><span class="what">修复播放无声，六步动画学习入口；296 项测试</span><span class="bar"><i style="width:64.3%"></i><b>171</b></span></li>
-    <li><span class="v">V16</span><span class="date">2026-10-15</span><span class="what">六步动画学习、CC0 小提琴示范音、社区短视频</span><span class="bar"><i style="width:62.4%"></i><b>166</b></span></li>
-    <li><span class="v">V15</span><span class="date">2026-10-14</span><span class="what">原创弦乐音色、伴奏、MIDI 编辑、私人预设云备份</span><span class="bar"><i style="width:49.6%"></i><b>132</b></span></li>
+    <li class="now"><span class="v">V29.2</span><span class="date">2026-11-03</span><span class="what">内容复核修正：曲谱旋律、调性、升降号、拍号与弱起小节；调音器读数不稳时的提示；四种语言的文字与版本号；723 项测试</span><span class="bar"><i style="width:100%"></i><b>270</b></span></li>
+    <li><span class="v">V29.1</span><span class="date">2026-11-02</span><span class="what">视频投稿权属确认提示、四轨循环按小节数自动停止、设备报错本地化</span><span class="bar"><i style="width:98.9%"></i><b>267</b></span></li>
+    <li><span class="v">V29</span><span class="date">2026-10-26</span><span class="what">可靠性：调音判准、作品包备份恢复、弱网课程、可选云进度；709 项测试</span><span class="bar"><i style="width:98.5%"></i><b>266</b></span></li>
+    <li><span class="v">V28.1</span><span class="date">2026-10-25</span><span class="what">手机商标、同步陪练控件、曲目封面入口与缓存版本热修</span><span class="bar"><i style="width:94.1%"></i><b>254</b></span></li>
+    <li><span class="v">V28</span><span class="date">2026-10-25</span><span class="what">原声 / 电子示范一致、教学音画同步、录制画幅修复</span><span class="bar"><i style="width:93%"></i><b>251</b></span></li>
+    <li><span class="v">V27</span><span class="date">2026-10-25</span><span class="what">明亮小提琴设计，主导航改为五项；Android 测试壳</span><span class="bar"><i style="width:88.5%"></i><b>239</b></span></li>
+    <li><span class="v">V26</span><span class="date">2026-10-24</span><span class="what">设计扩展到全部 15 个功能页；WebKit / Chrome 适配，录音中断修复</span><span class="bar"><i style="width:85.2%"></i><b>230</b></span></li>
+    <li><span class="v">V25</span><span class="date">2026-10-24</span><span class="what">Safari 视窗与安全区布局，真实比例的两种小提琴插图</span><span class="bar"><i style="width:84.4%"></i><b>228</b></span></li>
+    <li><span class="v">V24</span><span class="date">2026-10-23</span><span class="what">电子 / 原声小提琴双入口</span><span class="bar"><i style="width:82.2%"></i><b>222</b></span></li>
+    <li><span class="v">V23</span><span class="date">2026-10-23</span><span class="what">Canva 六页视觉落地到真实组件</span><span class="bar"><i style="width:80.4%"></i><b>217</b></span></li>
+    <li><span class="v">V22</span><span class="date">2026-10-23</span><span class="what">八阶段分级学习，22 项公开教学参考</span><span class="bar"><i style="width:79.6%"></i><b>215</b></span></li>
+    <li><span class="v">V21</span><span class="date">2026-10-22</span><span class="what">B+C 同步陪练六课，后台教学 CMS</span><span class="bar"><i style="width:77%"></i><b>208</b></span></li>
+    <li><span class="v">V20</span><span class="date">2026-10-20</span><span class="what">公开访客客户端，受保护后台</span><span class="bar"><i style="width:71.5%"></i><b>193</b></span></li>
+    <li><span class="v">V19</span><span class="date">2026-10-16</span><span class="what">完整客户端、后台与服务端源码；441 项测试</span><span class="bar"><i style="width:71.1%"></i><b>192</b></span></li>
+    <li><span class="v">V18</span><span class="date">2026-10-16</span><span class="what">访客为默认身份，账号可选；原创白色电小提琴动画；388 项测试</span><span class="bar"><i style="width:68.5%"></i><b>185</b></span></li>
+    <li><span class="v">V17.1</span><span class="date">2026-10-16</span><span class="what">iPhone / iPad 音频恢复修复；341 项测试</span><span class="bar"><i style="width:64.8%"></i><b>175</b></span></li>
+    <li><span class="v">V17</span><span class="date">2026-10-16</span><span class="what">修复播放无声，六步动画学习入口；296 项测试</span><span class="bar"><i style="width:63.3%"></i><b>171</b></span></li>
+    <li><span class="v">V16</span><span class="date">2026-10-15</span><span class="what">六步动画学习、CC0 小提琴示范音、社区短视频</span><span class="bar"><i style="width:61.5%"></i><b>166</b></span></li>
+    <li><span class="v">V15</span><span class="date">2026-10-14</span><span class="what">原创弦乐音色、伴奏、MIDI 编辑、私人预设云备份</span><span class="bar"><i style="width:48.9%"></i><b>132</b></span></li>
     <li><span class="v">V12</span><span class="date">2026-10-12</span><span class="what">手机浏览器入口、四语与国家商标、开机动画、图文教学、离线模式</span><span class="bar na"><i></i><b>—</b></span></li>
   </ol>
 </div></section>
@@ -488,7 +491,7 @@ node scripts/preview.mjs        <span class="c"># 127.0.0.1:18912</span></pre></
 </div></section>
 </main>
 
-<footer><div class="wrap"><span>Silvio Studio · V29 · 0.29.0</span><span>整理于 2026-10-27，依据 GitHub 现存源码</span></div></footer>
+<footer><div class="wrap"><span>Silvio Studio · V29.2 · 0.29.2</span><span>整理于 2026-10-27，2026-11-03 更新，依据 GitHub 现存源码</span></div></footer>
 
 <dialog class="lb" id="lightbox" aria-label="截图大图">
   <img id="lb-img" alt="">

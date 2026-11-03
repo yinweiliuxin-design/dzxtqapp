@@ -1,7 +1,7 @@
 /* Explicit offline preparation. This module never registers or downloads on load. */
 'use strict';
 (() => {
-  const VERSION='20261026-v29-reliability-1';
+  const VERSION='20261103-v29-2-content-1';
   const base=new URL('./',document.currentScript?.src||location.href);
   const supported=Boolean(navigator.serviceWorker&&typeof MessageChannel==='function'&&window.isSecureContext!==false);
   const listeners=new Set();

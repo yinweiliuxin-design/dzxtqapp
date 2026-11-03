@@ -1,2 +1,2 @@
 'use strict';
-window.SVRelease=Object.freeze({"version":"0.29.0","label":"V29","date":"2026-10-26","assetsVersion":"20261026-v29-reliability-1","reportPath":"reports/release-current.html"});
+window.SVRelease=Object.freeze({"version":"0.29.2","label":"V29.2","date":"2026-11-03","assetsVersion":"20261103-v29-2-content-1","reportPath":"reports/release-current.html"});

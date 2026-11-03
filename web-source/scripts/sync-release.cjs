@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),root=path.resolve(__dirname,'..'),dist=path.join(root,'dist');
 const release=JSON.parse(fs.readFileSync(path.join(root,'release.json')));
-if(!/^\d+\.\d+\.\d+$/.test(release.version)||!/^\d{8}-[A-Za-z0-9.-]+$/.test(release.assetsVersion)||!/^V\d+$/.test(release.label)||release.reportPath!=='reports/release-current.html')throw Error('Invalid release manifest');
+if(!/^\d+\.\d+\.\d+$/.test(release.version)||!/^\d{8}-[A-Za-z0-9.-]+$/.test(release.assetsVersion)||!/^V\d+(?:\.\d+)?$/.test(release.label)||release.reportPath!=='reports/release-current.html')throw Error('Invalid release manifest');
 const pkg=JSON.parse(fs.readFileSync(path.join(root,'package.json')));pkg.version=release.version;fs.writeFileSync(path.join(root,'package.json'),JSON.stringify(pkg,null,2)+'\n');
 fs.writeFileSync(path.join(dist,'release.js'),"'use strict';\nwindow.SVRelease=Object.freeze("+JSON.stringify(release)+");\n");
 for(const file of ['index.html','client.html']){
