@@ -5,9 +5,21 @@ const seed=seedContext.window.SV_SEED,scoreContext={module:{exports:{}}};vm.runI
 const ids=new Set(),titles=new Set(),markets=['us','uk','de','jp','cn','fr'],newSongs=seed.songs.filter(s=>s.catalogVersion===2);
 const checks=[];for(const song of seed.songs){
   assert(!ids.has(song.id),'Duplicate ID '+song.id);ids.add(song.id);assert(song.melody?.trim(),'Missing melody '+song.id);
-  const meter=(song.practice?.meter||'4/4').split('/').map(Number),score=model.createScore(song,{numerator:meter[0],denominator:meter[1]});
+  const meter=(song.practice?.meter||'4/4').split('/').map(Number),score=model.createScore(song,{numerator:meter[0],denominator:meter[1],pickup:song.practice?.pickup});
   assert(score.events.some(n=>n.pitch!=='R'),'Silent score '+song.id);assert(score.totalTicks>0);assert(song.regions.every(r=>markets.includes(r)));
-  if(song.catalogVersion!==2)continue;
+  // Spelling: one name per pitch class, no flat keys spelled with sharps on the flat side (A#/D#), no rare spellings.
+  const names=new Map();for(const token of song.melody.split(/\s+/)){const name=token.split(':')[0].replace(/-?\d+$/,'');if(name==='R')continue;const pc=model.midi(name+'4')%12;assert(!names.has(pc)||names.get(pc)===name,'Two spellings of one pitch '+song.id+' '+names.get(pc)+'/'+name);names.set(pc,name);}
+  assert(![...names.values()].some(n=>['Cb','Fb','B#'].includes(n)),'Rare spelling '+song.id);
+  if([...names.values()].some(n=>n.endsWith('b')))assert(![...names.values()].some(n=>n==='A#'||n==='D#'),'Sharps in a flat key '+song.id);
+  if(song.withheld){assert.equal(song.withheld,'melody-unverified');continue;}
+  assert(song.practice?.kind==='excerpt'&&/^\d{1,2}\/(2|4|8)$/.test(song.practice.meter),'Missing practice meter '+song.id);
+  if(song.practice.pickup!==undefined)assert(score.leadTicks>0,'Pickup must be shorter than a bar '+song.id);
+  if(song.catalogVersion!==2){
+    // Stock tunes: every bar is complete, or the last bar completes the pickup bar.
+    const tail=score.totalTicks%score.ticksPerBar;
+    assert(tail===0||tail===score.leadTicks,'Unfinished last bar '+song.id);
+    continue;
+  }
   assert(['global','regional'].includes(song.collection));assert(['beginner','folk','classic'].includes(song.category));
   for(const lang of ['zh','en','ja','de'])assert(typeof song.titles[lang]==='string'&&song.titles[lang].length>0,'Missing title '+song.id+' '+lang);
   assert(!titles.has(song.titles.en),'Duplicate new title '+song.titles.en);titles.add(song.titles.en);

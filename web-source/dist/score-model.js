@@ -28,7 +28,11 @@
     const ticksPerBar=ppq*4*numerator/denominator;
     const text=typeof song==='string'?song:song&&song.melody;
     if(typeof text!=='string'||!text.trim())throw new Error('Empty melody');
-    let cursor=0;
+    // An anacrusis (pickup, in beats) fills the end of bar 1, so later downbeats line up with the bar lines.
+    const pickup=Number(options.pickup)||0,pickupTicks=Math.round(pickup*ppq);
+    if(!Number.isFinite(pickup)||pickup<0)throw new Error('Invalid pickup');
+    const leadTicks=pickupTicks>0&&pickupTicks<ticksPerBar?ticksPerBar-pickupTicks:0;
+    let cursor=leadTicks;
     const events=text.trim().split(/\s+/).map((token,sourceIndex)=>{
       const parts=token.split(':');if(parts.length!==2)throw new Error('Invalid melody token: '+token);
       const pitch=parts[0],beats=Number(parts[1]);pitchParts(pitch);
@@ -37,10 +41,10 @@
       const startTick=cursor;cursor+=durationTicks;
       return {id:String((song&&song.id)||'score')+':'+sourceIndex,sourceIndex,pitch,beats,durationTicks,startTick,endTick:cursor,originalStartTick:startTick,originalEndTick:cursor,bar:Math.floor(startTick/ticksPerBar)+1};
     });
-    return {ppq,timeSignature:{numerator,denominator},ticksPerBar,events,totalTicks:cursor};
+    return {ppq,timeSignature:{numerator,denominator},ticksPerBar,pickupTicks:leadTicks?pickupTicks:0,leadTicks,events,totalTicks:cursor};
   }
   function selectTicks(score,startTick=0,endTick=score.totalTicks){
-    const start=Math.min(score.totalTicks,Math.max(0,Number(startTick)||0));
+    const start=Math.min(score.totalTicks,Math.max(score.leadTicks||0,Number(startTick)||0));
     const end=Math.min(score.totalTicks,Math.max(start,Number.isFinite(endTick)?endTick:score.totalTicks));
     const events=score.events.filter(n=>n.endTick>start&&n.startTick<end).map(n=>{
       const a=Math.max(n.startTick,start),b=Math.min(n.endTick,end);

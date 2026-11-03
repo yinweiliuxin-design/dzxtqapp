@@ -1,6 +1,6 @@
 /* Same-origin app assets only. User records, media, accounts and API traffic are never cached. */
 'use strict';
-const VERSION='20261102-v29-1-fixes-1',PREFIX='smartvio-static-v1-',FINAL=PREFIX+VERSION;
+const VERSION='20261103-v29-2-content-1',PREFIX='smartvio-static-v1-',FINAL=PREFIX+VERSION;
 const BASE=new URL('./',self.location.href);
 const FILES=Object.freeze([
   "reliability-v29.css",

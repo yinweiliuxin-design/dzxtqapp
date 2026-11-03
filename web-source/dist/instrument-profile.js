@@ -16,7 +16,7 @@
       electricShort: '连接设备，探索你的声音。', acousticShort: '从调音开始，专注每一根弦。',
       electricDetail: '设备连接、琴端参数适配与 MIDI 创作优先展示。', acousticDetail: '调音、麦克风跟练与录音优先展示。',
       sameRecords: '切换不会删除曲目收藏、练习记录或本机录音。', noAccount: '选择乐器无需登录，也不会自动连接设备。',
-      device: '连接设备', tones: '音色工作台', midi: 'MIDI 工作台', tuner: '调音器', practice: '跟奏练习', studio: '录音创作',
+      device: '连接设备', tones: '音色', midi: 'MIDI 工作台', tuner: '调音器', practice: '跟奏练习', studio: '录音创作',
       electricNote: 'BLE-MIDI 传输演奏指令，不传输琴的原声。琴端参数控制需要匹配的协议适配器；录下琴声可用麦克风或兼容的音频接口。',
       acousticNote: '使用手机或电脑的麦克风即可调音、跟练和录音。麦克风只在你点击开始并授权后启用。',
       inputTitle: '让 App 听见你的琴声', inputIntro: '不需要蓝牙配对。先准备好麦克风，再选择你想做的练习。',

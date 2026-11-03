@@ -8,6 +8,8 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
 const root=path.dirname(fileURLToPath(import.meta.url));
+// The banner shows the version the app itself reports (web-source/release.json).
+const releaseLabel=()=>{try{return JSON.parse(fs.readFileSync(path.join(root,'web-source','release.json'),'utf8')).label||'';}catch{return '';}};
 const app=path.join(root,'web-source');
 const args=process.argv.slice(2);
 const option=name=>{const i=args.indexOf('--'+name);return i<0?undefined:args[i+1];};
@@ -77,7 +79,7 @@ child.stdout.on('data',chunk=>{
   started=true;
   const url=`http://127.0.0.1:${port}/`;
   console.log(`
-Silvio V29 一键预览已启动
+Silvio ${releaseLabel()} 一键预览已启动
   App   ${url}
   后台  ${url}admin
   身份  ${roles[role]}（仅本机预览使用的测试身份）
